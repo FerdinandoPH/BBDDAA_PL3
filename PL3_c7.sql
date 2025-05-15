@@ -1,0 +1,16 @@
+\c telpark
+
+DROP USER IF EXISTS usuario1;
+DROP USER IF EXISTS usuario2;
+DROP USER IF EXISTS usuario3;
+DROP ROLE IF EXISTS rol_usuario;
+
+CREATE USER usuario1 WITH PASSWORD '1234';
+CREATE USER usuario2 WITH PASSWORD '1234';
+CREATE USER usuario3 WITH PASSWORD '1234';
+
+CREATE ROLE rol_usuario WITH NOSUPERUSER;
+GRANT USAGE ON SCHEMA public TO rol_usuario;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+
+GRANT rol_usuario TO usuario1, usuario2, usuario3;
