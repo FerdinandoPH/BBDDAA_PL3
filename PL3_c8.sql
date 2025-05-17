@@ -2,7 +2,7 @@
 
 BEGIN;
 
-INSERT INTO clientes VALUES(0, 'Fulano', 'Fulanez', 'fualnito@example.ex', 918856931, 'Madrid');
+INSERT INTO clientes VALUES(0, 'Fulano', 'Fulanez', 'fulanito@example.ex', 918856931, 'Madrid');
 INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
 
 SELECT * FROM clientes WHERE clienteid=0;
