@@ -12,7 +12,7 @@ INSERT INTO vars_u2 VALUES ('y', (SELECT y FROM tabla2));
 INSERT INTO vars_u2 VALUES ('z', (SELECT z FROM tabla3));
 UPDATE vars_u2 SET valor = (SELECT (SELECT y FROM tabla2) / (SELECT z FROM tabla3)) WHERE nombre = 'y';
 
---SELECT * FROM vars_u2;
+
 -- Secuencia 7
 
 UPDATE tabla2 SET y = (SELECT valor FROM vars_u2 WHERE nombre = 'y');
