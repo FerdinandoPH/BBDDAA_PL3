@@ -11,7 +11,7 @@ UPDATE vehiculos WHERE vehiculoid = 1 SET matricula = '1234MMG';
 
 INSERT INTO clientes VALUES(2, 'Zutano', 'Zutanez', 'zutanito@example.ex', 987651234, 'Madrid');
 
-INSERT INTO vehiculos VALUES(3, '4567HPG', 'Seat', 'Panda', 'Blanco', 2);
+INSERT INTO vehiculos VALUES(2, '4567HPG', 'Seat', 'Panda', 'Blanco', 2);
 
 COMMIT;
 
