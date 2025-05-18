@@ -18,3 +18,4 @@ UPDATE tabla3 SET z = (SELECT valor FROM vars_u1 WHERE nombre = 'z');
 INSERT INTO vars_u1 VALUES ('x', (SELECT x FROM tabla1));
 UPDATE vars_u1 SET valor = (SELECT (SELECT valor FROM vars_u1 WHERE nombre = 'y') * (SELECT valor FROM vars_u1 WHERE nombre = 'z')) WHERE nombre = 'x';
 UPDATE tabla1 SET x = (SELECT valor FROM vars_u1 WHERE nombre = 'x');
+COMMIT;

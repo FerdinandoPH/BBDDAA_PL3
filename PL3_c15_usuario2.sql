@@ -18,7 +18,7 @@ UPDATE vars_u2 SET valor = (SELECT (SELECT y FROM tabla2) / (SELECT z FROM tabla
 UPDATE tabla2 SET y = (SELECT valor FROM vars_u2 WHERE nombre = 'y');
 
 -- Secuencia 16 y 17
-UPDATE vars_u2 SET valor = (SELECT (SELECT y FROM vars_u2 WHERE nombre = 'y') + 100) WHERE nombre = 'z';
+UPDATE vars_u2 SET valor = (SELECT (SELECT valor FROM vars_u2 WHERE nombre = 'y') + 100) WHERE nombre = 'z';
 UPDATE tabla3 SET z = (SELECT valor FROM vars_u2 WHERE nombre = 'z');
 
 -- Secuencia 22
