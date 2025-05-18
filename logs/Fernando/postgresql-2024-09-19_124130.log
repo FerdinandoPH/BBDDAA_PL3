@@ -1,0 +1,21 @@
+2024-09-19 12:41:30.074 CEST [4680] LOG:  iniciando PostgreSQL 16.4, compiled by Visual C++ build 1940, 64-bit
+2024-09-19 12:41:30.074 CEST [4680] LOG:  escuchando en la dirección IPv6 «::», port 5432
+2024-09-19 12:41:30.075 CEST [4680] LOG:  escuchando en la dirección IPv4 «0.0.0.0», port 5432
+2024-09-19 12:41:30.116 CEST [21532] LOG:  el sistema de bases de datos fue interrumpido; última vez en funcionamiento en 2024-09-19 12:39:59 CEST
+2024-09-19 12:41:30.476 CEST [21532] LOG:  el sistema de bases de datos no fue apagado apropiadamente; se está efectuando la recuperación automática
+2024-09-19 12:41:30.480 CEST [21532] LOG:  redo comienza en 0/15D96A0
+2024-09-19 12:41:30.480 CEST [21532] LOG:  largo de registro no válido en 0/15D96D8: se esperaba al menos 24, se obtuvo 0
+2024-09-19 12:41:30.480 CEST [21532] LOG:  redo listo en 0/15D96A0 utilización del sistema: CPU: usuario: 0.00 s, sistema: 0.00 s, transcurrido: 0.00 s
+2024-09-19 12:41:30.485 CEST [18948] LOG:  empezando checkpoint: end-of-recovery immediate wait
+2024-09-19 12:41:30.494 CEST [18948] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=0 kB, estimación=0 kB; lsn=0/15D96D8, lsn de redo=0/15D96D8
+2024-09-19 12:41:30.524 CEST [4680] LOG:  el sistema de bases de datos está listo para aceptar conexiones
+2024-09-19 12:42:02.177 CEST [14148] FATAL:  la autentificación password falló para el usuario «postgres»
+2024-09-19 12:42:02.177 CEST [14148] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-09-19 12:42:28.162 CEST [18424] ERROR:  error de sintaxis en o cerca de «pospostgres» en carácter 1
+2024-09-19 12:42:28.162 CEST [18424] SENTENCIA:  pospostgres=# ALTER USER postgres WITH PASSWORD 'postgres';
+2024-09-19 12:42:34.726 CEST [18424] ERROR:  error de sintaxis en o cerca de «postgres» en carácter 1
+2024-09-19 12:42:34.726 CEST [18424] SENTENCIA:  postgres=# ALTER USER postgres WITH PASSWORD 'postgres';
+2024-09-19 12:46:30.505 CEST [18948] LOG:  empezando checkpoint: time
+2024-09-19 12:46:30.727 CEST [18948] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.211 s, sync=0.004 s, total=0.222 s; archivos sincronizados=3, más largo=0.003 s, promedio=0.002 s; distancia=2 kB, estimación=2 kB; lsn=0/15DA128, lsn de redo=0/15DA0F0
+2024-09-19 12:57:21.260 CEST [4624] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	

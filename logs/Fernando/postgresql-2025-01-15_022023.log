@@ -1,0 +1,3 @@
+2025-01-15 02:20:24.303 CET [9812] LOG:  el sistema de bases de datos fue apagado en 2025-01-15 02:19:25 CET
+2025-01-15 02:25:24.240 CET [6668] LOG:  empezando checkpoint: time
+2025-01-15 02:25:24.255 CET [6668] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.017 s; archivos sincronizados=2, más largo=0.002 s, promedio=0.002 s; distancia=0 kB, estimación=0 kB; lsn=0/87C7C9E8, lsn de redo=0/87C7C9B0

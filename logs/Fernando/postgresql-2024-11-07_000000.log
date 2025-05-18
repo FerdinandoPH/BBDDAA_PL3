@@ -1,0 +1,344 @@
+2024-11-07 12:11:00.174 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:11:00.184 CET [15056] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.011 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=1 kB, estimación=7797 kB; lsn=0/2AB10470, lsn de redo=0/2AB10438
+2024-11-07 12:11:22.252 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:11:22.275 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.004 s, total=0.023 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=9597 kB, estimación=9597 kB; lsn=0/2B46F988, lsn de redo=0/2B46F950
+2024-11-07 12:16:22.288 CET [15056] LOG:  empezando checkpoint: time
+2024-11-07 12:18:59.103 CET [15056] LOG:  checkpoint completo: escritos 1440 búfers (8.8%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=156.691 s, sync=0.119 s, total=156.816 s; archivos sincronizados=364, más largo=0.001 s, promedio=0.001 s; distancia=9596 kB, estimación=9597 kB; lsn=0/2BDCEFC0, lsn de redo=0/2BDCEC18
+2024-11-07 12:27:36.657 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:27:36.666 CET [15056] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.010 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=5 kB, estimación=8638 kB; lsn=0/2BDD01E8, lsn de redo=0/2BDD01B0
+2024-11-07 12:27:37.523 CET [10696] ERROR:  error de sintaxis en o cerca de «EXISTS» en carácter 108
+2024-11-07 12:27:37.523 CET [10696] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER IF EXISTS IN (SELECT nombre_usuario FROM tienda.Usuarios)
+	FROM tienda_temporal.UDeseaD;
+2024-11-07 12:27:37.571 CET [10696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:27:37.571 CET [10696] SENTENCIA:  DELETE FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario NOT IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-07 12:27:37.577 CET [10696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:27:37.577 CET [10696] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-11-07 12:27:37.582 CET [10696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:27:37.582 CET [10696] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE;
+2024-11-07 12:27:37.589 CET [10696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:27:37.589 CET [10696] SENTENCIA:  SET search_path= tienda;
+2024-11-07 12:27:37.596 CET [10696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:27:37.596 CET [10696] SENTENCIA:  SELECT d.titulo, COUNT(*) AS num_canciones
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo
+	HAVING num_canciones > 5
+	ORDER BY num_canciones;
+2024-11-07 12:28:52.424 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:28:52.513 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.027 s, total=0.089 s; archivos sincronizados=4, más largo=0.007 s, promedio=0.007 s; distancia=9461 kB, estimación=9461 kB; lsn=0/2C70D740, lsn de redo=0/2C70D708
+2024-11-07 12:28:53.423 CET [27836] ERROR:  no existe la columna «num_canciones» en carácter 179
+2024-11-07 12:28:53.423 CET [27836] SENTENCIA:  SELECT d.titulo, COUNT(*) AS num_canciones
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo
+	HAVING num_canciones > 5
+	ORDER BY num_canciones;
+2024-11-07 12:29:57.678 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:29:57.693 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9600 kB, estimación=9600 kB; lsn=0/2D06D918, lsn de redo=0/2D06D8E0
+2024-11-07 12:34:57.700 CET [15056] LOG:  empezando checkpoint: time
+2024-11-07 12:37:32.993 CET [15056] LOG:  checkpoint completo: escritos 1440 búfers (8.8%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=155.170 s, sync=0.117 s, total=155.294 s; archivos sincronizados=364, más largo=0.001 s, promedio=0.001 s; distancia=9595 kB, estimación=9599 kB; lsn=0/2D9CC8A0, lsn de redo=0/2D9CC4F8
+2024-11-07 12:44:03.279 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:44:03.288 CET [15056] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.010 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=5 kB, estimación=8640 kB; lsn=0/2D9CDCA8, lsn de redo=0/2D9CDC70
+2024-11-07 12:44:07.039 CET [29356] ERROR:  no existe la columna e.usuario_nombre_usuario en carácter 170
+2024-11-07 12:44:07.039 CET [29356] SENTENCIA:  SELECT u.nombre_usuario, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM UTieneE e
+	JOIN Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre_usuario LIKE 'Juan García Gómez';
+2024-11-07 12:45:08.118 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:45:08.136 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.004 s, total=0.019 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=9596 kB, estimación=9596 kB; lsn=0/2E32CED8, lsn de redo=0/2E32CEA0
+2024-11-07 12:45:08.664 CET [21876] ERROR:  no existe la columna «usuario_nombre» en la llave en carácter 295
+2024-11-07 12:45:08.664 CET [21876] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais TEXT,
+	    edicion_anno INTEGER,
+	    edicion_formato formato_enum,
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato,id),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-11-07 12:45:08.697 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.697 CET [21876] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-11-07 12:45:08.701 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.701 CET [21876] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-11-07 12:45:08.708 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.708 CET [21876] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-07 12:45:08.712 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.712 CET [21876] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-07 12:45:08.718 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.718 CET [21876] SENTENCIA:  DELETE FROM tienda_temporal.Canciones
+	USING tienda_temporal.Canciones c2
+	WHERE tienda_temporal.Canciones.titulo = c2.titulo
+	  AND tienda_temporal.Canciones.disco_id = c2.disco_id
+	  AND tienda_temporal.Canciones.duracion IS NULL
+	  AND c2.duracion IS NOT NULL;
+2024-11-07 12:45:08.723 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.723 CET [21876] SENTENCIA:  DELETE FROM tienda_temporal.Canciones a
+	USING tienda_temporal.Canciones b
+	WHERE a.ctid < b.ctid
+	  AND a.titulo = b.titulo
+	  AND a.disco_id = b.disco_id
+	  AND a.duracion IS NOT NULL
+	  AND b.duracion IS NOT NULL;
+2024-11-07 12:45:08.728 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.728 CET [21876] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT DISTINCT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-11-07 12:45:08.733 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.733 CET [21876] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-07 12:45:08.739 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.739 CET [21876] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-07 12:45:08.744 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.744 CET [21876] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-11-07 12:45:08.751 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.751 CET [21876] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-07 12:45:08.759 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.759 CET [21876] SENTENCIA:  SET search_path= tienda;
+2024-11-07 12:45:08.768 CET [21876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:08.768 CET [21876] SENTENCIA:  SELECT u.nombre_usuario, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM UTieneE e
+	JOIN Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre_usuario LIKE 'Juan García Gómez';
+2024-11-07 12:45:18.752 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:45:18.764 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6139 kB, estimación=9250 kB; lsn=0/2E92BCA0, lsn de redo=0/2E92BC68
+2024-11-07 12:45:19.408 CET [29188] ERROR:  no existe la columna «usuario_nombre» referida en la llave foránea
+2024-11-07 12:45:19.408 CET [29188] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais TEXT,
+	    edicion_anno INTEGER,
+	    edicion_formato formato_enum,
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato,id),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-11-07 12:45:19.449 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.449 CET [29188] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-11-07 12:45:19.455 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.455 CET [29188] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-11-07 12:45:19.461 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.461 CET [29188] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-07 12:45:19.467 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.467 CET [29188] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-07 12:45:19.473 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.473 CET [29188] SENTENCIA:  DELETE FROM tienda_temporal.Canciones
+	USING tienda_temporal.Canciones c2
+	WHERE tienda_temporal.Canciones.titulo = c2.titulo
+	  AND tienda_temporal.Canciones.disco_id = c2.disco_id
+	  AND tienda_temporal.Canciones.duracion IS NULL
+	  AND c2.duracion IS NOT NULL;
+2024-11-07 12:45:19.479 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.479 CET [29188] SENTENCIA:  DELETE FROM tienda_temporal.Canciones a
+	USING tienda_temporal.Canciones b
+	WHERE a.ctid < b.ctid
+	  AND a.titulo = b.titulo
+	  AND a.disco_id = b.disco_id
+	  AND a.duracion IS NOT NULL
+	  AND b.duracion IS NOT NULL;
+2024-11-07 12:45:19.485 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.485 CET [29188] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT DISTINCT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-11-07 12:45:19.491 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.491 CET [29188] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-07 12:45:19.497 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.497 CET [29188] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-07 12:45:19.504 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.504 CET [29188] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-11-07 12:45:19.511 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.511 CET [29188] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-07 12:45:19.518 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.518 CET [29188] SENTENCIA:  SET search_path= tienda;
+2024-11-07 12:45:19.525 CET [29188] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-07 12:45:19.525 CET [29188] SENTENCIA:  SELECT u.nombre_usuario, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM UTieneE e
+	JOIN Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre_usuario LIKE 'Juan García Gómez';
+2024-11-07 12:45:33.153 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:45:33.164 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6161 kB, estimación=8941 kB; lsn=0/2EF30498, lsn de redo=0/2EF30460
+2024-11-07 12:45:34.079 CET [18256] ERROR:  no existe la columna e.edicion_anno_edicion en carácter 84
+2024-11-07 12:45:34.079 CET [18256] SENTENCIA:  SELECT u.nombre_usuario, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM UTieneE e
+	JOIN Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre_usuario LIKE 'Juan García Gómez';
+2024-11-07 12:46:00.538 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:46:00.555 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.017 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9593 kB, estimación=9593 kB; lsn=0/2F88E8E8, lsn de redo=0/2F88E8B0
+2024-11-07 12:46:14.288 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:46:14.301 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9593 kB, estimación=9593 kB; lsn=0/301ED000, lsn de redo=0/301ECFC8
+2024-11-07 12:46:32.389 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:46:32.401 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9593 kB, estimación=9593 kB; lsn=0/30B4B410, lsn de redo=0/30B4B3D8
+2024-11-07 12:47:14.492 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:47:14.505 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/314A9CF0, lsn de redo=0/314A9CB8
+2024-11-07 12:49:07.014 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:49:07.026 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/31E086A8, lsn de redo=0/31E08670
+2024-11-07 12:49:07.912 CET [15772] ERROR:  no existe la columna «duracion» en carácter 16
+2024-11-07 12:49:07.912 CET [15772] SENTENCIA:  SELECT titulo, duracion
+	FROM discos
+	WHERE duracion > ALL (SELECT duracion FROM discos);
+2024-11-07 12:51:06.507 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:51:06.521 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/32766F80, lsn de redo=0/32766F48
+2024-11-07 12:51:07.419 CET [14656] ERROR:  la referencia a la columna «titulo» es ambigua en carácter 8
+2024-11-07 12:51:07.419 CET [14656] SENTENCIA:  SELECT titulo, SUM(c.duracion) AS duracion_total
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo, d.anno_publicacion
+	HAVING SUM(c.duracion) >= ALL (SELECT SUM(c2.duracion)
+	                              FROM Discos d2 JOIN Canciones c2 ON d2.titulo = c2.disco_titulo AND d2.anno_publicacion = c2.disco_anno_publicacion
+	                              WHERE d2.titulo = d.titulo AND d2.anno_publicacion = d.anno_publicacion
+	                              GROUP BY d2.titulo, d2.anno_publicacion)
+	LIMIT 1;
+2024-11-07 12:51:14.550 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:51:14.566 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.016 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/330C58F0, lsn de redo=0/330C58B8
+2024-11-07 12:51:31.956 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:51:31.967 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9595 kB, estimación=9595 kB; lsn=0/33A24500, lsn de redo=0/33A244C8
+2024-11-07 12:52:05.628 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:52:05.642 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9595 kB, estimación=9595 kB; lsn=0/343831D8, lsn de redo=0/343831A0
+2024-11-07 12:52:40.148 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:52:40.160 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9595 kB, estimación=9595 kB; lsn=0/34CE1FB8, lsn de redo=0/34CE1F80
+2024-11-07 12:52:41.013 CET [35580] ERROR:  error de sintaxis en o cerca de «WHERE» en carácter 229
+2024-11-07 12:52:41.013 CET [35580] SENTENCIA:  SELECT d.titulo, SUM(c.duracion) AS duracion_total
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo, d.anno_publicacion
+	ORDER BY duracion_total DESC WHERE duracion_total IS NOT NULL;
+2024-11-07 12:52:41.060 CET [35580] ERROR:  error de sintaxis en o cerca de «LIMIT» en carácter 1
+2024-11-07 12:52:41.060 CET [35580] SENTENCIA:  LIMIT 1;
+2024-11-07 12:53:13.168 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:53:13.181 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9595 kB, estimación=9595 kB; lsn=0/35640CD8, lsn de redo=0/35640CA0
+2024-11-07 12:54:14.769 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:54:14.780 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9595 kB, estimación=9595 kB; lsn=0/35F9FC30, lsn de redo=0/35F9FBF8
+2024-11-07 12:54:37.056 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 12:54:37.071 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9596 kB, estimación=9596 kB; lsn=0/368FECB8, lsn de redo=0/368FEC80
+2024-11-07 12:59:37.072 CET [15056] LOG:  empezando checkpoint: time
+2024-11-07 13:01:19.788 CET [15056] LOG:  checkpoint completo: escritos 949 búfers (5.8%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=102.703 s, sync=0.003 s, total=102.716 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=9594 kB, estimación=9595 kB; lsn=0/3725F1E0, lsn de redo=0/3725D6B8
+2024-11-07 13:01:19.800 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:01:19.810 CET [15056] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.010 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=6 kB, estimación=8637 kB; lsn=0/3725F290, lsn de redo=0/3725F258
+2024-11-07 13:02:44.026 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:02:44.037 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9596 kB, estimación=9596 kB; lsn=0/37BBE4B8, lsn de redo=0/37BBE480
+2024-11-07 13:05:17.814 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:05:17.829 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9596 kB, estimación=9596 kB; lsn=0/3851D7B8, lsn de redo=0/3851D780
+2024-11-07 13:05:18.650 CET [18780] ERROR:  la columna «ediciones.anno_edicion» debe aparecer en la cláusula GROUP BY o ser usada en una función de agregación en carácter 46
+2024-11-07 13:05:18.650 CET [18780] SENTENCIA:  SELECT disco_titulo, disco_anno_publicacion, anno_edicion, pais, formato
+	FROM Ediciones
+	WHERE disco_anno_publicacion BETWEEN 1970 AND 1972
+	GROUP BY disco_titulo, disco_anno_publicacion
+	ORDER BY disco_anno_publicacion;
+2024-11-07 13:06:35.904 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:06:35.915 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9596 kB, estimación=9596 kB; lsn=0/38E7CA10, lsn de redo=0/38E7C9D8
+2024-11-07 13:10:40.197 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:10:40.210 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9597 kB, estimación=9597 kB; lsn=0/397DBEC0, lsn de redo=0/397DBE88
+2024-11-07 13:15:40.225 CET [15056] LOG:  empezando checkpoint: time
+2024-11-07 13:18:15.803 CET [15056] LOG:  checkpoint completo: escritos 1440 búfers (8.8%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=155.451 s, sync=0.120 s, total=155.579 s; archivos sincronizados=364, más largo=0.001 s, promedio=0.001 s; distancia=9595 kB, estimación=9597 kB; lsn=0/3A13B0E8, lsn de redo=0/3A13AD40
+2024-11-07 13:19:36.091 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:19:36.099 CET [15056] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.009 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=9 kB, estimación=8638 kB; lsn=0/3A13D378, lsn de redo=0/3A13D340
+2024-11-07 13:19:36.968 CET [2172] ERROR:  la columna «d.titulo» debe aparecer en la cláusula GROUP BY o ser usada en una función de agregación en carácter 17
+2024-11-07 13:19:36.968 CET [2172] SENTENCIA:  SELECT DISTINCT d.titulo, d.anno_publicacion, SUM(c.duracion) AS duracion_total
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion JOIN ediciones e ON d.titulo = e.disco_titulo AND d.anno_publicacion = e.disco_anno_publicacion
+	WHERE e.anno_edicion < 2000
+2024-11-07 13:20:58.094 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:20:58.105 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9597 kB, estimación=9597 kB; lsn=0/3AA9C828, lsn de redo=0/3AA9C7F0
+2024-11-07 13:20:58.976 CET [14136] ERROR:  el argumento de AND debe ser de tipo boolean, no tipo text en carácter 197
+2024-11-07 13:20:58.976 CET [14136] SENTENCIA:  SELECT DISTINCT d.titulo, d.anno_publicacion, SUM(c.duracion) AS duracion_total
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	WHERE d.titulo AND d.anno_publicacion IN (SELECT disco_titulo, disco_anno_publicacion FROM ediciones WHERE anno_edicion < 2000);
+2024-11-07 13:21:39.291 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:21:39.305 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9597 kB, estimación=9597 kB; lsn=0/3B3FBDA0, lsn de redo=0/3B3FBD68
+2024-11-07 13:21:40.220 CET [21532] ERROR:  error de sintaxis en o cerca de «,» en carácter 205
+2024-11-07 13:21:40.220 CET [21532] SENTENCIA:  SELECT DISTINCT d.titulo, d.anno_publicacion, SUM(c.duracion) AS duracion_total
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	WHERE d.titulo, d.anno_publicacion IN (SELECT disco_titulo, disco_anno_publicacion FROM ediciones WHERE anno_edicion < 2000);
+2024-11-07 13:22:55.277 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:22:55.288 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9602 kB, estimación=9602 kB; lsn=0/3BD5C5F8, lsn de redo=0/3BD5C5C0
+2024-11-07 13:23:59.415 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:23:59.430 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9598 kB, estimación=9601 kB; lsn=0/3C6BBEA0, lsn de redo=0/3C6BBE68
+2024-11-07 13:24:22.184 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:24:22.198 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9598 kB, estimación=9601 kB; lsn=0/3D01B878, lsn de redo=0/3D01B840
+2024-11-07 13:26:11.579 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:26:11.590 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9598 kB, estimación=9601 kB; lsn=0/3D97B2D8, lsn de redo=0/3D97B2A0
+2024-11-07 13:26:12.565 CET [32204] ERROR:  la columna «c.titulo» debe aparecer en la cláusula GROUP BY o ser usada en una función de agregación en carácter 38
+2024-11-07 13:26:12.565 CET [32204] SENTENCIA:  SELECT d.titulo, d.anno_publicacion, c.titulo, c.duracion, e.anno_edicion, e.pais, e.formato
+	FROM Discos d
+	JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	JOIN Ediciones e ON d.titulo = e.disco_titulo AND d.anno_publicacion = e.disco_anno_publicacion
+	GROUP BY d.titulo, d.anno_publicacion
+	LIMIT 5;
+2024-11-07 13:26:18.465 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:26:18.482 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.017 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=9597 kB, estimación=9600 kB; lsn=0/3E2DAAB8, lsn de redo=0/3E2DAA80
+2024-11-07 13:31:18.487 CET [15056] LOG:  empezando checkpoint: time
+2024-11-07 13:33:54.078 CET [15056] LOG:  checkpoint completo: escritos 1440 búfers (8.8%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=155.468 s, sync=0.116 s, total=155.591 s; archivos sincronizados=364, más largo=0.001 s, promedio=0.001 s; distancia=9597 kB, estimación=9600 kB; lsn=0/3EC3A3E0, lsn de redo=0/3EC3A038
+2024-11-07 13:34:23.590 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:34:23.600 CET [15056] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.011 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=4 kB, estimación=8640 kB; lsn=0/3EC3B350, lsn de redo=0/3EC3B318
+2024-11-07 13:34:24.464 CET [32896] ERROR:  no existe la columna udd.usuario_nombre_usuario en carácter 283
+2024-11-07 13:34:24.464 CET [32896] HINT:  Probablemente quiera hacer referencia a la columna «ute.usuario_nombre_usuario».
+2024-11-07 13:34:24.464 CET [32896] SENTENCIA:  SELECT ute.disco_titulo, ute.disco_anno_publicacion, ute.edicion_pais, ute.edicion_anno_edicion, ute.edicion_formato, ute.estado
+	FROM UTieneE ute JOIN UDeseaD udd ON ute.disco_titulo = udd.disco_titulo AND ute.disco_anno_publicacion = udd.disco_anno_publicacion JOIN usuarios ud ON udd.usuario_nombre_usuario = ud.nombre_usuario JOIN usuarios ut ON ute.usuario_nombre_usuario = ut.nombre_usuario
+	WHERE ut.nombre LIKE 'Juan García Gómez' AND ud.nombre LIKE 'Lorena Sáez Pérez';
+2024-11-07 13:34:52.955 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:34:52.969 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9592 kB, estimación=9592 kB; lsn=0/3F599670, lsn de redo=0/3F599638
+2024-11-07 13:35:26.932 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:35:26.943 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9593 kB, estimación=9593 kB; lsn=0/3FEF7BF0, lsn de redo=0/3FEF7BB8
+2024-11-07 13:36:45.766 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:36:45.781 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9593 kB, estimación=9593 kB; lsn=0/408562B0, lsn de redo=0/40856278
+2024-11-07 13:40:05.018 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:40:05.031 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9593 kB, estimación=9593 kB; lsn=0/411B4A28, lsn de redo=0/411B49F0
+2024-11-07 13:40:59.512 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:40:59.522 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/41B13270, lsn de redo=0/41B13238
+2024-11-07 13:43:08.224 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:43:08.238 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/42471B98, lsn de redo=0/42471B60
+2024-11-07 13:45:09.029 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:45:09.039 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/42DD05A8, lsn de redo=0/42DD0570
+2024-11-07 13:45:31.853 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:45:31.868 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/4372F080, lsn de redo=0/4372F048
+2024-11-07 13:50:31.879 CET [15056] LOG:  empezando checkpoint: time
+2024-11-07 13:53:07.204 CET [15056] LOG:  checkpoint completo: escritos 1440 búfers (8.8%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=155.192 s, sync=0.125 s, total=155.326 s; archivos sincronizados=364, más largo=0.001 s, promedio=0.001 s; distancia=9593 kB, estimación=9594 kB; lsn=0/4408D890, lsn de redo=0/4408D4E8
+2024-11-07 13:53:37.232 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-07 13:53:37.241 CET [15056] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.010 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=6 kB, estimación=8635 kB; lsn=0/4408EE00, lsn de redo=0/4408EDC8
+2024-11-07 13:58:19.876 CET [35312] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-11-07 13:58:19.877 CET [35312] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-11-07 13:58:37.243 CET [15056] LOG:  empezando checkpoint: time
+2024-11-07 15:21:04.596 CET [15056] LOG:  checkpoint completo: escritos 1003 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=4947.104 s, sync=0.236 s, total=4947.353 s; archivos sincronizados=352, más largo=0.003 s, promedio=0.001 s; distancia=9594 kB, estimación=9594 kB; lsn=0/449F1608, lsn de redo=0/449ED988

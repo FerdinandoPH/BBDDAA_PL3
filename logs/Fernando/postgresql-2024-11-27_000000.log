@@ -1,0 +1,241 @@
+2024-11-28 16:05:40.196 CET [9280] LOG:  empezando checkpoint: immediate force wait
+2024-11-28 16:05:40.210 CET [9280] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.001 s, total=0.016 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=7 kB, estimación=7 kB; lsn=0/5EE1EC80, lsn de redo=0/5EE1EC48
+2024-11-28 16:06:17.881 CET [21936] ERROR:  no existe el esquema «tienda»
+2024-11-28 16:06:17.881 CET [21936] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-11-28 16:06:17.884 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.884 CET [21936] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-11-28 16:06:17.891 CET [21936] ERROR:  error de sintaxis en o cerca de «IN» en carácter 34
+2024-11-28 16:06:17.891 CET [21936] SENTENCIA:  GRANT INSERT ON UTieneE, UDeseaD IN SCHEMA tienda TO Cliente;
+2024-11-28 16:06:17.899 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.899 CET [21936] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-11-28 16:06:17.905 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.905 CET [21936] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-11-28 16:06:17.912 CET [21936] ERROR:  error de sintaxis en o cerca de «IN» en carácter 43
+2024-11-28 16:06:17.912 CET [21936] SENTENCIA:  GRANT SELECT ON Grupos, Discos, Canciones IN SCHEMA tienda TO Invitado;
+2024-11-28 16:06:17.921 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.921 CET [21936] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-11-28 16:06:17.926 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.926 CET [21936] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-11-28 16:06:17.934 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.934 CET [21936] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-11-28 16:06:17.940 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.940 CET [21936] SENTENCIA:  GRANT Gestor TO virrey;
+2024-11-28 16:06:17.945 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.945 CET [21936] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM Usuario
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        GRANT Cliente TO ent.nombre_usuario;
+	    END LOOP;
+	END $$;
+2024-11-28 16:06:17.950 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.950 CET [21936] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-11-28 16:06:17.955 CET [21936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:06:17.955 CET [21936] SENTENCIA:  GRANT Invitado TO forastero;
+2024-11-28 16:08:05.838 CET [32964] ERROR:  no existe el esquema «tienda»
+2024-11-28 16:08:05.838 CET [32964] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-11-28 16:08:05.841 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.841 CET [32964] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-11-28 16:08:05.848 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.848 CET [32964] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-11-28 16:08:05.854 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.854 CET [32964] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-11-28 16:08:05.860 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.860 CET [32964] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-11-28 16:08:05.865 CET [32964] ERROR:  error de sintaxis en o cerca de «IN» en carácter 70
+2024-11-28 16:08:05.865 CET [32964] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones IN SCHEMA tienda TO Invitado;
+2024-11-28 16:08:05.875 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.875 CET [32964] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-11-28 16:08:05.880 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.880 CET [32964] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-11-28 16:08:05.888 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.888 CET [32964] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-11-28 16:08:05.895 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.895 CET [32964] SENTENCIA:  GRANT Gestor TO virrey;
+2024-11-28 16:08:05.900 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.900 CET [32964] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM Usuario
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        GRANT Cliente TO ent.nombre_usuario;
+	    END LOOP;
+	END $$;
+2024-11-28 16:08:05.905 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.905 CET [32964] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-11-28 16:08:05.910 CET [32964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:05.910 CET [32964] SENTENCIA:  GRANT Invitado TO forastero;
+2024-11-28 16:08:47.608 CET [34808] ERROR:  no existe el esquema «tienda»
+2024-11-28 16:08:47.608 CET [34808] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-11-28 16:08:47.611 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.611 CET [34808] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-11-28 16:08:47.616 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.616 CET [34808] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-11-28 16:08:47.621 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.621 CET [34808] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-11-28 16:08:47.625 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.625 CET [34808] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-11-28 16:08:47.629 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.629 CET [34808] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-11-28 16:08:47.636 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.636 CET [34808] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-11-28 16:08:47.641 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.641 CET [34808] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-11-28 16:08:47.646 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.646 CET [34808] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-11-28 16:08:47.650 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.650 CET [34808] SENTENCIA:  GRANT Gestor TO virrey;
+2024-11-28 16:08:47.654 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.654 CET [34808] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM Usuario
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        GRANT Cliente TO ent.nombre_usuario;
+	    END LOOP;
+	END $$;
+2024-11-28 16:08:47.659 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.659 CET [34808] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-11-28 16:08:47.664 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:47.664 CET [34808] SENTENCIA:  GRANT Invitado TO forastero;
+2024-11-28 16:08:56.098 CET [34808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:08:56.098 CET [34808] SENTENCIA:  SELECT n.nspname as "Schema",
+	  c.relname as "Name",
+	  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 't' THEN 'TOAST table' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as "Type",
+	  pg_catalog.pg_get_userbyid(c.relowner) as "Owner"
+	FROM pg_catalog.pg_class c
+	     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+	     LEFT JOIN pg_catalog.pg_am am ON am.oid = c.relam
+	WHERE c.relkind IN ('r','p','')
+	      AND n.nspname <> 'pg_catalog'
+	      AND n.nspname !~ '^pg_toast'
+	      AND n.nspname <> 'information_schema'
+	  AND pg_catalog.pg_table_is_visible(c.oid)
+	ORDER BY 1,2;
+2024-11-28 16:09:35.769 CET [9280] LOG:  empezando checkpoint: immediate force wait
+2024-11-28 16:09:35.781 CET [9280] LOG:  checkpoint completo: escritos 5 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=5, más largo=0.001 s, promedio=0.001 s; distancia=12 kB, estimación=12 kB; lsn=0/5EE21F40, lsn de redo=0/5EE21F08
+2024-11-28 16:10:13.110 CET [12368] ERROR:  error de sintaxis en o cerca de «FOR» en carácter 38
+2024-11-28 16:10:13.110 CET [12368] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM Usuario
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        GRANT Cliente TO ent.nombre_usuario;
+	    END LOOP;
+	END $$;
+2024-11-28 16:10:13.117 CET [12368] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:10:13.117 CET [12368] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-11-28 16:10:13.123 CET [12368] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:10:13.123 CET [12368] SENTENCIA:  GRANT Invitado TO forastero;
+2024-11-28 16:10:49.590 CET [34340] ERROR:  error de sintaxis en o cerca de «.» en carácter 238
+2024-11-28 16:10:49.590 CET [34340] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM Usuario
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        GRANT Cliente TO ent.nombre_usuario;
+	    END LOOP;
+	END $$;
+2024-11-28 16:10:49.598 CET [34340] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:10:49.598 CET [34340] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-11-28 16:10:49.604 CET [34340] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:10:49.604 CET [34340] SENTENCIA:  GRANT Invitado TO forastero;
+2024-11-28 16:13:05.960 CET [36892] ERROR:  no existe la relación «usuario» en carácter 40
+2024-11-28 16:13:05.960 CET [36892] CONSULTA:  SELECT nombre_usuario, contrasena FROM Usuario
+2024-11-28 16:13:05.960 CET [36892] CONTEXTO:  función PL/pgSQL inline_code_block en la línea 5 en bucle FOR en torno a filas de un SELECT
+2024-11-28 16:13:05.960 CET [36892] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM Usuario
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-11-28 16:13:05.974 CET [36892] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:13:05.974 CET [36892] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-11-28 16:13:05.979 CET [36892] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:13:05.979 CET [36892] SENTENCIA:  GRANT Invitado TO forastero;
+2024-11-28 16:13:17.387 CET [36892] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:13:17.387 CET [36892] SENTENCIA:  SELECT n.nspname AS "Name",
+	  pg_catalog.pg_get_userbyid(n.nspowner) AS "Owner"
+	FROM pg_catalog.pg_namespace n
+	WHERE n.nspname !~ '^pg_' AND n.nspname <> 'information_schema'
+	ORDER BY 1;
+2024-11-28 16:14:22.732 CET [33644] ERROR:  no existe la relación «utienee» en carácter 15
+2024-11-28 16:14:22.732 CET [33644] SENTENCIA:  SELECT * FROM UTieneE;
+2024-11-28 16:14:29.781 CET [33644] ERROR:  permiso denegado al esquema tienda en carácter 15
+2024-11-28 16:14:29.781 CET [33644] SENTENCIA:  SELECT * FROM tienda.UTieneE;
+2024-11-28 16:14:35.789 CET [9280] LOG:  empezando checkpoint: time
+2024-11-28 16:17:19.251 CET [9280] LOG:  checkpoint completo: escritos 1488 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=163.317 s, sync=0.136 s, total=163.463 s; archivos sincronizados=385, más largo=0.002 s, promedio=0.001 s; distancia=9944 kB, estimación=9944 kB; lsn=0/5F7D7FC8, lsn de redo=0/5F7D7F90
+2024-11-28 16:18:16.724 CET [32868] ERROR:  no se puede eliminar el rol «gestor» porque otros objetos dependen de él
+2024-11-28 16:18:16.724 CET [32868] DETALLE:  privilegios para tabla tienda.usuarios
+	privilegios para tabla tienda.grupos
+	privilegios para tabla tienda.discos
+	privilegios para tabla tienda.generosdisco
+	privilegios para tabla tienda.ediciones
+	privilegios para tabla tienda.canciones
+	privilegios para tabla tienda.udesead
+	privilegios para tabla tienda.utienee
+2024-11-28 16:18:16.724 CET [32868] SENTENCIA:  DROP ROLE Gestor;
+2024-11-28 16:18:16.740 CET [32868] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:18:16.740 CET [32868] SENTENCIA:  DROP ROLE Cliente;
+2024-11-28 16:18:16.746 CET [32868] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:18:16.746 CET [32868] SENTENCIA:  DROP ROLE Invitado;
+2024-11-28 16:19:35.280 CET [9280] LOG:  empezando checkpoint: time
+2024-11-28 16:19:35.834 CET [9280] LOG:  checkpoint completo: escritos 6 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.545 s, sync=0.004 s, total=0.555 s; archivos sincronizados=5, más largo=0.001 s, promedio=0.001 s; distancia=12 kB, estimación=8951 kB; lsn=0/5F7DB350, lsn de redo=0/5F7DB318
+2024-11-28 16:19:52.503 CET [7720] ERROR:  el rol «administrador» ya existe
+2024-11-28 16:19:52.503 CET [7720] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-11-28 16:19:52.506 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.506 CET [7720] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-11-28 16:19:52.511 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.511 CET [7720] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-11-28 16:19:52.517 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.517 CET [7720] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-11-28 16:19:52.521 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.521 CET [7720] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-11-28 16:19:52.527 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.527 CET [7720] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-11-28 16:19:52.532 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.532 CET [7720] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-11-28 16:19:52.537 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.537 CET [7720] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-11-28 16:19:52.542 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.542 CET [7720] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-11-28 16:19:52.547 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.547 CET [7720] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-11-28 16:19:52.551 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.551 CET [7720] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-11-28 16:19:52.556 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.556 CET [7720] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-11-28 16:19:52.560 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.560 CET [7720] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-11-28 16:19:52.565 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.565 CET [7720] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-11-28 16:19:52.569 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.569 CET [7720] SENTENCIA:  GRANT Gestor TO virrey;
+2024-11-28 16:19:52.573 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.573 CET [7720] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-11-28 16:19:52.578 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.578 CET [7720] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-11-28 16:19:52.582 CET [7720] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-28 16:19:52.582 CET [7720] SENTENCIA:  GRANT Invitado TO forastero;
+2024-11-28 16:24:35.838 CET [9280] LOG:  empezando checkpoint: time
+2024-11-28 16:24:41.367 CET [9280] LOG:  checkpoint completo: escritos 51 búfers (0.3%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=5.510 s, sync=0.014 s, total=5.530 s; archivos sincronizados=31, más largo=0.001 s, promedio=0.001 s; distancia=253 kB, estimación=8081 kB; lsn=0/5F81AB08, lsn de redo=0/5F81AAD0

@@ -1,0 +1,2 @@
+2025-02-04 13:06:21.071 CET [10316] LOG:  empezando checkpoint: time
+2025-02-04 13:06:22.295 CET [10316] LOG:  checkpoint completo: escritos 12 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=1.206 s, sync=0.011 s, total=1.225 s; archivos sincronizados=11, más largo=0.002 s, promedio=0.001 s; distancia=14 kB, estimación=14 kB; lsn=0/87C80628, lsn de redo=0/87C805F0

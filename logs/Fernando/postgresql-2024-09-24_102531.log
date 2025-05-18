@@ -1,0 +1,7 @@
+2024-09-24 10:25:31.724 CEST [8616] LOG:  el sistema de bases de datos fue apagado en 2024-09-24 10:24:32 CEST
+2024-09-24 10:30:31.730 CEST [9444] LOG:  empezando checkpoint: time
+2024-09-24 10:30:32.757 CEST [9444] LOG:  checkpoint completo: escritos 12 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.991 s, sync=0.013 s, total=1.034 s; archivos sincronizados=6, más largo=0.004 s, promedio=0.003 s; distancia=0 kB, estimación=0 kB; lsn=0/31B3260, lsn de redo=0/31B3228
+2024-09-24 12:43:50.973 CEST [10380] ERROR:  cancelando la sentencia debido a una petición del usuario
+2024-09-24 12:43:51.004 CEST [9444] LOG:  apagando
+2024-09-24 12:43:51.006 CEST [9444] LOG:  empezando checkpoint: shutdown immediate
+2024-09-24 12:43:51.023 CEST [9444] LOG:  checkpoint completo: escritos 0 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.020 s; archivos sincronizados=0, más largo=0.000 s, promedio=0.000 s; distancia=0 kB, estimación=0 kB; lsn=0/31B3310, lsn de redo=0/31B3310

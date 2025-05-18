@@ -1,0 +1,5 @@
+2024-10-22 15:39:36.517 CEST [16864] ERROR:  cancelando la sentencia debido a una petición del usuario
+2024-10-22 15:39:36.517 CEST [8200] ERROR:  cancelando la sentencia debido a una petición del usuario
+2024-10-22 15:39:36.525 CEST [17340] LOG:  apagando
+2024-10-22 15:39:36.527 CEST [17340] LOG:  empezando checkpoint: shutdown immediate
+2024-10-22 15:39:36.536 CEST [17340] LOG:  checkpoint completo: escritos 0 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.011 s; archivos sincronizados=0, más largo=0.000 s, promedio=0.000 s; distancia=0 kB, estimación=0 kB; lsn=0/31B3E00, lsn de redo=0/31B3E00

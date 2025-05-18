@@ -1,0 +1,878 @@
+2024-12-19 13:06:19.643 CET [25672] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-19 13:07:14.048 CET [10300] LOG:  empezando checkpoint: time
+2024-12-19 13:07:15.049 CET [10300] LOG:  checkpoint completo: escritos 10 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.990 s, sync=0.006 s, total=1.001 s; archivos sincronizados=10, más largo=0.001 s, promedio=0.001 s; distancia=36 kB, estimación=36 kB; lsn=0/73052928, lsn de redo=0/730528F0
+2024-12-19 13:08:36.486 CET [26788] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:08:36.486 CET [26788] DETALLE:  La fila que falla contiene (MiCancionRota, -5, OtraPrueba, 1919).
+2024-12-19 13:08:36.486 CET [26788] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('MiCancionRota',  -5, 'OtraPrueba', 1919)
+2024-12-19 13:08:48.970 CET [26788] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:08:48.970 CET [26788] DETALLE:  La fila que falla contiene (MiCancionRota2, -4, OtraPrueba, 1919).
+2024-12-19 13:08:48.970 CET [26788] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('MiCancionRota2',  -4, 'OtraPrueba', 1919)
+2024-12-19 13:09:07.575 CET [26788] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:09:07.575 CET [26788] DETALLE:  La fila que falla contiene (falla, -4, OtraPrueba, 1919).
+2024-12-19 13:09:07.575 CET [26788] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('falla',  -4, 'OtraPrueba', 1919)
+2024-12-19 13:11:37.673 CET [432] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-19 13:12:04.630 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:12:04.642 CET [10300] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=49 kB, estimación=49 kB; lsn=0/7305ED58, lsn de redo=0/7305ED20
+2024-12-19 13:12:05.808 CET [35296] ERROR:  no existe el rol «administrador»
+2024-12-19 13:12:05.808 CET [35296] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:12:05.813 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.813 CET [35296] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:12:05.818 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.818 CET [35296] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:12:05.824 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.824 CET [35296] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:12:05.829 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.829 CET [35296] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:12:05.834 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.834 CET [35296] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:12:05.839 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.839 CET [35296] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:12:05.845 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.845 CET [35296] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:12:05.850 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.850 CET [35296] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:12:05.854 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.854 CET [35296] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:12:05.859 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.859 CET [35296] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:12:05.863 CET [35296] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.863 CET [35296] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:12:05.919 CET [13180] ERROR:  el rol «gestor» ya existe
+2024-12-19 13:12:05.919 CET [13180] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-19 13:12:05.922 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.922 CET [13180] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-19 13:12:05.926 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.926 CET [13180] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Gestor;
+2024-12-19 13:12:05.931 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.931 CET [13180] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-19 13:12:05.935 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.935 CET [13180] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-19 13:12:05.940 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.940 CET [13180] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-19 13:12:05.947 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.947 CET [13180] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Cliente;
+2024-12-19 13:12:05.951 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.951 CET [13180] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD, tienda.auditoria TO Cliente;
+2024-12-19 13:12:05.956 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.956 CET [13180] SENTENCIA:  GRANT DELETE ON tienda.UDeseaD, tienda.UTieneE TO Cliente;
+2024-12-19 13:12:05.963 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.963 CET [13180] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-19 13:12:05.967 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.967 CET [13180] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-19 13:12:05.972 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.972 CET [13180] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-19 13:12:05.977 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.977 CET [13180] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-19 13:12:05.981 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.981 CET [13180] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones, tienda.vista_usuarios_cliente TO Invitado;
+2024-12-19 13:12:05.985 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.985 CET [13180] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:12:05.989 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.989 CET [13180] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:12:05.994 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.994 CET [13180] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:12:05.998 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:05.998 CET [13180] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:12:06.002 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:06.002 CET [13180] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:12:06.008 CET [13180] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:06.008 CET [13180] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:12:23.203 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:12:23.221 CET [10300] LOG:  checkpoint completo: escritos 8 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.006 s, sync=0.005 s, total=0.018 s; archivos sincronizados=7, más largo=0.001 s, promedio=0.001 s; distancia=9678 kB, estimación=9678 kB; lsn=0/739D2828, lsn de redo=0/739D27F0
+2024-12-19 13:12:24.166 CET [28840] ERROR:  no existe el rol «administrador»
+2024-12-19 13:12:24.166 CET [28840] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:12:24.171 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.171 CET [28840] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:12:24.178 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.178 CET [28840] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:12:24.183 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.183 CET [28840] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:12:24.188 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.188 CET [28840] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:12:24.194 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.194 CET [28840] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:12:24.199 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.199 CET [28840] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:12:24.203 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.203 CET [28840] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:12:24.209 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.209 CET [28840] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:12:24.213 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.213 CET [28840] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:12:24.219 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.219 CET [28840] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:12:24.225 CET [28840] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.225 CET [28840] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:12:24.288 CET [11912] ERROR:  el rol «gestor» ya existe
+2024-12-19 13:12:24.288 CET [11912] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-19 13:12:24.291 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.291 CET [11912] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-19 13:12:24.296 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.296 CET [11912] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Gestor;
+2024-12-19 13:12:24.300 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.300 CET [11912] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-19 13:12:24.304 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.304 CET [11912] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-19 13:12:24.310 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.310 CET [11912] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-19 13:12:24.315 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.315 CET [11912] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Cliente;
+2024-12-19 13:12:24.319 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.319 CET [11912] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD, tienda.auditoria TO Cliente;
+2024-12-19 13:12:24.324 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.324 CET [11912] SENTENCIA:  GRANT DELETE ON tienda.UDeseaD, tienda.UTieneE TO Cliente;
+2024-12-19 13:12:24.330 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.330 CET [11912] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-19 13:12:24.335 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.335 CET [11912] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-19 13:12:24.339 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.339 CET [11912] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-19 13:12:24.345 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.345 CET [11912] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-19 13:12:24.349 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.349 CET [11912] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones, tienda.vista_usuarios_cliente TO Invitado;
+2024-12-19 13:12:24.353 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.353 CET [11912] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:12:24.358 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.358 CET [11912] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:12:24.362 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.362 CET [11912] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:12:24.367 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.367 CET [11912] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:12:24.371 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.371 CET [11912] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:12:24.376 CET [11912] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:24.376 CET [11912] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:12:47.360 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:12:47.377 CET [10300] LOG:  checkpoint completo: escritos 7 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.005 s, sync=0.003 s, total=0.017 s; archivos sincronizados=6, más largo=0.001 s, promedio=0.001 s; distancia=9899 kB, estimación=9899 kB; lsn=0/7437D560, lsn de redo=0/7437D528
+2024-12-19 13:12:48.323 CET [21104] ERROR:  el rol «gestor» ya existe
+2024-12-19 13:12:48.323 CET [21104] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-19 13:12:48.326 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.326 CET [21104] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-19 13:12:48.331 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.331 CET [21104] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Gestor;
+2024-12-19 13:12:48.338 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.338 CET [21104] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-19 13:12:48.343 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.343 CET [21104] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-19 13:12:48.347 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.347 CET [21104] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-19 13:12:48.353 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.353 CET [21104] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Cliente;
+2024-12-19 13:12:48.358 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.358 CET [21104] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD, tienda.auditoria TO Cliente;
+2024-12-19 13:12:48.363 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.363 CET [21104] SENTENCIA:  GRANT DELETE ON tienda.UDeseaD, tienda.UTieneE TO Cliente;
+2024-12-19 13:12:48.368 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.368 CET [21104] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-19 13:12:48.372 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.372 CET [21104] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-19 13:12:48.377 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.377 CET [21104] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-19 13:12:48.381 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.381 CET [21104] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-19 13:12:48.386 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.386 CET [21104] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones, tienda.vista_usuarios_cliente TO Invitado;
+2024-12-19 13:12:48.392 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.392 CET [21104] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:12:48.396 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.396 CET [21104] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:12:48.401 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.401 CET [21104] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:12:48.407 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.407 CET [21104] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:12:48.411 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.411 CET [21104] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:12:48.415 CET [21104] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:12:48.415 CET [21104] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:13:03.746 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:13:03.757 CET [10300] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9886 kB, estimación=9898 kB; lsn=0/74D24E88, lsn de redo=0/74D24E50
+2024-12-19 13:13:04.757 CET [32836] ERROR:  no existe el rol «administrador»
+2024-12-19 13:13:04.757 CET [32836] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:13:04.760 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.760 CET [32836] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:13:04.765 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.765 CET [32836] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:13:04.770 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.770 CET [32836] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:13:04.776 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.776 CET [32836] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:13:04.781 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.781 CET [32836] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:13:04.785 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.785 CET [32836] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:13:04.792 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.792 CET [32836] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:13:04.796 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.796 CET [32836] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:13:04.801 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.801 CET [32836] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:13:04.806 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.806 CET [32836] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:13:04.811 CET [32836] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.811 CET [32836] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:13:04.868 CET [3488] ERROR:  el rol «gestor» ya existe
+2024-12-19 13:13:04.868 CET [3488] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-19 13:13:04.871 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.871 CET [3488] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-19 13:13:04.877 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.877 CET [3488] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Gestor;
+2024-12-19 13:13:04.882 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.882 CET [3488] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-19 13:13:04.888 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.888 CET [3488] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-19 13:13:04.894 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.894 CET [3488] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-19 13:13:04.899 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.899 CET [3488] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Cliente;
+2024-12-19 13:13:04.904 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.904 CET [3488] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD, tienda.auditoria TO Cliente;
+2024-12-19 13:13:04.910 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.910 CET [3488] SENTENCIA:  GRANT DELETE ON tienda.UDeseaD, tienda.UTieneE TO Cliente;
+2024-12-19 13:13:04.915 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.915 CET [3488] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-19 13:13:04.920 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.920 CET [3488] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-19 13:13:04.925 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.925 CET [3488] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-19 13:13:04.929 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.929 CET [3488] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-19 13:13:04.933 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.933 CET [3488] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones, tienda.vista_usuarios_cliente TO Invitado;
+2024-12-19 13:13:04.940 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.940 CET [3488] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:13:04.945 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.945 CET [3488] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:13:04.949 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.949 CET [3488] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:13:04.955 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.955 CET [3488] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:13:04.959 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.959 CET [3488] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:13:04.964 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:13:04.964 CET [3488] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:14:30.502 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:14:30.527 CET [10300] LOG:  checkpoint completo: escritos 9 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.008 s, sync=0.005 s, total=0.025 s; archivos sincronizados=8, más largo=0.002 s, promedio=0.001 s; distancia=9900 kB, estimación=9900 kB; lsn=0/756CFF40, lsn de redo=0/756CFF08
+2024-12-19 13:14:31.721 CET [11204] ERROR:  no existe el rol «administrador»
+2024-12-19 13:14:31.721 CET [11204] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:14:31.727 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.727 CET [11204] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:14:31.733 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.733 CET [11204] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:14:31.740 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.740 CET [11204] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:14:31.749 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.749 CET [11204] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:14:31.755 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.755 CET [11204] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:14:31.761 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.761 CET [11204] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:14:31.767 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.767 CET [11204] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:14:31.771 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.771 CET [11204] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:14:31.776 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.776 CET [11204] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:14:31.781 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.781 CET [11204] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:14:31.785 CET [11204] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.785 CET [11204] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:14:31.849 CET [3696] ERROR:  el rol «cliente» ya existe
+2024-12-19 13:14:31.849 CET [3696] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-19 13:14:31.852 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.852 CET [3696] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-19 13:14:31.856 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.856 CET [3696] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Cliente;
+2024-12-19 13:14:31.863 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.863 CET [3696] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD, tienda.auditoria TO Cliente;
+2024-12-19 13:14:31.867 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.867 CET [3696] SENTENCIA:  GRANT DELETE ON tienda.UDeseaD, tienda.UTieneE TO Cliente;
+2024-12-19 13:14:31.872 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.872 CET [3696] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-19 13:14:31.877 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.877 CET [3696] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-19 13:14:31.882 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.882 CET [3696] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-19 13:14:31.887 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.887 CET [3696] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-19 13:14:31.891 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.891 CET [3696] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones, tienda.vista_usuarios_cliente TO Invitado;
+2024-12-19 13:14:31.895 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.895 CET [3696] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:14:31.899 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.899 CET [3696] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:14:31.904 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.904 CET [3696] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:14:31.909 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.909 CET [3696] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:14:31.913 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.913 CET [3696] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:14:31.917 CET [3696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:31.917 CET [3696] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:14:41.105 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:14:41.127 CET [10300] LOG:  checkpoint completo: escritos 13 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.008 s, sync=0.006 s, total=0.023 s; archivos sincronizados=12, más largo=0.001 s, promedio=0.001 s; distancia=9691 kB, estimación=9879 kB; lsn=0/76046C30, lsn de redo=0/76046BF8
+2024-12-19 13:14:42.212 CET [22280] ERROR:  no existe el rol «administrador»
+2024-12-19 13:14:42.212 CET [22280] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:14:42.217 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.217 CET [22280] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:14:42.224 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.224 CET [22280] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:14:42.230 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.230 CET [22280] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:14:42.238 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.238 CET [22280] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:14:42.244 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.244 CET [22280] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:14:42.250 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.250 CET [22280] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:14:42.255 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.255 CET [22280] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:14:42.261 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.261 CET [22280] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:14:42.267 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.267 CET [22280] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:14:42.273 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.273 CET [22280] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:14:42.279 CET [22280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.279 CET [22280] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:14:42.351 CET [25960] ERROR:  el rol «invitado» ya existe
+2024-12-19 13:14:42.351 CET [25960] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-19 13:14:42.355 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.355 CET [25960] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-19 13:14:42.361 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.361 CET [25960] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones, tienda.vista_usuarios_cliente TO Invitado;
+2024-12-19 13:14:42.369 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.369 CET [25960] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:14:42.375 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.375 CET [25960] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:14:42.381 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.381 CET [25960] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:14:42.389 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.389 CET [25960] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:14:42.395 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.395 CET [25960] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:14:42.402 CET [25960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:42.402 CET [25960] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:14:53.999 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:14:54.019 CET [10300] LOG:  checkpoint completo: escritos 13 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.007 s, sync=0.007 s, total=0.020 s; archivos sincronizados=12, más largo=0.002 s, promedio=0.001 s; distancia=9698 kB, estimación=9861 kB; lsn=0/769BF5E8, lsn de redo=0/769BF5B0
+2024-12-19 13:14:55.049 CET [22224] ERROR:  no existe el rol «administrador»
+2024-12-19 13:14:55.049 CET [22224] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:14:55.053 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.053 CET [22224] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:14:55.060 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.060 CET [22224] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:14:55.065 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.065 CET [22224] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:14:55.070 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.070 CET [22224] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:14:55.076 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.076 CET [22224] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:14:55.081 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.081 CET [22224] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:14:55.086 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.086 CET [22224] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:14:55.091 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.091 CET [22224] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:14:55.096 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.096 CET [22224] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:14:55.101 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.101 CET [22224] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:14:55.107 CET [22224] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.107 CET [22224] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:14:55.178 CET [31260] ERROR:  el rol «sumajestad» ya existe
+2024-12-19 13:14:55.178 CET [31260] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:14:55.181 CET [31260] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.181 CET [31260] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:14:55.186 CET [31260] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.186 CET [31260] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:14:55.192 CET [31260] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.192 CET [31260] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:14:55.196 CET [31260] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.196 CET [31260] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:14:55.201 CET [31260] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:14:55.201 CET [31260] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:15:21.968 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:15:21.990 CET [10300] LOG:  checkpoint completo: escritos 14 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.008 s, sync=0.007 s, total=0.023 s; archivos sincronizados=14, más largo=0.001 s, promedio=0.001 s; distancia=9932 kB, estimación=9932 kB; lsn=0/77372770, lsn de redo=0/77372738
+2024-12-19 13:15:22.954 CET [17320] ERROR:  no existe el rol «sumajestad»
+2024-12-19 13:15:22.954 CET [17320] SENTENCIA:  DROP USER suMajestad;
+2024-12-19 13:15:22.957 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.957 CET [17320] SENTENCIA:  DROP USER virrey;
+2024-12-19 13:15:22.965 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.965 CET [17320] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:15:22.973 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.973 CET [17320] SENTENCIA:  DROP USER forastero;
+2024-12-19 13:15:22.977 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.977 CET [17320] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:15:22.984 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.984 CET [17320] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:15:22.988 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.988 CET [17320] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:15:22.993 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.993 CET [17320] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:15:22.998 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:22.998 CET [17320] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:15:23.003 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.003 CET [17320] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:15:23.007 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.007 CET [17320] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:15:23.013 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.013 CET [17320] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:15:23.017 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.017 CET [17320] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:15:23.021 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.021 CET [17320] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:15:23.026 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.026 CET [17320] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:15:23.031 CET [17320] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.031 CET [17320] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:15:23.120 CET [13584] ERROR:  el rol «virrey» ya existe
+2024-12-19 13:15:23.120 CET [13584] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:15:23.123 CET [13584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.123 CET [13584] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:15:23.129 CET [13584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.129 CET [13584] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:15:23.133 CET [13584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.133 CET [13584] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:15:23.138 CET [13584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:15:23.138 CET [13584] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:17:01.924 CET [17496] ERROR:  el rol «virrey» ya existe
+2024-12-19 13:17:01.924 CET [17496] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:17:12.950 CET [17496] ERROR:  el rol «forastero» ya existe
+2024-12-19 13:17:12.950 CET [17496] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:17:43.682 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:17:43.699 CET [10300] LOG:  checkpoint completo: escritos 11 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.005 s, sync=0.005 s, total=0.017 s; archivos sincronizados=10, más largo=0.001 s, promedio=0.001 s; distancia=9915 kB, estimación=9930 kB; lsn=0/77D21378, lsn de redo=0/77D21340
+2024-12-19 13:17:44.696 CET [14420] ERROR:  no existe el rol «administrador»
+2024-12-19 13:17:44.696 CET [14420] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-19 13:17:44.703 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.703 CET [14420] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:17:44.709 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.709 CET [14420] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:17:44.715 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.715 CET [14420] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:17:44.723 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.723 CET [14420] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-19 13:17:44.728 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.728 CET [14420] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:17:44.735 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.735 CET [14420] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:17:44.740 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.740 CET [14420] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:17:44.746 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.746 CET [14420] SENTENCIA:  DROP ROLE Administrador;
+2024-12-19 13:17:44.752 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.752 CET [14420] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:17:44.757 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.757 CET [14420] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:17:44.762 CET [14420] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.762 CET [14420] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:17:44.842 CET [36996] ERROR:  el rol «sumajestad» ya existe
+2024-12-19 13:17:44.842 CET [36996] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:17:44.846 CET [36996] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.846 CET [36996] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:17:44.853 CET [36996] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.853 CET [36996] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:17:44.860 CET [36996] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.860 CET [36996] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:17:44.867 CET [36996] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.867 CET [36996] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:17:44.875 CET [36996] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:17:44.875 CET [36996] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:18:06.190 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:18:06.211 CET [10300] LOG:  checkpoint completo: escritos 12 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.007 s, sync=0.006 s, total=0.021 s; archivos sincronizados=12, más largo=0.001 s, promedio=0.001 s; distancia=9929 kB, estimación=9930 kB; lsn=0/786D3880, lsn de redo=0/786D3848
+2024-12-19 13:18:07.230 CET [22400] ERROR:  no existe el rol «gestor»
+2024-12-19 13:18:07.230 CET [22400] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:18:07.235 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.235 CET [22400] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:18:07.241 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.241 CET [22400] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:18:07.248 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.248 CET [22400] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:18:07.254 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.254 CET [22400] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:18:07.259 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.259 CET [22400] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:18:07.265 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.265 CET [22400] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:18:07.271 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.271 CET [22400] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:18:07.276 CET [22400] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.276 CET [22400] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:18:07.351 CET [3488] ERROR:  el rol «sumajestad» ya existe
+2024-12-19 13:18:07.351 CET [3488] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:18:07.354 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.354 CET [3488] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:18:07.360 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.360 CET [3488] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:18:07.367 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.367 CET [3488] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:18:07.372 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.372 CET [3488] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:18:07.377 CET [3488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:07.377 CET [3488] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:18:20.937 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:18:20.957 CET [10300] LOG:  checkpoint completo: escritos 11 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.007 s, sync=0.005 s, total=0.020 s; archivos sincronizados=10, más largo=0.001 s, promedio=0.001 s; distancia=9696 kB, estimación=9907 kB; lsn=0/7904BC30, lsn de redo=0/7904BBF8
+2024-12-19 13:18:21.940 CET [13336] ERROR:  no existe el rol «sumajestad»
+2024-12-19 13:18:21.940 CET [13336] SENTENCIA:  DROP USER suMajestad;
+2024-12-19 13:18:21.943 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.943 CET [13336] SENTENCIA:  DROP USER virrey;
+2024-12-19 13:18:21.949 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.949 CET [13336] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:18:21.956 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.956 CET [13336] SENTENCIA:  DROP USER forastero;
+2024-12-19 13:18:21.961 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.961 CET [13336] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:18:21.966 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.966 CET [13336] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:18:21.972 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.972 CET [13336] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:18:21.977 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.977 CET [13336] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:18:21.982 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.982 CET [13336] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:18:21.987 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.987 CET [13336] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:18:21.991 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.991 CET [13336] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:18:21.996 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:21.996 CET [13336] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:18:22.002 CET [13336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:22.002 CET [13336] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:18:22.083 CET [1832] ERROR:  el rol «virrey» ya existe
+2024-12-19 13:18:22.083 CET [1832] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:18:22.086 CET [1832] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:22.086 CET [1832] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:18:22.090 CET [1832] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:22.090 CET [1832] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:18:22.095 CET [1832] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:22.095 CET [1832] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:18:22.100 CET [1832] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:22.100 CET [1832] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:18:53.529 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:18:53.544 CET [10300] LOG:  checkpoint completo: escritos 12 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.005 s, total=0.015 s; archivos sincronizados=12, más largo=0.001 s, promedio=0.001 s; distancia=9929 kB, estimación=9929 kB; lsn=0/799FE368, lsn de redo=0/799FE330
+2024-12-19 13:18:54.528 CET [8008] ERROR:  no existe el rol «gestor»
+2024-12-19 13:18:54.528 CET [8008] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-19 13:18:54.532 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.532 CET [8008] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:18:54.538 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.538 CET [8008] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:18:54.542 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.542 CET [8008] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:18:54.547 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.547 CET [8008] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:18:54.551 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.551 CET [8008] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:18:54.557 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.557 CET [8008] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:18:54.562 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.562 CET [8008] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:18:54.567 CET [8008] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.567 CET [8008] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:18:54.635 CET [33584] ERROR:  el rol «sumajestad» ya existe
+2024-12-19 13:18:54.635 CET [33584] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:18:54.639 CET [33584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.639 CET [33584] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:18:54.644 CET [33584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.644 CET [33584] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:18:54.649 CET [33584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.649 CET [33584] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:18:54.654 CET [33584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.654 CET [33584] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:18:54.659 CET [33584] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:18:54.659 CET [33584] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:19:23.347 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:19:23.367 CET [10300] LOG:  checkpoint completo: escritos 11 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.005 s, sync=0.006 s, total=0.020 s; archivos sincronizados=10, más largo=0.001 s, promedio=0.001 s; distancia=9918 kB, estimación=9928 kB; lsn=0/7A3ADF08, lsn de redo=0/7A3ADED0
+2024-12-19 13:19:24.342 CET [13776] ERROR:  no existe el rol «cliente»
+2024-12-19 13:19:24.342 CET [13776] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-19 13:19:24.347 CET [13776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.347 CET [13776] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-19 13:19:24.353 CET [13776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.353 CET [13776] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-19 13:19:24.359 CET [13776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.359 CET [13776] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-19 13:19:24.366 CET [13776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.366 CET [13776] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-19 13:19:24.372 CET [13776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.372 CET [13776] SENTENCIA:  DROP ROLE Gestor;
+2024-12-19 13:19:24.378 CET [13776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.378 CET [13776] SENTENCIA:  DROP ROLE Cliente;
+2024-12-19 13:19:24.385 CET [13776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.385 CET [13776] SENTENCIA:  DROP ROLE Invitado;
+2024-12-19 13:19:24.443 CET [35776] ERROR:  el rol «gestor» ya existe
+2024-12-19 13:19:24.443 CET [35776] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-19 13:19:24.447 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.447 CET [35776] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-19 13:19:24.451 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.451 CET [35776] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Gestor;
+2024-12-19 13:19:24.455 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.455 CET [35776] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-19 13:19:24.460 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.460 CET [35776] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-19 13:19:24.466 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.466 CET [35776] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-19 13:19:24.470 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.470 CET [35776] SENTENCIA:  GRANT USAGE, SELECT ON SEQUENCE tienda.auditoria_id_seq TO Cliente;
+2024-12-19 13:19:24.474 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.474 CET [35776] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD, tienda.auditoria TO Cliente;
+2024-12-19 13:19:24.481 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.481 CET [35776] SENTENCIA:  GRANT DELETE ON tienda.UDeseaD, tienda.UTieneE TO Cliente;
+2024-12-19 13:19:24.485 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.485 CET [35776] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-19 13:19:24.489 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.489 CET [35776] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-19 13:19:24.495 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.495 CET [35776] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-19 13:19:24.499 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.499 CET [35776] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-19 13:19:24.503 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.503 CET [35776] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones, tienda.vista_usuarios_cliente TO Invitado;
+2024-12-19 13:19:24.507 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.507 CET [35776] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234' SUPERUSER;
+2024-12-19 13:19:24.513 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.513 CET [35776] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-19 13:19:24.517 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.517 CET [35776] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-19 13:19:24.521 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.521 CET [35776] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-19 13:19:24.526 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.526 CET [35776] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-19 13:19:24.530 CET [35776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:19:24.530 CET [35776] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-19 13:19:38.509 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:19:38.523 CET [10300] LOG:  checkpoint completo: escritos 8 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.005 s, sync=0.004 s, total=0.015 s; archivos sincronizados=7, más largo=0.001 s, promedio=0.001 s; distancia=9910 kB, estimación=9926 kB; lsn=0/7AD5B830, lsn de redo=0/7AD5B7F8
+2024-12-19 13:19:49.814 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:19:49.837 CET [10300] LOG:  checkpoint completo: escritos 17 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.008 s, sync=0.008 s, total=0.023 s; archivos sincronizados=16, más largo=0.001 s, promedio=0.001 s; distancia=9732 kB, estimación=9907 kB; lsn=0/7B6DCC00, lsn de redo=0/7B6DCBC8
+2024-12-19 13:21:07.076 CET [32152] WARNING:  ya hay una transacción en curso
+2024-12-19 13:21:21.242 CET [32152] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-12-19 13:21:21.242 CET [32152] DETALLE:  La fila que falla contiene (Test, 2000, Los Testeadores, ).
+2024-12-19 13:21:21.242 CET [32152] SENTENCIA:  INSERT INTO tienda.Discos VALUES ('Test', 2000, 'Los Testeadores', '')
+2024-12-19 13:24:16.124 CET [23948] WARNING:  ya hay una transacción en curso
+2024-12-19 13:24:49.846 CET [10300] LOG:  empezando checkpoint: time
+2024-12-19 13:27:34.099 CET [10300] LOG:  checkpoint completo: escritos 1498 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=164.109 s, sync=0.137 s, total=164.254 s; archivos sincronizados=391, más largo=0.001 s, promedio=0.001 s; distancia=10007 kB, estimación=10007 kB; lsn=0/7C0A2870, lsn de redo=0/7C0A2838
+2024-12-19 13:30:14.062 CET [10300] LOG:  empezando checkpoint: immediate force wait
+2024-12-19 13:30:14.074 CET [10300] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.013 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=10 kB, estimación=9007 kB; lsn=0/7C0A5340, lsn de redo=0/7C0A5308
+2024-12-19 13:30:26.155 CET [38396] WARNING:  ya hay una transacción en curso
+2024-12-19 13:30:36.816 CET [38396] ERROR:  el nuevo registro para la relación «grupos» viola la restricción «check» «grupos_enlace_check»
+2024-12-19 13:30:36.816 CET [38396] DETALLE:  La fila que falla contiene (, null).
+2024-12-19 13:30:36.816 CET [38396] SENTENCIA:  INSERT INTO tienda.Grupos VALUES ('', NULL)
+2024-12-19 13:32:13.659 CET [38396] ERROR:  el nuevo registro para la relación «grupos» viola la restricción «check» «grupos_enlace_check»
+2024-12-19 13:32:13.659 CET [38396] DETALLE:  La fila que falla contiene (, null).
+2024-12-19 13:32:13.659 CET [38396] SENTENCIA:  INSERT INTO tienda.Grupos VALUES ('', NULL)
+2024-12-19 13:32:17.389 CET [38396] ERROR:  el nuevo registro para la relación «grupos» viola la restricción «check» «grupos_enlace_check»
+2024-12-19 13:32:17.389 CET [38396] DETALLE:  La fila que falla contiene (s, null).
+2024-12-19 13:32:17.389 CET [38396] SENTENCIA:  INSERT INTO tienda.Grupos VALUES ('s', NULL)
+2024-12-19 13:32:25.157 CET [38396] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-12-19 13:32:25.157 CET [38396] DETALLE:  La fila que falla contiene (Test, 2000, meda.igual, ).
+2024-12-19 13:32:25.157 CET [38396] SENTENCIA:  INSERT INTO tienda.Discos VALUES ('Test', 2000, 'meda.igual', '')
+2024-12-19 13:32:42.041 CET [8800] WARNING:  ya hay una transacción en curso
+2024-12-19 13:32:53.735 CET [8800] ERROR:  el valor nulo en la columna «nombre» de la relación «grupos» viola la restricción de no nulo
+2024-12-19 13:32:53.735 CET [8800] DETALLE:  La fila que falla contiene (null, null).
+2024-12-19 13:32:53.735 CET [8800] SENTENCIA:  INSERT INTO tienda.Grupos VALUES (NULL, NULL)
+2024-12-19 13:33:12.997 CET [8800] ERROR:  el valor nulo en la columna «nombre» de la relación «grupos» viola la restricción de no nulo
+2024-12-19 13:33:12.997 CET [8800] DETALLE:  La fila que falla contiene (null, http://hola.com).
+2024-12-19 13:33:12.997 CET [8800] SENTENCIA:  INSERT INTO tienda.Grupos VALUES (NULL, 'http://hola.com')
+2024-12-19 13:33:52.058 CET [8800] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:33:52.058 CET [8800] DETALLE:  La fila que falla contiene (AA, -4, Test2, 2002).
+2024-12-19 13:33:52.058 CET [8800] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('AA',  -4, 'Test2', 2002)
+2024-12-19 13:33:55.620 CET [8800] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:33:55.620 CET [8800] DETALLE:  La fila que falla contiene (AA, -5, Test2, 2002).
+2024-12-19 13:33:55.620 CET [8800] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('AA',  -5, 'Test2', 2002)
+2024-12-19 13:33:58.718 CET [8800] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:33:58.718 CET [8800] DETALLE:  La fila que falla contiene (AB, -5, Test2, 2002).
+2024-12-19 13:33:58.718 CET [8800] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('AB',  -5, 'Test2', 2002)
+2024-12-19 13:34:04.594 CET [8800] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:34:04.594 CET [8800] DETALLE:  La fila que falla contiene (AB, -4, Test2, 2002).
+2024-12-19 13:34:04.594 CET [8800] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('AB',  -4, 'Test2', 2002)
+2024-12-19 13:34:14.120 CET [8800] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-12-19 13:34:14.120 CET [8800] DETALLE:  La fila que falla contiene (ABC, -6, Test2, 2002).
+2024-12-19 13:34:14.120 CET [8800] SENTENCIA:  INSERT INTO tienda.Canciones VALUES ('ABC',  -6, 'Test2', 2002)
+2024-12-19 13:35:14.081 CET [10300] LOG:  empezando checkpoint: time
+2024-12-19 13:36:53.111 CET [8800] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-19 13:36:53.111 CET [8800] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-12-19 13:37:57.499 CET [10300] LOG:  checkpoint completo: escritos 1488 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=163.260 s, sync=0.151 s, total=163.418 s; archivos sincronizados=388, más largo=0.002 s, promedio=0.001 s; distancia=9965 kB, estimación=9965 kB; lsn=0/7CA60978, lsn de redo=0/7CA60940
+2024-12-19 13:39:21.207 CET [14968] ERROR:  permiso denegado a la tabla usuarios
+2024-12-19 13:39:21.207 CET [14968] SENTENCIA:  
+	SELECT u.nombre_usuario, u.nombre, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM tienda.UTieneE e
+	JOIN tienda.Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre LIKE 'Juan García Gómez' AND e.edicion_formato = 'Vinyl'
+2024-12-19 13:41:41.326 CET [34996] ERROR:  permiso denegado a la tabla usuarios
+2024-12-19 13:41:41.326 CET [34996] SENTENCIA:  
+	SELECT u.nombre_usuario, u.nombre, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM tienda.UTieneE e
+	JOIN tienda.Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre LIKE 'Juan García Gómez' AND e.edicion_formato = 'Vinyl'
+2024-12-19 13:41:58.676 CET [34996] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-19 13:41:58.676 CET [34996] SENTENCIA:  
+	WITH DuracionesDisco AS (
+	    SELECT d.titulo, d.anno_publicacion, SUM(c.duracion) AS duracion_total
+	    FROM tienda.Discos d JOIN tienda.Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	    GROUP BY d.titulo, d.anno_publicacion
+	    HAVING SUM(c.duracion) IS NOT NULL
+	)
+	SELECT d.titulo, d.anno_publicacion, SUM(c.duracion) AS duracion_total
+	FROM tienda.Discos d JOIN tienda.Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo, d.anno_publicacion
+	HAVING SUM(c.duracion) >= ALL(SELECT duracion_total FROM DuracionesDisco)
+2024-12-19 13:42:11.176 CET [34996] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-19 13:42:26.937 CET [29892] ERROR:  permiso denegado a la tabla usuarios
+2024-12-19 13:42:26.937 CET [29892] SENTENCIA:  
+	SELECT u.nombre_usuario, u.nombre, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM tienda.UTieneE e
+	JOIN tienda.Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre LIKE 'Juan García Gómez' AND e.edicion_formato = 'Vinyl'
+2024-12-19 13:42:33.075 CET [29892] ERROR:  permiso denegado a la tabla usuarios
+2024-12-19 13:42:33.075 CET [29892] SENTENCIA:  
+	SELECT u.nombre_usuario, u.nombre, e.disco_titulo, e.disco_anno_publicacion, e.edicion_pais, e.edicion_anno_edicion, e.edicion_formato, e.estado
+	FROM tienda.UTieneE e
+	JOIN tienda.Usuarios u ON e.usuario_nombre_usuario = u.nombre_usuario
+	WHERE u.nombre LIKE 'Juan García Gómez' AND e.edicion_formato = 'Vinyl'
+2024-12-19 13:42:40.316 CET [29892] ERROR:  permiso denegado a la tabla usuarios
+2024-12-19 13:42:40.316 CET [29892] SENTENCIA:  
+	SELECT u.nombre_usuario, u.nombre, udd.disco_titulo, udd.disco_anno_publicacion, d.grupo_nombre
+	FROM tienda.Usuarios u JOIN tienda.UDeseaD udd ON u.nombre_usuario = udd.usuario_nombre_usuario
+	JOIN tienda.Discos d ON udd.disco_titulo = d.titulo AND udd.disco_anno_publicacion = d.anno_publicacion
+	WHERE u.nombre LIKE 'Juan García Gómez'
+2024-12-19 13:44:43.484 CET [30884] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-19 13:44:45.650 CET [29892] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-19 13:44:45.650 CET [29892] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-12-19 13:45:14.526 CET [10300] LOG:  empezando checkpoint: time
+2024-12-19 13:45:15.959 CET [10300] LOG:  checkpoint completo: escritos 13 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=1.423 s, sync=0.004 s, total=1.433 s; archivos sincronizados=6, más largo=0.001 s, promedio=0.001 s; distancia=6 kB, estimación=8969 kB; lsn=0/7CA624F0, lsn de redo=0/7CA624B8

@@ -1,0 +1,13 @@
+2024-09-19 12:23:41.278 CEST [14204] LOG:  el sistema de bases de datos fue apagado en 2024-09-19 12:22:33 CEST
+2024-09-19 12:25:54.869 CEST [7860] FATAL:  la autentificación password falló para el usuario «perez»
+2024-09-19 12:25:54.869 CEST [7860] DETALLE:  No existe el rol «perez».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-09-19 12:26:00.655 CEST [16852] FATAL:  la autentificación password falló para el usuario «perez»
+2024-09-19 12:26:00.655 CEST [16852] DETALLE:  No existe el rol «perez».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-09-19 12:26:10.326 CEST [22424] FATAL:  la autentificación password falló para el usuario «perez»
+2024-09-19 12:26:10.326 CEST [22424] DETALLE:  No existe el rol «perez».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-09-19 12:27:13.108 CEST [14172] LOG:  apagando
+2024-09-19 12:27:13.109 CEST [14172] LOG:  empezando checkpoint: shutdown immediate
+2024-09-19 12:27:13.120 CEST [14172] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.012 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=0 kB, estimación=0 kB; lsn=0/15D9450, lsn de redo=0/15D9450

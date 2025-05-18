@@ -1,0 +1,2 @@
+2024-10-20 11:53:22.713 CEST [14848] LOG:  empezando checkpoint: shutdown immediate
+2024-10-20 11:53:22.724 CEST [14848] LOG:  checkpoint completo: escritos 0 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.014 s; archivos sincronizados=0, más largo=0.000 s, promedio=0.000 s; distancia=0 kB, estimación=0 kB; lsn=0/31B3C68, lsn de redo=0/31B3C68

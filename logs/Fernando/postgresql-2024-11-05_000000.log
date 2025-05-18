@@ -1,0 +1,306 @@
+2024-11-05 12:27:12.155 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:27:12.163 CET [15056] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.009 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=5 kB, estimación=5 kB; lsn=0/1CC08480, lsn de redo=0/1CC08448
+2024-11-05 12:27:12.892 CET [28076] ERROR:  llave duplicada viola restricción de unicidad «generosdisco_pkey»
+2024-11-05 12:27:12.892 CET [28076] DETALLE:  Ya existe la llave (disco_titulo, disco_anno_publicacion, genero)=(Waves, 1988, Electronic).
+2024-11-05 12:27:12.892 CET [28076] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:27:12.925 CET [28076] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:27:12.925 CET [28076] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-05 12:27:12.932 CET [28076] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:27:12.932 CET [28076] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-05 12:27:12.938 CET [28076] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:27:12.938 CET [28076] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:27:22.782 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:27:22.796 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6088 kB, estimación=6088 kB; lsn=0/1D1FA590, lsn de redo=0/1D1FA558
+2024-11-05 12:27:23.343 CET [15032] ERROR:  llave duplicada viola restricción de unicidad «generosdisco_pkey»
+2024-11-05 12:27:23.343 CET [15032] DETALLE:  Ya existe la llave (disco_titulo, disco_anno_publicacion, genero)=(Waves, 1988, Electronic).
+2024-11-05 12:27:23.343 CET [15032] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:27:23.379 CET [15032] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:27:23.379 CET [15032] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-05 12:27:23.384 CET [15032] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:27:23.384 CET [15032] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-05 12:27:23.389 CET [15032] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:27:23.389 CET [15032] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:29:17.423 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:29:17.435 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6088 kB, estimación=6088 kB; lsn=0/1D7EC878, lsn de redo=0/1D7EC840
+2024-11-05 12:29:17.987 CET [24876] ERROR:  llave duplicada viola restricción de unicidad «generosdisco_pkey»
+2024-11-05 12:29:17.987 CET [24876] DETALLE:  Ya existe la llave (disco_titulo, disco_anno_publicacion, genero)=(Waves, 1988, Electronic).
+2024-11-05 12:29:17.987 CET [24876] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:29:18.018 CET [24876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:29:18.018 CET [24876] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-05 12:29:18.025 CET [24876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:29:18.025 CET [24876] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-05 12:29:18.033 CET [24876] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:29:18.033 CET [24876] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:30:05.631 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:30:05.643 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6089 kB, estimación=6089 kB; lsn=0/1DDDEC78, lsn de redo=0/1DDDEC40
+2024-11-05 12:30:06.206 CET [13348] ERROR:  inserción o actualización en la tabla «ediciones» viola la llave foránea «ediciones_disco_titulo_disco_anno_publicacion_fkey»
+2024-11-05 12:30:06.206 CET [13348] DETALLE:  La llave (disco_titulo, disco_anno_publicacion)=(The Cave, 2014) no está presente en la tabla «discos».
+2024-11-05 12:30:06.206 CET [13348] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-05 12:30:06.231 CET [13348] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:30:06.231 CET [13348] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-05 12:30:06.235 CET [13348] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:30:06.235 CET [13348] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:30:06.240 CET [13348] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:30:06.240 CET [13348] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:32:05.549 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:32:05.566 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.005 s, sync=0.003 s, total=0.018 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6353 kB, estimación=6353 kB; lsn=0/1E413078, lsn de redo=0/1E413040
+2024-11-05 12:32:06.125 CET [23576] ERROR:  error de sintaxis en o cerca de «SELECT» en carácter 243
+2024-11-05 12:32:06.125 CET [23576] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-05 12:32:06.152 CET [23576] ERROR:  error de sintaxis en o cerca de «FROM» en carácter 1
+2024-11-05 12:32:06.152 CET [23576] SENTENCIA:  FROM tienda_temporal.Discos;
+2024-11-05 12:32:06.158 CET [23576] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:32:06.158 CET [23576] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:32:15.319 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:32:15.330 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6209 kB, estimación=6338 kB; lsn=0/1EA23790, lsn de redo=0/1EA23758
+2024-11-05 12:32:15.899 CET [21756] ERROR:  llave duplicada viola restricción de unicidad «generosdisco_pkey»
+2024-11-05 12:32:15.899 CET [21756] DETALLE:  Ya existe la llave (disco_titulo, disco_anno_publicacion, genero)=(Waves, 1988, Electronic).
+2024-11-05 12:32:15.899 CET [21756] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:32:15.931 CET [21756] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:32:15.931 CET [21756] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-05 12:32:15.938 CET [21756] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:32:15.938 CET [21756] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:34:07.349 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:34:07.364 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6520 kB, estimación=6520 kB; lsn=0/1F0819D0, lsn de redo=0/1F081998
+2024-11-05 12:34:08.016 CET [12436] ERROR:  llave duplicada viola restricción de unicidad «generosdisco_pkey»
+2024-11-05 12:34:08.016 CET [12436] DETALLE:  Ya existe la llave (disco_titulo, disco_anno_publicacion, genero)=(Waves, 1988, Electronic).
+2024-11-05 12:34:08.016 CET [12436] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:34:08.050 CET [12436] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:34:08.050 CET [12436] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:34:19.853 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:34:19.864 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=7131 kB, estimación=7131 kB; lsn=0/1F778928, lsn de redo=0/1F7788F0
+2024-11-05 12:34:20.436 CET [27472] ERROR:  llave duplicada viola restricción de unicidad «ediciones_pkey»
+2024-11-05 12:34:20.436 CET [27472] DETALLE:  Ya existe la llave (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)=(US, 1973, Vinyl, Two Timin' Lady, 0).
+2024-11-05 12:34:20.436 CET [27472] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-05 12:34:20.469 CET [27472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:34:20.469 CET [27472] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:34:20.473 CET [27472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:34:20.473 CET [27472] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:38:26.009 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:38:26.023 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=6213 kB, estimación=7040 kB; lsn=0/1FD8A018, lsn de redo=0/1FD89FC8
+2024-11-05 12:38:26.793 CET [18948] ERROR:  llave duplicada viola restricción de unicidad «generosdisco_pkey»
+2024-11-05 12:38:26.793 CET [18948] DETALLE:  Ya existe la llave (disco_titulo, disco_anno_publicacion, genero)=(Waves, 1988, Electronic).
+2024-11-05 12:38:26.793 CET [18948] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 12:38:26.836 CET [18948] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:38:26.836 CET [18948] SENTENCIA:  SET search_path= tienda;
+2024-11-05 12:43:26.033 CET [15056] LOG:  empezando checkpoint: time
+2024-11-05 12:45:14.548 CET [15056] LOG:  checkpoint completo: escritos 1000 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=108.385 s, sync=0.114 s, total=108.515 s; archivos sincronizados=351, más largo=0.002 s, promedio=0.001 s; distancia=7352 kB, estimación=7352 kB; lsn=0/204B83A8, lsn de redo=0/204B8370
+2024-11-05 12:49:14.323 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:49:14.330 CET [15056] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.007 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=7 kB, estimación=6618 kB; lsn=0/204BA020, lsn de redo=0/204B9FD0
+2024-11-05 12:49:14.977 CET [6776] ERROR:  la sintaxis de entrada no es válida para tipo integer: «2:39»
+2024-11-05 12:49:14.977 CET [6776] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT c.titulo, c.duracion::INTEGER, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-11-05 12:49:15.012 CET [6776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:49:15.012 CET [6776] SENTENCIA:  SELECT * FROM tienda.Discos WHERE titulo = 'Waves';
+2024-11-05 12:51:22.065 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:51:22.076 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=7318 kB, estimación=7318 kB; lsn=0/20BDF8C8, lsn de redo=0/20BDF890
+2024-11-05 12:51:22.721 CET [3920] ERROR:  llave duplicada viola restricción de unicidad «canciones_pkey»
+2024-11-05 12:51:22.721 CET [3920] DETALLE:  Ya existe la llave (titulo, disco_titulo, disco_anno_publicacion)=(Come On Home, All That We Let In, 2004).
+2024-11-05 12:51:22.721 CET [3920] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-11-05 12:51:22.762 CET [3920] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:51:22.762 CET [3920] SENTENCIA:  SELECT * FROM tienda.Discos WHERE titulo = 'Waves';
+2024-11-05 12:56:22.086 CET [15056] LOG:  empezando checkpoint: time
+2024-11-05 12:58:10.690 CET [15056] LOG:  checkpoint completo: escritos 1000 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=108.486 s, sync=0.103 s, total=108.604 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=7422 kB, estimación=7422 kB; lsn=0/2131F138, lsn de redo=0/2131F100
+2024-11-05 12:59:18.374 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 12:59:18.381 CET [15056] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.007 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=7 kB, estimación=6680 kB; lsn=0/21320F00, lsn de redo=0/21320EC8
+2024-11-05 12:59:19.024 CET [25112] ERROR:  el nuevo registro para la relación «canciones» viola la restricción «check» «canciones_duracion_check»
+2024-11-05 12:59:19.024 CET [25112] DETALLE:  La fila que falla contiene (Dalla Pace Del Mare Lontano, 0, Dalla Pace Del Mare Lontano, 2003).
+2024-11-05 12:59:19.024 CET [25112] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-11-05 12:59:19.078 CET [25112] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 12:59:19.078 CET [25112] SENTENCIA:  SELECT * FROM tienda.Discos WHERE titulo = 'Waves';
+2024-11-05 13:00:49.401 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:00:49.413 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=7430 kB, estimación=7430 kB; lsn=0/21A629B8, lsn de redo=0/21A62980
+2024-11-05 13:00:50.067 CET [30664] ERROR:  llave duplicada viola restricción de unicidad «canciones_pkey»
+2024-11-05 13:00:50.067 CET [30664] DETALLE:  Ya existe la llave (titulo, disco_titulo, disco_anno_publicacion)=(Miles Davis In Concert, In Concert, 1979).
+2024-11-05 13:00:50.067 CET [30664] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-11-05 13:00:50.109 CET [30664] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:00:50.109 CET [30664] SENTENCIA:  SELECT * FROM tienda.Discos WHERE titulo = 'Waves';
+2024-11-05 13:05:49.427 CET [15056] LOG:  empezando checkpoint: time
+2024-11-05 13:07:37.917 CET [15056] LOG:  checkpoint completo: escritos 1000 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=108.369 s, sync=0.106 s, total=108.491 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=7715 kB, estimación=7715 kB; lsn=0/221EB808, lsn de redo=0/221EB7D0
+2024-11-05 13:07:39.982 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:07:39.989 CET [15056] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=1 kB, estimación=6944 kB; lsn=0/221EBEC0, lsn de redo=0/221EBE88
+2024-11-05 13:07:40.689 CET [23004] ERROR:  llave duplicada viola restricción de unicidad «canciones_pkey»
+2024-11-05 13:07:40.689 CET [23004] DETALLE:  Ya existe la llave (titulo, disco_titulo, disco_anno_publicacion)=(Love That Boy, Waves, 1988).
+2024-11-05 13:07:40.689 CET [23004] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-11-05 13:07:40.729 CET [23004] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:07:40.729 CET [23004] SENTENCIA:  SELECT * FROM tienda.Discos WHERE titulo = 'Waves';
+2024-11-05 13:12:39.992 CET [15056] LOG:  empezando checkpoint: time
+2024-11-05 13:14:27.654 CET [15056] LOG:  checkpoint completo: escritos 1000 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=107.533 s, sync=0.110 s, total=107.662 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=8042 kB, estimación=8042 kB; lsn=0/229C6868, lsn de redo=0/229C6830
+2024-11-05 13:25:53.392 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:25:53.402 CET [15056] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.011 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=1 kB, estimación=7238 kB; lsn=0/229C6FC8, lsn de redo=0/229C6F90
+2024-11-05 13:30:24.705 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:30:24.719 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9147 kB, estimación=9147 kB; lsn=0/232B5DF8, lsn de redo=0/232B5DC0
+2024-11-05 13:30:25.585 CET [23208] ERROR:  llave duplicada viola restricción de unicidad «generosdisco_pkey»
+2024-11-05 13:30:25.585 CET [23208] DETALLE:  Ya existe la llave (disco_titulo, disco_anno_publicacion, genero)=(Waves, 1988, Electronic).
+2024-11-05 13:30:25.585 CET [23208] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-11-05 13:30:25.624 CET [23208] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:30:25.624 CET [23208] SENTENCIA:  SET search_path= tienda;
+2024-11-05 13:31:22.071 CET [23208] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:31:22.071 CET [23208] SENTENCIA:  SELECT * FROM tienda.Discos WHERE titulo='Waves'
+	;
+2024-11-05 13:31:24.379 CET [23208] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:31:24.379 CET [23208] SENTENCIA:  SELECT * FROM tienda.Discos WHERE titulo='Waves';
+2024-11-05 13:31:41.949 CET [23208] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:31:41.949 CET [23208] SENTENCIA:  SELECT * FROM tienda.canciones WHERE titulo='Introduction';
+2024-11-05 13:31:44.767 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:31:44.778 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9193 kB, estimación=9193 kB; lsn=0/23BB0438, lsn de redo=0/23BB0400
+2024-11-05 13:33:40.905 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:33:40.919 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9147 kB, estimación=9189 kB; lsn=0/2449F418, lsn de redo=0/2449F3E0
+2024-11-05 13:36:37.882 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:36:37.893 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=9463 kB, estimación=9463 kB; lsn=0/24DDD138, lsn de redo=0/24DDD100
+2024-11-05 13:36:38.775 CET [3640] ERROR:  el operador no existe: text = integer en carácter 210
+2024-11-05 13:36:38.775 CET [3640] HINT:  Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+2024-11-05 13:36:38.775 CET [3640] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT u.nombre_usuario, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD u
+	JOIN tienda_temporal.Discos d ON u.disco_titulo = d.titulo AND u.disco_anno_publicacion = d.anno_publicacion::INTEGER;
+2024-11-05 13:36:38.816 CET [3640] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:36:38.816 CET [3640] SENTENCIA:  SET search_path= tienda;
+2024-11-05 13:37:55.246 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:37:55.260 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9463 kB, estimación=9463 kB; lsn=0/2571ADA0, lsn de redo=0/2571AD68
+2024-11-05 13:37:56.171 CET [376] ERROR:  inserción o actualización en la tabla «udesead» viola la llave foránea «udesead_usuario_nombre_fkey»
+2024-11-05 13:37:56.171 CET [376] DETALLE:  La llave (usuario_nombre)=(lucíapérez) no está presente en la tabla «usuarios».
+2024-11-05 13:37:56.171 CET [376] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD;
+2024-11-05 13:37:56.217 CET [376] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:37:56.217 CET [376] SENTENCIA:  SET search_path= tienda;
+2024-11-05 13:42:55.271 CET [15056] LOG:  empezando checkpoint: time
+2024-11-05 13:44:43.705 CET [15056] LOG:  checkpoint completo: escritos 1000 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=108.308 s, sync=0.110 s, total=108.434 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=9507 kB, estimación=9507 kB; lsn=0/26063C58, lsn de redo=0/26063C20
+2024-11-05 13:45:21.877 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:45:21.885 CET [15056] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=2 kB, estimación=8557 kB; lsn=0/260647C0, lsn de redo=0/26064788
+2024-11-05 13:48:28.430 CET [3136] ERROR:  no existe la columna «usuario_nombre» en carácter 54
+2024-11-05 13:48:28.430 CET [3136] SENTENCIA:  SELECT DISTINCT * FROM tienda_temporal.UDeseaD WHERE usuario_nombre NOT IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-05 13:48:37.130 CET [3136] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:48:37.130 CET [3136] SENTENCIA:  SELECT DISTINCT * FROM tienda_temporal.UDeseaD WHERE usuario_nombre NOT IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-05 13:48:56.979 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:48:56.991 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9498 kB, estimación=9498 kB; lsn=0/269AB298, lsn de redo=0/269AB260
+2024-11-05 13:49:39.545 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:49:39.559 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9498 kB, estimación=9498 kB; lsn=0/272F1E18, lsn de redo=0/272F1DE0
+2024-11-05 13:54:26.434 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:54:26.445 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9464 kB, estimación=9495 kB; lsn=0/27C2FF78, lsn de redo=0/27C2FF40
+2024-11-05 13:54:27.424 CET [11004] ERROR:  la columna «estado» es de tipo estado_enum pero la expresión es de tipo text en carácter 182
+2024-11-05 13:54:27.424 CET [11004] HINT:  Necesitará reescribir la expresión o aplicarle una conversión de tipo.
+2024-11-05 13:54:27.424 CET [11004] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UsuarioTieneE;
+2024-11-05 13:54:27.470 CET [11004] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:54:27.470 CET [11004] SENTENCIA:  SET search_path= tienda;
+2024-11-05 13:54:38.374 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:54:38.389 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9501 kB, estimación=9501 kB; lsn=0/28577768, lsn de redo=0/28577730
+2024-11-05 13:54:39.302 CET [19460] ERROR:  llave duplicada viola restricción de unicidad «utienee_pkey»
+2024-11-05 13:54:39.302 CET [19460] DETALLE:  Ya existe la llave (usuario_nombre, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato)=(davidmartínez, Texas Sugar / Strat Magik, 1994, US, 1994, CD).
+2024-11-05 13:54:39.302 CET [19460] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UsuarioTieneE;
+2024-11-05 13:54:39.352 CET [19460] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:54:39.352 CET [19460] SENTENCIA:  SET search_path= tienda;
+2024-11-05 13:55:32.824 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:55:32.835 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9550 kB, estimación=9550 kB; lsn=0/28ECB0A8, lsn de redo=0/28ECB070
+2024-11-05 13:55:33.768 CET [18012] ERROR:  inserción o actualización en la tabla «utienee» viola la llave foránea «utienee_usuario_nombre_fkey»
+2024-11-05 13:55:33.768 CET [18012] DETALLE:  La llave (usuario_nombre)=(davidmartínez) no está presente en la tabla «usuarios».
+2024-11-05 13:55:33.768 CET [18012] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UsuarioTieneE;
+2024-11-05 13:55:33.815 CET [18012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:55:33.815 CET [18012] SENTENCIA:  SET search_path= tienda;
+2024-11-05 13:56:06.490 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:56:06.506 CET [15056] LOG:  checkpoint completo: escritos 5 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.004 s, total=0.016 s; archivos sincronizados=5, más largo=0.002 s, promedio=0.001 s; distancia=9611 kB, estimación=9611 kB; lsn=0/2982DDD8, lsn de redo=0/2982DDA0
+2024-11-05 13:56:07.436 CET [29992] ERROR:  no existe la relación «tienda_temporal.utienee» en carácter 13
+2024-11-05 13:56:07.436 CET [29992] SENTENCIA:  DELETE FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario NOT IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-11-05 13:56:07.482 CET [29992] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:56:07.482 CET [29992] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-11-05 13:56:07.487 CET [29992] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:56:07.487 CET [29992] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UsuarioTieneE;
+2024-11-05 13:56:07.492 CET [29992] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-05 13:56:07.492 CET [29992] SENTENCIA:  SET search_path= tienda;
+2024-11-05 13:57:54.978 CET [15056] LOG:  empezando checkpoint: immediate force wait
+2024-11-05 13:57:54.991 CET [15056] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.002 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9495 kB, estimación=9599 kB; lsn=0/2A173AF0, lsn de redo=0/2A173AB8
+2024-11-05 14:02:54.994 CET [15056] LOG:  empezando checkpoint: time
+2024-11-05 14:04:43.173 CET [15056] LOG:  checkpoint completo: escritos 1003 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=108.052 s, sync=0.115 s, total=108.179 s; archivos sincronizados=352, más largo=0.001 s, promedio=0.001 s; distancia=9598 kB, estimación=9599 kB; lsn=0/2AAD3420, lsn de redo=0/2AAD33E8
+2024-11-05 14:38:36.122 CET [23344] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-11-06 01:33:40.694 CET [17456] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-11-06 01:34:58.560 CET [30324] ERROR:  no existe la columna «apellido» en carácter 15
+2024-11-06 01:34:58.560 CET [30324] HINT:  Probablemente quiera hacer referencia a la columna «profesores.apellidos».
+2024-11-06 01:34:58.560 CET [30324] SENTENCIA:  SELECT nombre,apellido FROM profesores
+	;
+2024-11-06 01:35:00.611 CET [30324] ERROR:  no existe la columna «apellido» en carácter 15
+2024-11-06 01:35:00.611 CET [30324] HINT:  Probablemente quiera hacer referencia a la columna «profesores.apellidos».
+2024-11-06 01:35:00.611 CET [30324] SENTENCIA:  SELECT nombre,apellido FROM profesores;
+2024-11-06 01:37:31.038 CET [15056] LOG:  empezando checkpoint: time
+2024-11-06 01:37:37.038 CET [15056] LOG:  checkpoint completo: escritos 56 búfers (0.3%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=5.971 s, sync=0.021 s, total=6.000 s; archivos sincronizados=48, más largo=0.001 s, promedio=0.001 s; distancia=242 kB, estimación=8663 kB; lsn=0/2AB0FCF8, lsn de redo=0/2AB0FCC0
+2024-11-06 01:51:55.437 CET [30324] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	

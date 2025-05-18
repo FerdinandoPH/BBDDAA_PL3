@@ -1,0 +1,5 @@
+2024-09-24 12:44:48.869 CEST [14488] LOG:  el sistema de bases de datos fue apagado en 2024-09-24 12:43:51 CEST
+2024-09-24 12:47:09.521 CEST [14992] ERROR:  cancelando la sentencia debido a una petición del usuario
+2024-09-24 12:47:09.537 CEST [14468] LOG:  apagando
+2024-09-24 12:47:09.539 CEST [14468] LOG:  empezando checkpoint: shutdown immediate
+2024-09-24 12:47:09.549 CEST [14468] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=2, más largo=0.002 s, promedio=0.002 s; distancia=0 kB, estimación=0 kB; lsn=0/31B33C0, lsn de redo=0/31B33C0

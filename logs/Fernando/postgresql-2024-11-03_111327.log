@@ -1,0 +1,459 @@
+2024-11-03 11:13:27.287 CET [14640] LOG:  el sistema de bases de datos fue apagado en 2024-11-03 11:12:24 CET
+2024-11-03 11:18:27.189 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 11:18:27.209 CET [14616] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.006 s, sync=0.004 s, total=0.024 s; archivos sincronizados=2, más largo=0.003 s, promedio=0.002 s; distancia=0 kB, estimación=0 kB; lsn=0/D2BB778, lsn de redo=0/D2BB740
+2024-11-03 12:17:20.876 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:17:20.884 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.009 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=7 kB, estimación=7 kB; lsn=0/D2BD508, lsn de redo=0/D2BD4D0
+2024-11-03 12:17:21.576 CET [10992] ERROR:  llave duplicada viola restricción de unicidad «grupos_pkey»
+2024-11-03 12:17:21.576 CET [10992] DETALLE:  Ya existe la llave (nombre)=(Ludwig van Beethoven).
+2024-11-03 12:17:21.576 CET [10992] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-11-03 12:17:21.602 CET [10992] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:17:21.602 CET [10992] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:17:21.607 CET [10992] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:17:21.607 CET [10992] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:17:21.613 CET [10992] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:17:21.613 CET [10992] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:22:20.890 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 12:24:09.432 CET [14616] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=108.422 s, sync=0.108 s, total=108.542 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=5631 kB, estimación=5631 kB; lsn=0/D83D290, lsn de redo=0/D83D258
+2024-11-03 12:31:07.159 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:31:07.167 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.009 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=7 kB, estimación=5069 kB; lsn=0/D83F0C8, lsn de redo=0/D83F090
+2024-11-03 12:31:07.703 CET [5688] ERROR:  llave duplicada viola restricción de unicidad «grupos_pkey»
+2024-11-03 12:31:07.703 CET [5688] DETALLE:  Ya existe la llave (nombre)=(Ludwig van Beethoven).
+2024-11-03 12:31:07.703 CET [5688] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos
+	WHERE NOT EXISTS (
+	    SELECT 1
+	    FROM tienda.Grupos
+	    WHERE tienda.Grupos.nombre = tienda_temporal.Discos.grupo_nombre
+	);
+2024-11-03 12:31:07.734 CET [5688] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:31:07.734 CET [5688] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:31:07.740 CET [5688] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:31:07.740 CET [5688] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:31:07.747 CET [5688] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:31:07.747 CET [5688] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:31:21.648 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:31:21.660 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5631 kB, estimación=5631 kB; lsn=0/DDBEF20, lsn de redo=0/DDBEEE8
+2024-11-03 12:31:22.151 CET [6336] ERROR:  llave duplicada viola restricción de unicidad «grupos_pkey»
+2024-11-03 12:31:22.151 CET [6336] DETALLE:  Ya existe la llave (nombre)=(Ludwig van Beethoven).
+2024-11-03 12:31:22.151 CET [6336] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos
+	WHERE NOT EXISTS (
+	    SELECT 1
+	    FROM tienda.Grupos
+	    WHERE tienda.Grupos.nombre = tienda_temporal.Discos.grupo_nombre
+	);
+2024-11-03 12:31:22.175 CET [6336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:31:22.175 CET [6336] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:31:22.180 CET [6336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:31:22.180 CET [6336] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:31:22.186 CET [6336] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:31:22.186 CET [6336] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:32:04.281 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:32:04.294 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5625 kB, estimación=5631 kB; lsn=0/E33D638, lsn de redo=0/E33D600
+2024-11-03 12:32:04.786 CET [8116] ERROR:  llave duplicada viola restricción de unicidad «grupos_pkey»
+2024-11-03 12:32:04.786 CET [8116] DETALLE:  Ya existe la llave (nombre)=(Ludwig van Beethoven).
+2024-11-03 12:32:04.786 CET [8116] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos
+	WHERE NOT EXISTS (
+	    SELECT 1
+	    FROM tienda.Grupos
+	    WHERE tienda.Grupos.nombre = tienda_temporal.Discos.grupo_nombre
+	);
+2024-11-03 12:32:04.814 CET [8116] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:04.814 CET [8116] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:32:04.818 CET [8116] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:04.818 CET [8116] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:32:04.822 CET [8116] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:04.822 CET [8116] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:32:19.646 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:32:19.657 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5625 kB, estimación=5630 kB; lsn=0/E8BBCB8, lsn de redo=0/E8BBC80
+2024-11-03 12:32:20.163 CET [24860] ERROR:  error de sintaxis en o cerca de «;» en carácter 212
+2024-11-03 12:32:20.163 CET [24860] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos
+	WHERE NOT EXISTS (
+	    SELECT 1
+	    FROM tienda.Grupos
+	    WHERE tienda.Grupos.nombre = tienda_temporal.Discos.grupo_nombre;
+	);
+2024-11-03 12:32:20.190 CET [24860] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:20.190 CET [24860] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:32:20.194 CET [24860] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:20.194 CET [24860] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:32:20.199 CET [24860] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:20.199 CET [24860] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:32:37.219 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:32:37.230 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5597 kB, estimación=5627 kB; lsn=0/EE330C8, lsn de redo=0/EE33090
+2024-11-03 12:32:37.736 CET [5896] ERROR:  llave duplicada viola restricción de unicidad «grupos_pkey»
+2024-11-03 12:32:37.736 CET [5896] DETALLE:  Ya existe la llave (nombre)=(Ludwig van Beethoven).
+2024-11-03 12:32:37.736 CET [5896] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos
+	WHERE NOT EXISTS (
+	    SELECT 1
+	    FROM tienda.Grupos
+	    WHERE tienda.Grupos.nombre = tienda_temporal.Discos.grupo_nombre
+	);
+2024-11-03 12:32:37.770 CET [5896] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:37.770 CET [5896] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:32:37.777 CET [5896] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:37.777 CET [5896] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:32:37.783 CET [5896] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:32:37.783 CET [5896] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:33:23.081 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:33:23.094 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5626 kB, estimación=5627 kB; lsn=0/F3B1AB8, lsn de redo=0/F3B1A80
+2024-11-03 12:33:23.611 CET [25360] ERROR:  error de sintaxis en o cerca de «INTO» en carácter 105
+2024-11-03 12:33:23.611 CET [25360] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos
+	INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:33:23.638 CET [25360] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:33:23.638 CET [25360] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:33:23.642 CET [25360] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:33:23.642 CET [25360] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:33:31.395 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:33:31.407 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5597 kB, estimación=5624 kB; lsn=0/F929048, lsn de redo=0/F929010
+2024-11-03 12:33:31.939 CET [412] ERROR:  la columna «anno_publicacion» es de tipo integer pero la expresión es de tipo text en carácter 42
+2024-11-03 12:33:31.939 CET [412] HINT:  Necesitará reescribir la expresión o aplicarle una conversión de tipo.
+2024-11-03 12:33:31.939 CET [412] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:33:31.972 CET [412] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:33:31.972 CET [412] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:33:31.977 CET [412] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:33:31.977 CET [412] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:34:32.274 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:34:32.285 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5790 kB, estimación=5790 kB; lsn=0/FED0B20, lsn de redo=0/FED0AE8
+2024-11-03 12:34:32.829 CET [14956] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-11-03 12:34:32.829 CET [14956] DETALLE:  La fila que falla contiene (Mega Byte / Death Trap, 2002, NULL, Chemical Frequency).
+2024-11-03 12:34:32.829 CET [14956] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:34:32.858 CET [14956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:34:32.858 CET [14956] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:34:32.864 CET [14956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:34:32.864 CET [14956] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:39:32.291 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 12:41:20.662 CET [14616] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=108.246 s, sync=0.111 s, total=108.372 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=5928 kB, estimación=5928 kB; lsn=0/1049AD28, lsn de redo=0/1049ACF0
+2024-11-03 12:45:29.679 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:45:29.686 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.007 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=2 kB, estimación=5335 kB; lsn=0/1049B7B8, lsn de redo=0/1049B780
+2024-11-03 12:45:30.203 CET [16480] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-11-03 12:45:30.203 CET [16480] DETALLE:  La fila que falla contiene (Mega Byte / Death Trap, 2002, NULL, Chemical Frequency).
+2024-11-03 12:45:30.203 CET [16480] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:45:30.232 CET [16480] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:45:30.232 CET [16480] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:45:30.236 CET [16480] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:45:30.236 CET [16480] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:46:19.810 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 12:46:19.825 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.004 s, total=0.016 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=5929 kB, estimación=5929 kB; lsn=0/10A65C48, lsn de redo=0/10A65C10
+2024-11-03 12:46:20.339 CET [6496] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-11-03 12:46:20.339 CET [6496] DETALLE:  La fila que falla contiene (Mega Byte / Death Trap, 2002, NULL, Chemical Frequency).
+2024-11-03 12:46:20.339 CET [6496] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 12:46:20.365 CET [6496] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:46:20.365 CET [6496] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 12:46:20.371 CET [6496] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 12:46:20.371 CET [6496] SENTENCIA:  SET search_path= tienda;
+2024-11-03 12:51:19.827 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 12:53:07.272 CET [14616] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=107.321 s, sync=0.108 s, total=107.446 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=5929 kB, estimación=5929 kB; lsn=0/110300E0, lsn de redo=0/110300A8
+2024-11-03 13:12:36.556 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 13:12:36.564 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=2 kB, estimación=5336 kB; lsn=0/11030CC8, lsn de redo=0/11030C90
+2024-11-03 13:12:37.150 CET [2312] ERROR:  llave duplicada viola restricción de unicidad «discos_pkey»
+2024-11-03 13:12:37.150 CET [2312] DETALLE:  Ya existe la llave (titulo, anno_publicacion)=(Waves, 1988).
+2024-11-03 13:12:37.150 CET [2312] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-11-03 13:12:37.191 CET [2312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 13:12:37.191 CET [2312] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 13:12:37.199 CET [2312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 13:12:37.199 CET [2312] SENTENCIA:  SET search_path= tienda;
+2024-11-03 13:17:36.574 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 13:19:24.895 CET [14616] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=108.202 s, sync=0.106 s, total=108.322 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=6132 kB, estimación=6132 kB; lsn=0/1162DF90, lsn de redo=0/1162DF58
+2024-11-03 13:43:25.950 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 13:43:25.957 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=3 kB, estimación=5519 kB; lsn=0/1162EC40, lsn de redo=0/1162EC08
+2024-11-03 13:43:26.547 CET [14776] ERROR:  no existe la columna «disco_titulo» en carácter 40
+2024-11-03 13:43:26.547 CET [14776] DETALLE:  Hay una columna llamada «disco_titulo» en la tabla «generosdisco», pero no puede ser referenciada desde esta parte de la consulta.
+2024-11-03 13:43:26.547 CET [14776] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 13:43:26.581 CET [14776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 13:43:26.581 CET [14776] SENTENCIA:  SET search_path= tienda;
+2024-11-03 13:48:25.972 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 13:50:13.602 CET [14616] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=107.508 s, sync=0.109 s, total=107.631 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=6196 kB, estimación=6196 kB; lsn=0/11C3BC90, lsn de redo=0/11C3BC58
+2024-11-03 13:50:43.737 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 13:50:43.744 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=3 kB, estimación=5576 kB; lsn=0/11C3C9E8, lsn de redo=0/11C3C9B0
+2024-11-03 13:50:44.283 CET [8292] ERROR:  no existe la columna «disco_titulo» en carácter 40
+2024-11-03 13:50:44.283 CET [8292] DETALLE:  Hay una columna llamada «disco_titulo» en la tabla «generosdisco», pero no puede ser referenciada desde esta parte de la consulta.
+2024-11-03 13:50:44.283 CET [8292] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT disco_titulo, disco_anno_publicacion, unnest(string_to_array(generos, ','))
+	FROM tienda_temporal.Discos;
+2024-11-03 13:50:44.314 CET [8292] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 13:50:44.314 CET [8292] SENTENCIA:  SET search_path= tienda;
+2024-11-03 13:51:11.933 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 13:51:11.947 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6196 kB, estimación=6196 kB; lsn=0/12249C20, lsn de redo=0/12249BE8
+2024-11-03 13:54:05.271 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 13:54:05.282 CET [14616] LOG:  checkpoint completo: escritos 8 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=6, más largo=0.001 s, promedio=0.001 s; distancia=6587 kB, estimación=6587 kB; lsn=0/128B8838, lsn de redo=0/128B8800
+2024-11-03 13:56:14.275 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 13:56:14.286 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6572 kB, estimación=6585 kB; lsn=0/12F23B88, lsn de redo=0/12F23B50
+2024-11-03 14:01:14.295 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 14:03:26.807 CET [14616] LOG:  checkpoint completo: escritos 1222 búfers (7.5%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=132.367 s, sync=0.135 s, total=132.513 s; archivos sincronizados=354, más largo=0.001 s, promedio=0.001 s; distancia=6571 kB, estimación=6584 kB; lsn=0/1358EC20, lsn de redo=0/1358E960
+2024-11-03 14:10:44.102 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 14:10:44.111 CET [14616] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.009 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=4 kB, estimación=5926 kB; lsn=0/1358FB08, lsn de redo=0/1358FAD0
+2024-11-03 14:11:17.654 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 14:11:17.665 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6582 kB, estimación=6582 kB; lsn=0/13BFD320, lsn de redo=0/13BFD2E8
+2024-11-03 14:16:17.675 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 14:16:31.042 CET [14616] LOG:  checkpoint completo: escritos 130 búfers (0.8%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=13.355 s, sync=0.003 s, total=13.367 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6561 kB, estimación=6579 kB; lsn=0/142665B8, lsn de redo=0/142658A0
+2024-11-03 14:16:31.043 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 14:16:31.051 CET [14616] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.009 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=3 kB, estimación=5922 kB; lsn=0/14266668, lsn de redo=0/14266630
+2024-11-03 14:16:31.633 CET [14276] ERROR:  no existe la columna «anno_publicacion» en carácter 85
+2024-11-03 14:16:31.633 CET [14276] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT pais, anno_edicion::INTEGER, formato, disco_id, anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones;
+2024-11-03 14:16:31.663 CET [14276] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 14:16:31.663 CET [14276] SENTENCIA:  SET search_path= tienda;
+2024-11-03 15:41:59.926 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 15:43:47.891 CET [14616] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=107.839 s, sync=0.113 s, total=107.966 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=6567 kB, estimación=6567 kB; lsn=0/148D0270, lsn de redo=0/148D0238
+2024-11-03 15:45:14.525 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 15:45:14.533 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=2 kB, estimación=5910 kB; lsn=0/148D0BC8, lsn de redo=0/148D0B90
+2024-11-03 15:45:15.101 CET [28864] ERROR:  la columna «formato» es de tipo formato_enum pero la expresión es de tipo text en carácter 70
+2024-11-03 15:45:15.101 CET [28864] HINT:  Necesitará reescribir la expresión o aplicarle una conversión de tipo.
+2024-11-03 15:45:15.101 CET [28864] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-03 15:45:15.134 CET [28864] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 15:45:15.134 CET [28864] SENTENCIA:  SET search_path= tienda;
+2024-11-03 15:46:06.107 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 15:46:06.119 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6563 kB, estimación=6563 kB; lsn=0/14F397F8, lsn de redo=0/14F397C0
+2024-11-03 15:46:06.812 CET [15312] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Vinyl»
+2024-11-03 15:46:06.812 CET [15312] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-03 15:46:06.852 CET [15312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 15:46:06.852 CET [15312] SENTENCIA:  SET search_path= tienda;
+2024-11-03 15:47:02.877 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 15:47:02.891 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6563 kB, estimación=6563 kB; lsn=0/155A2558, lsn de redo=0/155A2520
+2024-11-03 15:47:03.535 CET [4824] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Vinyl»
+2024-11-03 15:47:03.535 CET [4824] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-03 15:47:03.571 CET [4824] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 15:47:03.571 CET [4824] SENTENCIA:  SET search_path= tienda;
+2024-11-03 15:47:15.083 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 15:47:15.093 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6563 kB, estimación=6563 kB; lsn=0/15C0B1F8, lsn de redo=0/15C0B1C0
+2024-11-03 15:47:15.671 CET [31272] ERROR:  el valor es demasiado largo para el tipo character(2)
+2024-11-03 15:47:15.671 CET [31272] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-03 15:47:15.699 CET [31272] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 15:47:15.699 CET [31272] SENTENCIA:  SET search_path= tienda;
+2024-11-03 15:52:15.096 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 15:54:02.959 CET [14616] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=107.744 s, sync=0.103 s, total=107.863 s; archivos sincronizados=351, más largo=0.001 s, promedio=0.001 s; distancia=6563 kB, estimación=6563 kB; lsn=0/162740F0, lsn de redo=0/162740B8
+2024-11-03 16:05:31.149 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:05:31.156 CET [14616] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=2 kB, estimación=5907 kB; lsn=0/16274CE8, lsn de redo=0/16274CB0
+2024-11-03 16:05:31.750 CET [32540] ERROR:  llave duplicada viola restricción de unicidad «ediciones_pkey»
+2024-11-03 16:05:31.750 CET [32540] DETALLE:  Ya existe la llave (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)=(US, 1973, Vinyl, Two Timin' Lady, 0).
+2024-11-03 16:05:31.750 CET [32540] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-11-03 16:05:31.790 CET [32540] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:05:31.790 CET [32540] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:07:09.417 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:07:09.427 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6566 kB, estimación=6566 kB; lsn=0/168DE8D0, lsn de redo=0/168DE898
+2024-11-03 16:07:10.052 CET [15488] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «CDr»
+2024-11-03 16:07:10.052 CET [15488] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:07:10.083 CET [15488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:07:10.083 CET [15488] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:08:32.563 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:08:32.577 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6583 kB, estimación=6583 kB; lsn=0/16F4C8B8, lsn de redo=0/16F4C880
+2024-11-03 16:08:33.207 CET [3332] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Box Set»
+2024-11-03 16:08:33.207 CET [3332] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:08:33.235 CET [3332] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:08:33.235 CET [3332] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:08:41.729 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:08:41.747 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.005 s, sync=0.003 s, total=0.019 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=6588 kB, estimación=6588 kB; lsn=0/175BB8F0, lsn de redo=0/175BB8B8
+2024-11-03 16:08:42.410 CET [16820] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «File»
+2024-11-03 16:08:42.410 CET [16820] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:08:42.438 CET [16820] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:08:42.438 CET [16820] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:08:48.829 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:08:48.840 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6599 kB, estimación=6599 kB; lsn=0/17C2D6E0, lsn de redo=0/17C2D6A8
+2024-11-03 16:08:49.442 CET [18504] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «All Media»
+2024-11-03 16:08:49.442 CET [18504] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:08:49.475 CET [18504] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:08:49.475 CET [18504] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:08:55.499 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:08:55.513 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6600 kB, estimación=6600 kB; lsn=0/1829F900, lsn de redo=0/1829F8C8
+2024-11-03 16:08:56.182 CET [32280] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Flexi-disc»
+2024-11-03 16:08:56.182 CET [32280] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:08:56.213 CET [32280] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:08:56.213 CET [32280] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:01.161 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:01.174 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6618 kB, estimación=6618 kB; lsn=0/18916200, lsn de redo=0/189161C8
+2024-11-03 16:09:01.758 CET [32356] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Lathe Cut»
+2024-11-03 16:09:01.758 CET [32356] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:01.790 CET [32356] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:01.790 CET [32356] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:09.381 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:09.391 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6625 kB, estimación=6625 kB; lsn=0/18F8E978, lsn de redo=0/18F8E940
+2024-11-03 16:09:10.079 CET [27936] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «DVD»
+2024-11-03 16:09:10.079 CET [27936] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:10.111 CET [27936] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:10.111 CET [27936] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:17.183 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:17.199 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.016 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6632 kB, estimación=6632 kB; lsn=0/19608988, lsn de redo=0/19608950
+2024-11-03 16:09:17.780 CET [31664] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «VHS»
+2024-11-03 16:09:17.780 CET [31664] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:17.813 CET [31664] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:17.813 CET [31664] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:23.088 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:23.100 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6690 kB, estimación=6690 kB; lsn=0/19C91330, lsn de redo=0/19C912F8
+2024-11-03 16:09:23.696 CET [15388] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Reel-To-Reel»
+2024-11-03 16:09:23.696 CET [15388] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:23.726 CET [15388] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:23.726 CET [15388] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:35.475 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:35.489 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6692 kB, estimación=6692 kB; lsn=0/1A31A590, lsn de redo=0/1A31A558
+2024-11-03 16:09:36.099 CET [29668] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Shellac»
+2024-11-03 16:09:36.099 CET [29668] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:36.132 CET [29668] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:36.132 CET [29668] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:41.286 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:41.296 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6703 kB, estimación=6703 kB; lsn=0/1A9A6340, lsn de redo=0/1A9A6308
+2024-11-03 16:09:41.892 CET [25504] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Blu-ray»
+2024-11-03 16:09:41.892 CET [25504] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:41.924 CET [25504] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:41.924 CET [25504] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:49.045 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:49.059 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=6719 kB, estimación=6719 kB; lsn=0/1B036048, lsn de redo=0/1B035FF8
+2024-11-03 16:09:49.681 CET [11588] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «SACD»
+2024-11-03 16:09:49.681 CET [11588] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:49.714 CET [11588] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:49.714 CET [11588] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:09:55.921 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:09:55.932 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=7089 kB, estimación=7089 kB; lsn=0/1B7224E0, lsn de redo=0/1B7224A8
+2024-11-03 16:09:56.540 CET [9932] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «8-Track Cartridge»
+2024-11-03 16:09:56.540 CET [9932] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:09:56.569 CET [9932] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:09:56.569 CET [9932] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:10:06.517 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:10:06.529 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=7119 kB, estimación=7119 kB; lsn=0/1BE16340, lsn de redo=0/1BE16308
+2024-11-03 16:10:07.141 CET [18208] ERROR:  la sintaxis de entrada no es válida para el enum formato_enum: «Floppy Disk»
+2024-11-03 16:10:07.141 CET [18208] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id
+	ON CONFLICT DO NOTHING;
+2024-11-03 16:10:07.174 CET [18208] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-11-03 16:10:07.174 CET [18208] SENTENCIA:  SET search_path= tienda;
+2024-11-03 16:10:13.497 CET [14616] LOG:  empezando checkpoint: immediate force wait
+2024-11-03 16:10:13.512 CET [14616] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.016 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=7120 kB, estimación=7120 kB; lsn=0/1C50A3A8, lsn de redo=0/1C50A370
+2024-11-03 16:15:13.521 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 16:17:30.947 CET [14616] LOG:  checkpoint completo: escritos 1261 búfers (7.7%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=137.300 s, sync=0.120 s, total=137.426 s; archivos sincronizados=355, más largo=0.001 s, promedio=0.001 s; distancia=7138 kB, estimación=7138 kB; lsn=0/1CC030D8, lsn de redo=0/1CC02E18
+2024-11-03 17:57:16.436 CET [29272] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-11-03 17:57:16.436 CET [29272] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-11-03 20:33:23.024 CET [14616] LOG:  empezando checkpoint: time
+2024-11-03 20:33:23.492 CET [14616] LOG:  checkpoint completo: escritos 5 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.436 s, sync=0.003 s, total=0.468 s; archivos sincronizados=2, más largo=0.002 s, promedio=0.002 s; distancia=15 kB, estimación=6426 kB; lsn=0/1CC06C58, lsn de redo=0/1CC06C20

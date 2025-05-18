@@ -1,0 +1,54 @@
+2024-11-21 12:08:06.066 CET [15348] FATAL:  la autentificación password falló para el usuario «postgres»
+2024-11-21 12:08:06.066 CET [15348] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-11-21 12:08:31.791 CET [11612] LOG:  empezando checkpoint: immediate force wait
+2024-11-21 12:08:31.801 CET [11612] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.001 s, total=0.012 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=6 kB, estimación=8643 kB; lsn=0/5A4AE878, lsn de redo=0/5A4AE840
+2024-11-21 12:11:36.518 CET [11612] LOG:  empezando checkpoint: immediate force wait
+2024-11-21 12:11:36.530 CET [11612] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.013 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.001 s; distancia=9598 kB, estimación=9598 kB; lsn=0/5AE0E0A8, lsn de redo=0/5AE0E070
+2024-11-21 12:11:39.636 CET [11612] LOG:  empezando checkpoint: immediate force wait
+2024-11-21 12:11:39.653 CET [11612] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.005 s, sync=0.003 s, total=0.018 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=9597 kB, estimación=9598 kB; lsn=0/5B76D7B0, lsn de redo=0/5B76D778
+2024-11-21 12:16:39.660 CET [11612] LOG:  empezando checkpoint: time
+2024-11-21 12:18:30.172 CET [11612] LOG:  checkpoint completo: escritos 1003 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=110.382 s, sync=0.113 s, total=110.512 s; archivos sincronizados=352, más largo=0.002 s, promedio=0.001 s; distancia=9598 kB, estimación=9598 kB; lsn=0/5C0CD078, lsn de redo=0/5C0CD040
+2024-11-21 12:39:11.834 CET [26616] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-11-21 12:51:45.598 CET [32888] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 12:51:45.598 CET [32888] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 12:51:46.215 CET [18736] ERROR:  no existe la columna d.nombre en carácter 17
+2024-11-21 12:51:46.215 CET [18736] SENTENCIA:  SELECT DISTINCT d.nombre
+	FROM discos d JOIN generosdisco gd ON d.titulo = gd.disco_titulo AND d.anno_publicacion = gd.disco_anno_publicacion
+	WHERE gd.genero = 'Electronic';
+2024-11-21 12:51:55.928 CET [18736] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 12:51:55.928 CET [18736] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 12:52:40.059 CET [6932] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 12:52:40.059 CET [6932] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 12:56:39.251 CET [11612] LOG:  empezando checkpoint: time
+2024-11-21 12:56:54.068 CET [11612] LOG:  checkpoint completo: escritos 135 búfers (0.8%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=14.737 s, sync=0.051 s, total=14.818 s; archivos sincronizados=208, más largo=0.001 s, promedio=0.001 s; distancia=15510 kB, estimación=15510 kB; lsn=0/5CFF2B18, lsn de redo=0/5CFF2AE0
+2024-11-21 13:03:31.314 CET [32540] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 13:03:31.314 CET [32540] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 13:05:13.907 CET [40808] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 13:05:13.907 CET [40808] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 13:05:23.583 CET [4956] ERROR:  falta una entrada para la tabla «u» en la cláusula FROM en carácter 207
+2024-11-21 13:05:23.583 CET [4956] SENTENCIA:  WITH discos_por_usuario AS (
+	    SELECT usuario_nombre_usuario, COUNT(id) AS num_discos
+	    FROM UTieneE
+	    GROUP BY usuario_nombre_usuario
+	)
+	SELECT usuario_nombre_usuario, COUNT(id)
+	FROM UTieneE
+	GROUP BY u.nombre_usuario
+	HAVING COUNT(id) >= ALL(SELECT num_discos FROM discos_por_usuario);
+2024-11-21 13:05:32.456 CET [4956] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 13:05:32.456 CET [4956] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 13:06:39.088 CET [11612] LOG:  empezando checkpoint: time
+2024-11-21 13:06:52.804 CET [11612] LOG:  checkpoint completo: escritos 125 búfers (0.8%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=13.631 s, sync=0.055 s, total=13.717 s; archivos sincronizados=212, más largo=0.002 s, promedio=0.001 s; distancia=15343 kB, estimación=15493 kB; lsn=0/5DEEE898, lsn de redo=0/5DEEE860
+2024-11-21 13:19:16.583 CET [14456] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 13:19:16.583 CET [14456] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 13:19:43.517 CET [26924] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 13:19:43.517 CET [26924] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 13:21:39.820 CET [11612] LOG:  empezando checkpoint: time
+2024-11-21 13:21:51.412 CET [11612] LOG:  checkpoint completo: escritos 106 búfers (0.6%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=11.526 s, sync=0.043 s, total=11.593 s; archivos sincronizados=157, más largo=0.001 s, promedio=0.001 s; distancia=10338 kB, estimación=14978 kB; lsn=0/5E907320, lsn de redo=0/5E9072E8
+2024-11-21 13:33:11.077 CET [34712] ERROR:  la base de datos «tienda_db» ya existe
+2024-11-21 13:33:11.077 CET [34712] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-11-21 13:36:39.447 CET [11612] LOG:  empezando checkpoint: time
+2024-11-21 13:36:50.476 CET [11612] LOG:  checkpoint completo: escritos 101 búfers (0.6%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=10.982 s, sync=0.032 s, total=11.030 s; archivos sincronizados=104, más largo=0.001 s, promedio=0.001 s; distancia=5206 kB, estimación=14001 kB; lsn=0/5EE1CD20, lsn de redo=0/5EE1CCE8
+2024-11-21 13:39:13.085 CET [40220] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	

@@ -1,0 +1,341 @@
+2024-12-12 12:15:18.761 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 12:15:18.772 CET [11584] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.012 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=6 kB, estimación=6 kB; lsn=0/680F5DA0, lsn de redo=0/680F5D68
+2024-12-12 12:15:38.725 CET [10744] LOG:  omitiendo analyze de «utienee»: el candado no está disponible
+2024-12-12 12:15:38.775 CET [10744] LOG:  omitiendo el vacuum de «generosdisco»: el candado no está disponible
+2024-12-12 12:15:38.775 CET [10744] LOG:  omitiendo el vacuum de «ediciones»: el candado no está disponible
+2024-12-12 12:15:38.775 CET [10744] LOG:  omitiendo analyze de «udesead»: el candado no está disponible
+2024-12-12 12:15:38.775 CET [10744] LOG:  omitiendo analyze de «grupos»: el candado no está disponible
+2024-12-12 12:15:38.775 CET [10744] LOG:  omitiendo analyze de «discos»: el candado no está disponible
+2024-12-12 12:15:38.775 CET [10744] LOG:  omitiendo el vacuum de «canciones»: el candado no está disponible
+2024-12-12 12:16:07.621 CET [19360] FATAL:  no existe la base de datos «juangomez»
+2024-12-12 12:20:15.496 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 12:20:15.524 CET [11584] LOG:  checkpoint completo: escritos 22 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.009 s, sync=0.014 s, total=0.028 s; archivos sincronizados=19, más largo=0.002 s, promedio=0.001 s; distancia=9989 kB, estimación=9989 kB; lsn=0/68AB7330, lsn de redo=0/68AB72F8
+2024-12-12 12:22:07.290 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 12:22:07.317 CET [11584] LOG:  checkpoint completo: escritos 19 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.010 s, sync=0.009 s, total=0.027 s; archivos sincronizados=18, más largo=0.001 s, promedio=0.001 s; distancia=9970 kB, estimación=9987 kB; lsn=0/69473D78, lsn de redo=0/69473D40
+2024-12-12 12:22:08.812 CET [41876] LOG:  omitiendo analyze de «grupos»: el candado no está disponible
+2024-12-12 12:22:08.812 CET [41876] LOG:  omitiendo analyze de «discos»: el candado no está disponible
+2024-12-12 12:22:08.812 CET [41876] LOG:  omitiendo el vacuum de «generosdisco»: el candado no está disponible
+2024-12-12 12:22:08.812 CET [41876] LOG:  omitiendo el vacuum de «ediciones»: el candado no está disponible
+2024-12-12 12:22:08.812 CET [41876] LOG:  omitiendo el vacuum de «canciones»: el candado no está disponible
+2024-12-12 12:22:08.812 CET [41876] LOG:  omitiendo analyze de «udesead»: el candado no está disponible
+2024-12-12 12:22:08.812 CET [41876] LOG:  omitiendo analyze de «utienee»: el candado no está disponible
+2024-12-12 12:24:40.902 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 12:24:40.928 CET [11584] LOG:  checkpoint completo: escritos 23 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.009 s, sync=0.011 s, total=0.026 s; archivos sincronizados=20, más largo=0.002 s, promedio=0.001 s; distancia=9986 kB, estimación=9987 kB; lsn=0/69E345B0, lsn de redo=0/69E34578
+2024-12-12 12:25:28.317 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 12:25:28.343 CET [11584] LOG:  checkpoint completo: escritos 18 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.010 s, sync=0.009 s, total=0.027 s; archivos sincronizados=17, más largo=0.002 s, promedio=0.001 s; distancia=9956 kB, estimación=9984 kB; lsn=0/6A7ED7C0, lsn de redo=0/6A7ED788
+2024-12-12 12:30:28.354 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 12:33:13.688 CET [11584] LOG:  checkpoint completo: escritos 1499 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=165.192 s, sync=0.134 s, total=165.335 s; archivos sincronizados=393, más largo=0.002 s, promedio=0.001 s; distancia=10091 kB, estimación=10091 kB; lsn=0/6B1C9928, lsn de redo=0/6B1C8640
+2024-12-12 12:42:02.063 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 12:42:02.072 CET [11584] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.009 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=12 kB, estimación=9083 kB; lsn=0/6B1CB728, lsn de redo=0/6B1CB6F0
+2024-12-12 12:42:38.515 CET [21868] FATAL:  la autentificación password falló para el usuario «postgres»
+2024-12-12 12:42:38.515 CET [21868] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 12:42:44.299 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 12:42:44.323 CET [11584] LOG:  checkpoint completo: escritos 22 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.009 s, sync=0.010 s, total=0.024 s; archivos sincronizados=19, más largo=0.002 s, promedio=0.001 s; distancia=9989 kB, estimación=9989 kB; lsn=0/6BB8CE30, lsn de redo=0/6BB8CDF8
+2024-12-12 12:43:53.462 CET [23292] FATAL:  la autentificación password falló para el usuario «postgres»
+2024-12-12 12:43:53.462 CET [23292] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 12:47:44.327 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 12:50:28.815 CET [11584] LOG:  checkpoint completo: escritos 1493 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=164.331 s, sync=0.149 s, total=164.489 s; archivos sincronizados=390, más largo=0.004 s, promedio=0.001 s; distancia=9982 kB, estimación=9989 kB; lsn=0/6C54C958, lsn de redo=0/6C54C920
+2024-12-12 13:07:32.118 CET [20460] FATAL:  la autentificación password falló para el usuario «juangomez»
+2024-12-12 13:07:32.118 CET [20460] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 13:08:29.215 CET [18616] ERROR:  permiso denegado a la tabla usuarios
+2024-12-12 13:08:29.215 CET [18616] SENTENCIA:  SELECT * FROM tienda.usuarios;
+2024-12-12 13:10:44.670 CET [36964] ERROR:  permiso denegado a la vista vista_usuarios_cliente
+2024-12-12 13:10:44.670 CET [36964] SENTENCIA:  SELECT * FROM tienda.vista_usuarios_cliente;
+2024-12-12 13:11:12.071 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:11:12.079 CET [11584] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.009 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=7 kB, estimación=8990 kB; lsn=0/6C54E8B8, lsn de redo=0/6C54E880
+2024-12-12 13:13:40.892 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:13:40.928 CET [11584] LOG:  checkpoint completo: escritos 23 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.017 s, sync=0.012 s, total=0.037 s; archivos sincronizados=20, más largo=0.002 s, promedio=0.001 s; distancia=9986 kB, estimación=9986 kB; lsn=0/6CF0F438, lsn de redo=0/6CF0F400
+2024-12-12 13:14:03.078 CET [7216] ERROR:  El usuario no puede insertar, modificar o borrar tuplas de otros usuarios
+2024-12-12 13:14:03.078 CET [7216] CONTEXTO:  función PL/pgSQL fn_restringir_edicion() en la línea 5 en RAISE
+2024-12-12 13:14:03.078 CET [7216] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('lorenasaez', 'Kootch', 1973, 'US', 1973, 'Vinyl', 'VG+', 1);
+2024-12-12 13:16:57.456 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:16:57.482 CET [11584] LOG:  checkpoint completo: escritos 18 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.010 s, sync=0.008 s, total=0.027 s; archivos sincronizados=17, más largo=0.001 s, promedio=0.001 s; distancia=9959 kB, estimación=9984 kB; lsn=0/6D8C9280, lsn de redo=0/6D8C9248
+2024-12-12 13:20:58.938 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:20:58.966 CET [11584] LOG:  checkpoint completo: escritos 20 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.009 s, sync=0.011 s, total=0.029 s; archivos sincronizados=19, más largo=0.002 s, promedio=0.001 s; distancia=10004 kB, estimación=10004 kB; lsn=0/6E28E2C0, lsn de redo=0/6E28E288
+2024-12-12 13:20:59.030 CET [36376] ERROR:  CREATE DATABASE no puede ser ejecutado dentro de un bloque de transacción
+2024-12-12 13:20:59.030 CET [36376] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-12-12 13:20:59.083 CET [23528] FATAL:  no existe la base de datos «tienda_db»
+2024-12-12 13:25:58.980 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 13:28:32.678 CET [11584] LOG:  checkpoint completo: escritos 1402 búfers (8.6%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=153.684 s, sync=0.009 s, total=153.699 s; archivos sincronizados=18, más largo=0.001 s, promedio=0.001 s; distancia=9955 kB, estimación=9999 kB; lsn=0/6EC490C0, lsn de redo=0/6EC46EB8
+2024-12-12 13:28:32.700 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:28:32.713 CET [11584] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.013 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=8 kB, estimación=9000 kB; lsn=0/6EC49170, lsn de redo=0/6EC49138
+2024-12-12 13:31:28.150 CET [10940] ERROR:  El usuario no puede insertar, modificar o borrar tuplas de otros usuarios
+2024-12-12 13:31:28.150 CET [10940] CONTEXTO:  función PL/pgSQL fn_restringir_edicion() en la línea 6 en RAISE
+2024-12-12 13:31:28.150 CET [10940] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('lorenasaez', 'Kootch', 1973, 'US', 1973, 'Vinyl', 'VG+', 1);
+2024-12-12 13:31:59.315 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:31:59.340 CET [11584] LOG:  checkpoint completo: escritos 19 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.010 s, sync=0.009 s, total=0.026 s; archivos sincronizados=18, más largo=0.001 s, promedio=0.001 s; distancia=9991 kB, estimación=9991 kB; lsn=0/6F60B0B8, lsn de redo=0/6F60B080
+2024-12-12 13:32:00.774 CET [28272] ERROR:  error de sintaxis en o cerca de «;» en carácter 345
+2024-12-12 13:32:00.774 CET [28272] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_restringir_edicion() RETURNS TRIGGER AS $fn_restringir_edicion$
+	  DECLARE
+	  BEGIN
+	    IF NEW.usuario_nombre_usuario != session_user AND session_user IN (SELECT nombre_usuario FROM tienda.vista_usuarios_cliente) THEN
+	      RAISE EXCEPTION 'El usuario no puede insertar, modificar o borrar tuplas de otros usuarios';;
+	    END IF;
+	    RETURN NEW;
+	  END;
+	$fn_restringir_edicion$ LANGUAGE plpgsql;
+2024-12-12 13:32:00.783 CET [28272] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:00.783 CET [28272] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_tienes_lo_que_deseas() RETURNS TRIGGER AS $fn_tienes_lo_que_deseas$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      IF EXISTS (SELECT * FROM tienda.UDeseaD WHERE usuario_nombre_usuario = NEW.usuario_nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion) THEN
+	        DELETE FROM tienda.UDeseaD WHERE usuario_nombre_usuario = NEW.usuario_nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion;
+	      END IF;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_tienes_lo_que_deseas$ LANGUAGE plpgsql;
+2024-12-12 13:32:00.789 CET [28272] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:00.789 CET [28272] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-12 13:32:00.794 CET [28272] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:00.794 CET [28272] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-12 13:32:00.800 CET [28272] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:00.800 CET [28272] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_restringir_edicion BEFORE INSERT OR UPDATE OR DELETE ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_restringir_edicion();
+2024-12-12 13:32:00.805 CET [28272] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:00.805 CET [28272] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_restringir_edicion BEFORE INSERT OR UPDATE OR DELETE ON tienda.UDeseaD FOR EACH ROW EXECUTE PROCEDURE fn_restringir_edicion();
+2024-12-12 13:32:00.810 CET [28272] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:00.810 CET [28272] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-12 13:32:09.091 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:32:09.116 CET [11584] LOG:  checkpoint completo: escritos 18 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.011 s, sync=0.007 s, total=0.026 s; archivos sincronizados=17, más largo=0.001 s, promedio=0.001 s; distancia=9717 kB, estimación=9964 kB; lsn=0/6FF88698, lsn de redo=0/6FF88660
+2024-12-12 13:32:10.672 CET [32572] ERROR:  error de sintaxis en o cerca de «;» en carácter 345
+2024-12-12 13:32:10.672 CET [32572] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_restringir_edicion() RETURNS TRIGGER AS $fn_restringir_edicion$
+	  DECLARE
+	  BEGIN
+	    IF NEW.usuario_nombre_usuario != session_user AND session_user IN (SELECT nombre_usuario FROM tienda.vista_usuarios_cliente) THEN
+	      RAISE EXCEPTION 'El usuario no puede insertar, modificar o borrar tuplas de otros usuarios';;
+	    END IF;
+	    RETURN NEW;
+	  END;
+	$fn_restringir_edicion$ LANGUAGE plpgsql;
+2024-12-12 13:32:10.684 CET [32572] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:10.684 CET [32572] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_tienes_lo_que_deseas() RETURNS TRIGGER AS $fn_tienes_lo_que_deseas$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      IF EXISTS (SELECT * FROM tienda.UDeseaD WHERE usuario_nombre_usuario = NEW.usuario_nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion) THEN
+	        DELETE FROM tienda.UDeseaD WHERE usuario_nombre_usuario = NEW.usuario_nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion;
+	      END IF;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_tienes_lo_que_deseas$ LANGUAGE plpgsql;
+2024-12-12 13:32:10.689 CET [32572] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:10.689 CET [32572] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-12 13:32:10.695 CET [32572] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:10.695 CET [32572] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-12 13:32:10.701 CET [32572] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:10.701 CET [32572] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_restringir_edicion BEFORE INSERT OR UPDATE OR DELETE ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_restringir_edicion();
+2024-12-12 13:32:10.706 CET [32572] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:10.706 CET [32572] SENTENCIA:  CREATE OR REPLACE TRIGGER tg_restringir_edicion BEFORE INSERT OR UPDATE OR DELETE ON tienda.UDeseaD FOR EACH ROW EXECUTE PROCEDURE fn_restringir_edicion();
+2024-12-12 13:32:10.711 CET [32572] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 13:32:10.711 CET [32572] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-12 13:32:15.188 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 13:32:15.214 CET [11584] LOG:  checkpoint completo: escritos 19 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.009 s, sync=0.009 s, total=0.026 s; archivos sincronizados=18, más largo=0.001 s, promedio=0.001 s; distancia=9742 kB, estimación=9942 kB; lsn=0/7090C040, lsn de redo=0/7090BFF0
+2024-12-12 13:37:15.220 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 13:39:58.656 CET [11584] LOG:  checkpoint completo: escritos 1485 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=163.294 s, sync=0.132 s, total=163.436 s; archivos sincronizados=387, más largo=0.001 s, promedio=0.001 s; distancia=9972 kB, estimación=9972 kB; lsn=0/712C9400, lsn de redo=0/712C93C8
+2024-12-12 21:05:11.700 CET [28808] FATAL:  la autentificación password falló para el usuario «suMajestad»
+2024-12-12 21:05:11.700 CET [28808] DETALLE:  No existe el rol «suMajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:08:14.590 CET [7000] FATAL:  la autentificación password falló para el usuario «suMajestad»
+2024-12-12 21:08:14.590 CET [7000] DETALLE:  No existe el rol «suMajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:08:29.236 CET [33728] FATAL:  la autentificación password falló para el usuario «suMajestad»
+2024-12-12 21:08:29.236 CET [33728] DETALLE:  No existe el rol «suMajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:09:20.492 CET [29964] FATAL:  la autentificación password falló para el usuario «suMajestad»
+2024-12-12 21:09:20.492 CET [29964] DETALLE:  No existe el rol «suMajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:09:26.592 CET [15108] FATAL:  la autentificación password falló para el usuario «suMajestad»
+2024-12-12 21:09:26.592 CET [15108] DETALLE:  No existe el rol «suMajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:10:44.409 CET [14392] ERROR:  no existe la relación «discos» en carácter 69
+2024-12-12 21:10:44.409 CET [14392] SENTENCIA:  SELECT d.titulo, d.anno_publicacion, COUNT(*) AS num_canciones
+	FROM Discos d JOIN Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo, d.anno_publicacion
+	HAVING COUNT(*) > 5
+	ORDER BY num_canciones
+2024-12-12 21:11:32.249 CET [41980] ERROR:  permiso denegado al esquema tienda en carácter 69
+2024-12-12 21:11:32.249 CET [41980] SENTENCIA:  SELECT d.titulo, d.anno_publicacion, COUNT(*) AS num_canciones
+	FROM tienda.Discos d JOIN tienda.Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo, d.anno_publicacion
+	HAVING COUNT(*) > 5
+	ORDER BY num_canciones
+2024-12-12 21:12:35.410 CET [20896] ERROR:  permiso denegado al esquema tienda en carácter 69
+2024-12-12 21:12:35.410 CET [20896] SENTENCIA:  SELECT d.titulo, d.anno_publicacion, COUNT(*) AS num_canciones
+	FROM tienda.Discos d JOIN tienda.Canciones c ON d.titulo = c.disco_titulo AND d.anno_publicacion = c.disco_anno_publicacion
+	GROUP BY d.titulo, d.anno_publicacion
+	HAVING COUNT(*) > 5
+	ORDER BY num_canciones
+2024-12-12 21:13:25.136 CET [26196] ERROR:  permiso denegado al esquema tienda en carácter 15
+2024-12-12 21:13:25.136 CET [26196] SENTENCIA:  SELECT * FROM tienda.discos;
+2024-12-12 21:13:37.673 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 21:13:38.226 CET [11584] LOG:  checkpoint completo: escritos 5 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.545 s, sync=0.002 s, total=0.553 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=6 kB, estimación=8976 kB; lsn=0/712CAF58, lsn de redo=0/712CAF20
+2024-12-12 21:16:00.320 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 21:16:00.332 CET [11584] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.013 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=9 kB, estimación=8079 kB; lsn=0/712CD478, lsn de redo=0/712CD440
+2024-12-12 21:16:08.186 CET [25488] ERROR:  no existe el rol «superuser»
+2024-12-12 21:16:08.186 CET [25488] SENTENCIA:  GRANT SUPERUSER TO suMajestad;
+2024-12-12 21:16:08.188 CET [25488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:16:08.188 CET [25488] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-12 21:16:08.192 CET [25488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:16:08.192 CET [25488] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-12 21:16:08.197 CET [25488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:16:08.197 CET [25488] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-12 21:16:08.200 CET [25488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:16:08.200 CET [25488] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-12 21:16:08.205 CET [25488] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:16:08.205 CET [25488] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-12 21:16:14.311 CET [25060] FATAL:  la autentificación password falló para el usuario «virrey»
+2024-12-12 21:16:14.311 CET [25060] DETALLE:  No existe el rol «virrey».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:16:18.222 CET [21240] FATAL:  la autentificación password falló para el usuario «virrey»
+2024-12-12 21:16:18.222 CET [21240] DETALLE:  No existe el rol «virrey».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:16:25.455 CET [12172] FATAL:  la autentificación password falló para el usuario «sumajestad»
+2024-12-12 21:16:25.455 CET [12172] DETALLE:  No existe el rol «sumajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:16:28.506 CET [16968] FATAL:  la autentificación password falló para el usuario «sumajestad»
+2024-12-12 21:16:28.506 CET [16968] DETALLE:  No existe el rol «sumajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:16:39.334 CET [39508] FATAL:  la autentificación password falló para el usuario «sumajestad»
+2024-12-12 21:16:39.334 CET [39508] DETALLE:  No existe el rol «sumajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:16:49.501 CET [7412] FATAL:  la autentificación password falló para el usuario «suMajestad»
+2024-12-12 21:16:49.501 CET [7412] DETALLE:  No existe el rol «suMajestad».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:16:59.551 CET [23668] FATAL:  la autentificación password falló para el usuario «virrey»
+2024-12-12 21:16:59.551 CET [23668] DETALLE:  No existe el rol «virrey».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:17:02.625 CET [36444] FATAL:  la autentificación password falló para el usuario «virrey»
+2024-12-12 21:17:02.625 CET [36444] DETALLE:  No existe el rol «virrey».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:17:58.932 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 21:17:58.965 CET [11584] LOG:  checkpoint completo: escritos 26 búfers (0.2%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.014 s, sync=0.012 s, total=0.033 s; archivos sincronizados=21, más largo=0.002 s, promedio=0.001 s; distancia=9961 kB, estimación=9961 kB; lsn=0/71C87AC0, lsn de redo=0/71C87A88
+2024-12-12 21:18:06.837 CET [23616] ERROR:  no existe el rol «sumajestad»
+2024-12-12 21:18:06.837 CET [23616] SENTENCIA:  DROP USER suMajestad;
+2024-12-12 21:18:06.840 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.840 CET [23616] SENTENCIA:  DROP USER virrey;
+2024-12-12 21:18:06.846 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.846 CET [23616] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-12 21:18:06.852 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.852 CET [23616] SENTENCIA:  DROP USER forastero;
+2024-12-12 21:18:06.856 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.856 CET [23616] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-12 21:18:06.859 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.859 CET [23616] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-12 21:18:06.863 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.863 CET [23616] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-12 21:18:06.867 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.867 CET [23616] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-12 21:18:06.871 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.871 CET [23616] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-12 21:18:06.875 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.875 CET [23616] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-12 21:18:06.879 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.879 CET [23616] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-12 21:18:06.883 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.883 CET [23616] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-12 21:18:06.888 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.888 CET [23616] SENTENCIA:  DROP ROLE Administrador;
+2024-12-12 21:18:06.892 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.892 CET [23616] SENTENCIA:  DROP ROLE Gestor;
+2024-12-12 21:18:06.896 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.896 CET [23616] SENTENCIA:  DROP ROLE Cliente;
+2024-12-12 21:18:06.900 CET [23616] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:18:06.900 CET [23616] SENTENCIA:  DROP ROLE Invitado;
+2024-12-12 21:22:49.246 CET [22288] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-12 21:22:49.246 CET [22288] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-12-12 21:22:58.975 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 21:24:45.191 CET [21540] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-12 21:24:45.191 CET [21540] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-12-12 21:25:42.085 CET [11584] LOG:  checkpoint completo: escritos 1487 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=162.965 s, sync=0.137 s, total=163.111 s; archivos sincronizados=389, más largo=0.001 s, promedio=0.001 s; distancia=9973 kB, estimación=9973 kB; lsn=0/72645110, lsn de redo=0/726450D8
+2024-12-12 21:26:09.622 CET [38656] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-12 21:26:09.622 CET [38656] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-12-12 21:27:27.042 CET [33788] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-12 21:27:27.042 CET [33788] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-12-12 21:27:32.317 CET [32212] FATAL:  la autentificación password falló para el usuario «pepe»
+2024-12-12 21:27:32.317 CET [32212] DETALLE:  No existe el rol «pepe».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:30:31.750 CET [28548] FATAL:  la autentificación password falló para el usuario «s»
+2024-12-12 21:30:31.750 CET [28548] DETALLE:  No existe el rol «s».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:31:03.793 CET [34864] FATAL:  la autentificación password falló para el usuario «s»
+2024-12-12 21:31:03.793 CET [34864] DETALLE:  No existe el rol «s».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-12 21:32:39.462 CET [16664] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-12 21:32:39.462 CET [16664] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-12-12 21:35:13.172 CET [17884] ERROR:  error de sintaxis en o cerca de «)» en carácter 41
+2024-12-12 21:35:13.172 CET [17884] SENTENCIA:  INSERT INTO tienda.Grupos VALUES (nose, )
+2024-12-12 21:37:29.097 CET [24108] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-12-12 21:37:29.097 CET [24108] DETALLE:  La fila que falla contiene (yoake, 1987, nose, null).
+2024-12-12 21:37:29.097 CET [24108] SENTENCIA:  INSERT INTO tienda.Discos VALUES ('yoake', 1987, 'nose', NULL)
+2024-12-12 21:37:58.133 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 21:38:00.016 CET [11584] LOG:  checkpoint completo: escritos 18 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=1.867 s, sync=0.010 s, total=1.884 s; archivos sincronizados=15, más largo=0.002 s, promedio=0.001 s; distancia=14 kB, estimación=8977 kB; lsn=0/72648B30, lsn de redo=0/72648AF8
+2024-12-12 21:40:50.479 CET [41328] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-12-12 21:40:50.479 CET [41328] DETALLE:  La fila que falla contiene (yoake, 1987, nose, http://portada.es).
+2024-12-12 21:40:50.479 CET [41328] SENTENCIA:  INSERT INTO tienda.Discos VALUES ('yoake', 1987, 'nose', 'http://portada.es')
+2024-12-12 21:42:56.568 CET [10704] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-12 21:42:58.021 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 21:42:58.574 CET [11584] LOG:  checkpoint completo: escritos 6 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.543 s, sync=0.004 s, total=0.554 s; archivos sincronizados=6, más largo=0.001 s, promedio=0.001 s; distancia=8 kB, estimación=8080 kB; lsn=0/7264AE68, lsn de redo=0/7264AE30
+2024-12-12 21:43:27.811 CET [26708] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-12-12 21:43:27.811 CET [26708] DETALLE:  La fila que falla contiene (Yoake, 1987, nose, http://portada.es).
+2024-12-12 21:43:27.811 CET [26708] SENTENCIA:  INSERT INTO tienda.Discos VALUES ('Yoake', 1987, 'nose', 'http://portada.es')
+2024-12-12 21:44:18.843 CET [26708] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-12 21:44:18.843 CET [26708] SENTENCIA:  SELECT * FROM tienda.Grupos WHERE nombre = 'nose'
+2024-12-12 21:44:44.563 CET [26708] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-12 21:45:17.810 CET [11584] LOG:  empezando checkpoint: immediate force wait
+2024-12-12 21:45:17.820 CET [11584] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.010 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=18 kB, estimación=7274 kB; lsn=0/7264F7C8, lsn de redo=0/7264F790
+2024-12-12 21:46:09.792 CET [42424] ERROR:  el nuevo registro para la relación «discos» viola la restricción «check» «discos_enlace_portada_check»
+2024-12-12 21:46:09.792 CET [42424] DETALLE:  La fila que falla contiene (Yoake, 1987, nose, http://portada.es).
+2024-12-12 21:46:09.792 CET [42424] SENTENCIA:  INSERT INTO tienda.Discos VALUES ('Yoake', 1987, 'nose', 'http://portada.es')
+2024-12-12 21:50:17.821 CET [11584] LOG:  empezando checkpoint: time
+2024-12-12 21:53:01.594 CET [11584] LOG:  checkpoint completo: escritos 1494 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=163.617 s, sync=0.146 s, total=163.774 s; archivos sincronizados=389, más largo=0.002 s, promedio=0.001 s; distancia=9981 kB, estimación=9981 kB; lsn=0/7300EDA8, lsn de redo=0/7300ED70
+2024-12-12 23:53:19.477 CET [11584] LOG:  apagando
+2024-12-12 23:53:19.479 CET [11584] LOG:  empezando checkpoint: shutdown immediate
+2024-12-12 23:53:19.486 CET [11584] LOG:  checkpoint completo: escritos 0 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.009 s; archivos sincronizados=0, más largo=0.000 s, promedio=0.000 s; distancia=0 kB, estimación=8983 kB; lsn=0/7300EE58, lsn de redo=0/7300EE58

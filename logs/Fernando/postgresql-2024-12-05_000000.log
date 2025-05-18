@@ -1,0 +1,4 @@
+2024-12-06 22:13:45.875 CET [10868] ERROR:  cancelando la sentencia debido a una petición del usuario
+2024-12-06 22:13:45.894 CET [10408] LOG:  apagando
+2024-12-06 22:13:45.896 CET [10408] LOG:  empezando checkpoint: shutdown immediate
+2024-12-06 22:13:45.907 CET [10408] LOG:  checkpoint completo: escritos 0 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.014 s; archivos sincronizados=0, más largo=0.000 s, promedio=0.000 s; distancia=0 kB, estimación=8991 kB; lsn=0/680F4198, lsn de redo=0/680F4198

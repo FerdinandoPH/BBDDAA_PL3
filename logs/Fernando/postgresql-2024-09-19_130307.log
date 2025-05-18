@@ -1,0 +1,185 @@
+2024-09-19 13:03:07.779 CEST [15584] LOG:  el sistema de bases de datos fue interrumpido; última vez en funcionamiento en 2024-09-19 12:46:30 CEST
+2024-09-19 13:03:08.903 CEST [15584] LOG:  el sistema de bases de datos no fue apagado apropiadamente; se está efectuando la recuperación automática
+2024-09-19 13:03:08.910 CEST [15584] LOG:  redo comienza en 0/15DA0F0
+2024-09-19 13:03:08.910 CEST [15584] LOG:  largo de registro no válido en 0/15DA1D8: se esperaba al menos 24, se obtuvo 0
+2024-09-19 13:03:08.910 CEST [15584] LOG:  redo listo en 0/15DA1A0 utilización del sistema: CPU: usuario: 0.00 s, sistema: 0.00 s, transcurrido: 0.00 s
+2024-09-19 13:03:08.919 CEST [15568] LOG:  empezando checkpoint: end-of-recovery immediate wait
+2024-09-19 13:03:08.934 CEST [15568] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.019 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=0 kB, estimación=0 kB; lsn=0/15DA1D8, lsn de redo=0/15DA1D8
+2024-09-19 13:05:40.036 CEST [24040] WARNING:  ya hay una transacción en curso
+2024-09-19 13:08:08.935 CEST [15568] LOG:  empezando checkpoint: time
+2024-09-19 13:08:12.643 CEST [15568] LOG:  checkpoint completo: escritos 35 búfers (0.2%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=3.688 s, sync=0.015 s, total=3.709 s; archivos sincronizados=30, más largo=0.001 s, promedio=0.001 s; distancia=121 kB, estimación=121 kB; lsn=0/15F8678, lsn de redo=0/15F8640
+2024-09-19 13:20:30.010 CEST [3344] ERROR:  error de sintaxis en o cerca de «CREATE» en carácter 22
+2024-09-19 13:20:30.010 CEST [3344] SENTENCIA:  CREATE DATABASE cine
+	CREATE DATABASE cine;
+2024-09-19 13:21:05.798 CEST [3344] ERROR:  error de sintaxis en o cerca de «CREATE» en carácter 22
+2024-09-19 13:21:05.798 CEST [3344] SENTENCIA:  CREATE DATABASE cine
+	CREATE DATABASE cine;
+2024-09-19 13:23:08.665 CEST [15568] LOG:  empezando checkpoint: time
+2024-09-19 13:23:49.005 CEST [3344] ERROR:  no existe la columna «cine» en carácter 8
+2024-09-19 13:23:49.005 CEST [3344] SENTENCIA:  SELECT cine;
+2024-09-19 13:23:53.202 CEST [3344] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:23:53.202 CEST [3344] SENTENCIA:  select cine;
+2024-09-19 13:24:25.116 CEST [15568] LOG:  checkpoint completo: escritos 711 búfers (4.3%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=76.443 s, sync=0.003 s, total=76.452 s; archivos sincronizados=7, más largo=0.001 s, promedio=0.001 s; distancia=4559 kB, estimación=4559 kB; lsn=0/1A89D58, lsn de redo=0/1A6C590
+2024-09-19 13:24:25.121 CEST [15568] LOG:  empezando checkpoint: immediate force wait
+2024-09-19 13:24:25.147 CEST [15568] LOG:  checkpoint completo: escritos 27 búfers (0.2%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.011 s, sync=0.010 s, total=0.026 s; archivos sincronizados=23, más largo=0.001 s, promedio=0.001 s; distancia=118 kB, estimación=4115 kB; lsn=0/1A89E08, lsn de redo=0/1A89DD0
+2024-09-19 13:24:56.520 CEST [3344] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:24:56.520 CEST [3344] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:24:56.520 CEST [3344] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E',', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:25:05.347 CEST [15568] LOG:  empezando checkpoint: immediate force wait
+2024-09-19 13:25:05.401 CEST [15568] LOG:  checkpoint completo: escritos 34 búfers (0.2%); 1 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.010 s, sync=0.012 s, total=0.054 s; archivos sincronizados=29, más largo=0.001 s, promedio=0.001 s; distancia=4692 kB, estimación=4692 kB; lsn=0/1F1F128, lsn de redo=0/1F1F0F0
+2024-09-19 13:25:45.581 CEST [3344] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:25:45.581 CEST [3344] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:25:45.581 CEST [3344] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E',', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:25:45.588 CEST [3344] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:25:45.588 CEST [3344] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:25:45.590 CEST [3344] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:25:45.590 CEST [3344] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:29:10.319 CEST [3344] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:29:10.319 CEST [3344] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:29:10.319 CEST [3344] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E',', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:29:10.326 CEST [3344] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:29:10.326 CEST [3344] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:29:10.329 CEST [3344] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:29:10.329 CEST [3344] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:29:39.394 CEST [15568] LOG:  empezando checkpoint: immediate force wait
+2024-09-19 13:29:39.407 CEST [15568] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4560 kB, estimación=4679 kB; lsn=0/2393378, lsn de redo=0/2393340
+2024-09-19 13:29:59.407 CEST [6236] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:29:59.407 CEST [6236] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:29:59.407 CEST [6236] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E',', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:29:59.413 CEST [6236] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:29:59.413 CEST [6236] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:29:59.415 CEST [6236] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:29:59.415 CEST [6236] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:30:39.769 CEST [6236] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:30:39.769 CEST [6236] SENTENCIA:  SELECT n.nspname as "Schema",
+	  c.relname as "Name",
+	  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 't' THEN 'TOAST table' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as "Type",
+	  pg_catalog.pg_get_userbyid(c.relowner) as "Owner"
+	FROM pg_catalog.pg_class c
+	     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+	     LEFT JOIN pg_catalog.pg_am am ON am.oid = c.relam
+	WHERE c.relkind IN ('r','p','v','m','S','f','')
+	      AND n.nspname <> 'pg_catalog'
+	      AND n.nspname !~ '^pg_toast'
+	      AND n.nspname <> 'information_schema'
+	  AND pg_catalog.pg_table_is_visible(c.oid)
+	ORDER BY 1,2;
+2024-09-19 13:34:39.421 CEST [15568] LOG:  empezando checkpoint: time
+2024-09-19 13:36:25.188 CEST [15568] LOG:  checkpoint completo: escritos 975 búfers (6.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=105.663 s, sync=0.099 s, total=105.767 s; archivos sincronizados=309, más largo=0.001 s, promedio=0.001 s; distancia=4599 kB, estimación=4671 kB; lsn=0/2811710, lsn de redo=0/2810FA8
+2024-09-19 13:36:28.034 CEST [6236] ERROR:  error de sintaxis en o cerca de «TEXT» en carácter 69
+2024-09-19 13:36:28.034 CEST [6236] SENTENCIA:  CREATE TABLE IF NOT EXISTS cine.peliculas(
+	     a    ,titulo        TEXT 
+	    ,generos       TEXT
+	    ,puntuacion    TEXT
+	    ,duracion      TEXT
+	    ,idioma        TEXT
+	    ,calificacion  TEXT
+	);
+2024-09-19 13:36:44.251 CEST [6236] WARNING:  ya hay una transacción en curso
+2024-09-19 13:37:56.478 CEST [15568] LOG:  empezando checkpoint: immediate force wait
+2024-09-19 13:37:56.486 CEST [15568] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.008 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=134 kB, estimación=4217 kB; lsn=0/2832858, lsn de redo=0/2832820
+2024-09-19 13:42:04.217 CEST [21712] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:42:04.217 CEST [21712] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:42:04.217 CEST [21712] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E',', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:42:04.223 CEST [21712] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:42:04.223 CEST [21712] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:42:04.225 CEST [21712] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:42:04.225 CEST [21712] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:42:56.487 CEST [15568] LOG:  empezando checkpoint: time
+2024-09-19 13:42:57.104 CEST [21712] WARNING:  no hay una transacción en curso
+2024-09-19 13:43:03.006 CEST [21712] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:43:03.006 CEST [21712] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:43:03.006 CEST [21712] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E'\t', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:43:03.014 CEST [21712] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:43:03.014 CEST [21712] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:43:03.017 CEST [21712] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:43:03.017 CEST [21712] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:43:27.694 CEST [21712] WARNING:  no hay una transacción en curso
+2024-09-19 13:43:56.758 CEST [15568] LOG:  checkpoint completo: escritos 558 búfers (3.4%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=60.264 s, sync=0.002 s, total=60.272 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4599 kB, estimación=4599 kB; lsn=0/2CD1CA0, lsn de redo=0/2CB0670
+2024-09-19 13:43:56.762 CEST [15568] LOG:  empezando checkpoint: immediate force wait
+2024-09-19 13:43:56.770 CEST [15568] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.009 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=133 kB, estimación=4152 kB; lsn=0/2CD1D50, lsn de redo=0/2CD1D18
+2024-09-19 13:44:02.754 CEST [3580] FATAL:  no existe la base de datos «cine,»
+2024-09-19 13:44:22.754 CEST [11088] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:44:22.754 CEST [11088] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:44:22.754 CEST [11088] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E'\t', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:44:22.760 CEST [11088] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:44:22.760 CEST [11088] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:44:22.762 CEST [11088] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:44:22.762 CEST [11088] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:44:26.904 CEST [11088] WARNING:  no hay una transacción en curso
+2024-09-19 13:46:47.740 CEST [11088] ERROR:  datos extra después de la última columna esperada
+2024-09-19 13:46:47.740 CEST [11088] CONTEXTO:  COPY peliculas, línea 2: «tt5231420	The Talent	2013	Action,Comedy,Drama,Romance	vi	113	Tri (Harry Lu) is the only son in a pre...»
+2024-09-19 13:46:47.740 CEST [11088] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E'\t', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:46:47.748 CEST [11088] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:46:47.748 CEST [11088] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:46:47.752 CEST [11088] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:46:47.752 CEST [11088] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:48:24.500 CEST [11088] ERROR:  faltan datos en la columna «año»
+2024-09-19 13:48:24.500 CEST [11088] CONTEXTO:  COPY peliculas, línea 2: «2022,Z-O-M-B-I-E-S 3,Family Musical Romance,5.3,88 mins,en,NULL»
+2024-09-19 13:48:24.500 CEST [11088] SENTENCIA:  COPY  cine.peliculas FROM STDIN WITH (FORMAT csv, HEADER, DELIMITER E'\t', NULL 'NULL', ENCODING 'UTF-8');
+2024-09-19 13:48:24.503 CEST [11088] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:48:24.503 CEST [11088] SENTENCIA:  SELECT
+	    count(*) as Número_de_peliculas
+	    FROM cine.peliculas                                                            -- from peliculas
+	    ;
+2024-09-19 13:48:24.506 CEST [11088] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-09-19 13:48:24.506 CEST [11088] SENTENCIA:  SELECT
+	    *
+	    FROM cine.peliculas                                                            -- from peliculas
+	    WHERE peliculas.idioma='es' 
+	;
+2024-09-19 13:48:56.785 CEST [15568] LOG:  empezando checkpoint: time
+2024-09-19 13:50:43.032 CEST [15568] LOG:  checkpoint completo: escritos 977 búfers (6.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=106.125 s, sync=0.113 s, total=106.247 s; archivos sincronizados=321, más largo=0.001 s, promedio=0.001 s; distancia=4685 kB, estimación=4685 kB; lsn=0/31AD5F8, lsn de redo=0/3165338
+2024-09-19 13:53:56.045 CEST [15568] LOG:  empezando checkpoint: time
+2024-09-19 13:53:57.903 CEST [15568] LOG:  checkpoint completo: escritos 18 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=1.849 s, sync=0.004 s, total=1.859 s; archivos sincronizados=6, más largo=0.001 s, promedio=0.001 s; distancia=290 kB, estimación=4246 kB; lsn=0/31ADC68, lsn de redo=0/31ADC30
+2024-09-19 17:26:08.059 CEST [15568] LOG:  empezando checkpoint: time
+2024-09-19 17:26:10.217 CEST [15568] LOG:  checkpoint completo: escritos 21 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=2.145 s, sync=0.006 s, total=2.158 s; archivos sincronizados=10, más largo=0.001 s, promedio=0.001 s; distancia=21 kB, estimación=3823 kB; lsn=0/31B30C8, lsn de redo=0/31B3090

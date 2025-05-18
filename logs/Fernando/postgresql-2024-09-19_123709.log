@@ -1,0 +1,7 @@
+2024-09-19 12:37:09.012 CEST [5516] LOG:  iniciando PostgreSQL 16.4, compiled by Visual C++ build 1940, 64-bit
+2024-09-19 12:37:09.013 CEST [5516] LOG:  escuchando en la dirección IPv6 «::», port 5432
+2024-09-19 12:37:09.013 CEST [5516] LOG:  escuchando en la dirección IPv4 «0.0.0.0», port 5432
+2024-09-19 12:37:09.052 CEST [2432] LOG:  el sistema de bases de datos fue apagado en 2024-09-19 12:37:08 CEST
+2024-09-19 12:37:09.091 CEST [5516] LOG:  el sistema de bases de datos está listo para aceptar conexiones
+2024-09-19 12:37:47.356 CEST [20632] FATAL:  no existe el rol «perez»
+2024-09-19 12:37:53.517 CEST [24524] FATAL:  no existe el rol «perez»

@@ -1,0 +1,18 @@
+[09066309P 08134385K]  2025-05-17 20:56:59.574 CESTLOG:  el sistema de bases de datos fue interrumpido; última vez en funcionamiento en 2025-05-17 20:42:49 CEST
+[09066309P 08134385K]  2025-05-17 20:57:01.141 CESTLOG:  comenzando proceso de recuperación
+[09066309P 08134385K]  2025-05-17 20:57:01.142 CESTLOG:  iniciando recuperación de backup con LSN de redo D8/9C000028, LSN de checkpoint D8/9C000060, en timeline 1
+[09066309P 08134385K]  2025-05-17 20:57:01.180 CESTLOG:  se ha restaurado el archivo «00000001000000D80000009C» desde el área de archivado
+[09066309P 08134385K]  2025-05-17 20:57:01.201 CESTLOG:  redo comienza en D8/9C000028
+[09066309P 08134385K]  2025-05-17 20:57:01.203 CESTLOG:  se completó la recuperación de backup con LSN de redo D8/9C000028 y LSN de término D8/9C000138
+[09066309P 08134385K]  2025-05-17 20:57:01.203 CESTLOG:  el estado de recuperación consistente fue alcanzado en D8/9C000138
+[09066309P 08134385K]  2025-05-17 20:57:01.246 CESTLOG:  se ha restaurado el archivo «00000001000000D80000009D» desde el área de archivado
+[09066309P 08134385K]  2025-05-17 20:57:01.310 CESTLOG:  largo de registro no válido en D8/9E0000A0: se esperaba al menos 24, se obtuvo 0
+[09066309P 08134385K]  2025-05-17 20:57:01.310 CESTLOG:  redo listo en D8/9E000028 utilización del sistema: CPU: usuario: 0.00 s, sistema: 0.03 s, transcurrido: 0.11 s
+[09066309P 08134385K]  2025-05-17 20:57:01.310 CESTLOG:  última transacción completada al tiempo de registro 2025-05-17 20:48:36.089128+02
+[09066309P 08134385K]  2025-05-17 20:57:01.335 CESTLOG:  seleccionado nuevo ID de timeline: 2
+[09066309P 08134385K]  2025-05-17 20:57:01.397 CESTLOG:  recuperación completa
+[09066309P 08134385K]  2025-05-17 20:57:01.401 CESTLOG:  empezando checkpoint: end-of-recovery immediate wait
+[09066309P 08134385K]  2025-05-17 20:57:01.477 CESTLOG:  checkpoint completo: escritos 73 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.039 s, sync=0.027 s, total=0.080 s; archivos sincronizados=55, más largo=0.002 s, promedio=0.001 s; distancia=32768 kB, estimación=32768 kB; lsn=D8/9E0000A0, lsn de redo=D8/9E0000A0
+[09066309P 08134385K] ::1(55561) 2025-05-17 20:57:44.562 CESTLOG:  duración: 6.478 ms  sentencia: SELECT * FROM tabla1;
+[09066309P 08134385K] ::1(55561) 2025-05-18 00:14:23.715 CESTLOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	

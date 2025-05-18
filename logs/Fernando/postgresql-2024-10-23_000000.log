@@ -1,0 +1,201 @@
+2024-10-24 13:06:30.513 CEST [10900] FATAL:  la autentificación password falló para el usuario «perez»
+2024-10-24 13:06:30.513 CEST [10900] DETALLE:  No existe el rol «perez».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-10-24 13:28:17.695 CEST [13080] ERROR:  error de sintaxis en o cerca de «NOT» en carácter 20
+2024-10-24 13:28:17.695 CEST [13080] SENTENCIA:  CREATE DATABASE IF NOT EXISTS tienda_db;
+2024-10-24 13:28:17.753 CEST [22988] FATAL:  no existe la base de datos «tienda_db»
+2024-10-24 13:29:46.305 CEST [6636] ERROR:  error de sintaxis en o cerca de «FOREIGN» en carácter 190
+2024-10-24 13:29:46.305 CEST [6636] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Ediciones(
+	    disco_id TEXT,
+	    anno_edicion TEXT,
+	    pais TEXT,
+	    formato TEXT,
+	    PRIMARY KEY (disco_id, anno_edicion, pais, formato)
+	    FOREIGN KEY (disco_id) REFERENCES Discos(id)
+	);
+2024-10-24 13:29:46.313 CEST [6636] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:29:46.313 CEST [6636] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion)
+	);
+2024-10-24 13:29:46.319 CEST [6636] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:29:46.319 CEST [6636] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UsuarioTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    edicion_anno_edicion TEXT,
+	    edicion_pais TEXT,
+	    edicion_formato TEXT,
+	    estado TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_anno_edicion, edicion_pais, edicion_formato),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_anno_edicion, edicion_pais, edicion_formato) REFERENCES Ediciones(anno_edicion, pais, formato)
+	);
+2024-10-24 13:29:46.324 CEST [6636] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:29:46.324 CEST [6636] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Canciones(
+	    disco_id TEXT,
+	    titulo TEXT,
+	    duracion TEXT,
+	    PRIMARY KEY (disco_id, titulo),
+	    FOREIGN KEY (disco_id) REFERENCES Discos(id)
+	);
+2024-10-24 13:30:23.832 CEST [6636] ERROR:  error de sintaxis en o cerca de «,» en carácter 9
+2024-10-24 13:30:23.832 CEST [6636] SENTENCIA:  ROLLBACK,
+	ROLLBACK;
+2024-10-24 13:31:27.215 CEST [15116] LOG:  empezando checkpoint: time
+2024-10-24 13:31:45.746 CEST [15116] LOG:  checkpoint completo: escritos 174 búfers (1.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=18.521 s, sync=0.003 s, total=18.532 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4588 kB, estimación=4588 kB; lsn=0/362FA00, lsn de redo=0/362F210
+2024-10-24 13:31:45.747 CEST [15116] LOG:  empezando checkpoint: immediate force wait
+2024-10-24 13:31:45.755 CEST [15116] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=2 kB, estimación=4130 kB; lsn=0/362FAB0, lsn de redo=0/362FA78
+2024-10-24 13:31:51.527 CEST [34896] ERROR:  no existe la relación «discos»
+2024-10-24 13:31:51.527 CEST [34896] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Ediciones(
+	    disco_id TEXT,
+	    anno_edicion TEXT,
+	    pais TEXT,
+	    formato TEXT,
+	    PRIMARY KEY (disco_id, anno_edicion, pais, formato),
+	    FOREIGN KEY (disco_id) REFERENCES Discos(id)
+	);
+2024-10-24 13:31:51.533 CEST [34896] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:31:51.533 CEST [34896] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion)
+	);
+2024-10-24 13:31:51.538 CEST [34896] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:31:51.538 CEST [34896] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UsuarioTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    edicion_anno_edicion TEXT,
+	    edicion_pais TEXT,
+	    edicion_formato TEXT,
+	    estado TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_anno_edicion, edicion_pais, edicion_formato),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_anno_edicion, edicion_pais, edicion_formato) REFERENCES Ediciones(anno_edicion, pais, formato)
+	);
+2024-10-24 13:31:51.544 CEST [34896] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:31:51.544 CEST [34896] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Canciones(
+	    disco_id TEXT,
+	    titulo TEXT,
+	    duracion TEXT,
+	    PRIMARY KEY (disco_id, titulo),
+	    FOREIGN KEY (disco_id) REFERENCES Discos(id)
+	);
+2024-10-24 13:32:50.316 CEST [15116] LOG:  empezando checkpoint: immediate force wait
+2024-10-24 13:32:50.326 CEST [15116] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.010 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4608 kB, estimación=4608 kB; lsn=0/3AAFB10, lsn de redo=0/3AAFAD8
+2024-10-24 13:33:00.509 CEST [6084] ERROR:  no hay restricción unique que coincida con las columnas dadas en la tabla referida «discos»
+2024-10-24 13:33:00.509 CEST [6084] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Ediciones(
+	    disco_id TEXT,
+	    anno_edicion TEXT,
+	    pais TEXT,
+	    formato TEXT,
+	    PRIMARY KEY (disco_id, anno_edicion, pais, formato),
+	    FOREIGN KEY (disco_id) REFERENCES tienda_temporal.Discos(id)
+	);
+2024-10-24 13:33:00.516 CEST [6084] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:33:00.516 CEST [6084] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion)
+	);
+2024-10-24 13:33:00.522 CEST [6084] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:33:00.522 CEST [6084] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UsuarioTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    edicion_anno_edicion TEXT,
+	    edicion_pais TEXT,
+	    edicion_formato TEXT,
+	    estado TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_anno_edicion, edicion_pais, edicion_formato),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_anno_edicion, edicion_pais, edicion_formato) REFERENCES Ediciones(anno_edicion, pais, formato)
+	);
+2024-10-24 13:33:00.528 CEST [6084] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:33:00.528 CEST [6084] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Canciones(
+	    disco_id TEXT,
+	    titulo TEXT,
+	    duracion TEXT,
+	    PRIMARY KEY (disco_id, titulo),
+	    FOREIGN KEY (disco_id) REFERENCES Discos(id)
+	);
+2024-10-24 13:36:20.387 CEST [15116] LOG:  empezando checkpoint: immediate force wait
+2024-10-24 13:36:20.399 CEST [15116] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4608 kB, estimación=4608 kB; lsn=0/3F2FC40, lsn de redo=0/3F2FC08
+2024-10-24 13:36:22.388 CEST [20696] ERROR:  no existe la relación «usuarios»
+2024-10-24 13:36:22.388 CEST [20696] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion)
+	);
+2024-10-24 13:36:22.396 CEST [20696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:36:22.396 CEST [20696] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UsuarioTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    edicion_anno_edicion TEXT,
+	    edicion_pais TEXT,
+	    edicion_formato TEXT,
+	    estado TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_anno_edicion, edicion_pais, edicion_formato),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_anno_edicion, edicion_pais, edicion_formato) REFERENCES Ediciones(anno_edicion, pais, formato)
+	);
+2024-10-24 13:36:22.400 CEST [20696] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:36:22.400 CEST [20696] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Canciones(
+	    disco_id TEXT,
+	    titulo TEXT,
+	    duracion TEXT,
+	    PRIMARY KEY (disco_id, titulo),
+	    FOREIGN KEY (disco_id) REFERENCES Discos(id)
+	);
+2024-10-24 13:37:22.166 CEST [15116] LOG:  empezando checkpoint: immediate force wait
+2024-10-24 13:37:22.180 CEST [15116] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4628 kB, estimación=4628 kB; lsn=0/43B4F68, lsn de redo=0/43B4F30
+2024-10-24 13:37:25.391 CEST [15624] ERROR:  no hay restricción unique que coincida con las columnas dadas en la tabla referida «ediciones»
+2024-10-24 13:37:25.391 CEST [15624] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UsuarioTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    edicion_anno_edicion TEXT,
+	    edicion_pais TEXT,
+	    edicion_formato TEXT,
+	    estado TEXT,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_anno_edicion, edicion_pais, edicion_formato),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda_temporal.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda_temporal.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_anno_edicion, edicion_pais, edicion_formato) REFERENCES tienda_temporal.Ediciones(anno_edicion, pais, formato)
+	);
+2024-10-24 13:37:25.401 CEST [15624] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-24 13:37:25.401 CEST [15624] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Canciones(
+	    disco_id TEXT,
+	    titulo TEXT,
+	    duracion TEXT,
+	    PRIMARY KEY (disco_id, titulo),
+	    FOREIGN KEY (disco_id) REFERENCES tienda_temporal.Discos(id)
+	);
+2024-10-24 13:42:22.190 CEST [15116] LOG:  empezando checkpoint: time
+2024-10-24 13:42:45.904 CEST [15116] LOG:  checkpoint completo: escritos 222 búfers (1.4%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=23.706 s, sync=0.003 s, total=23.715 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4665 kB, estimación=4665 kB; lsn=0/4843E98, lsn de redo=0/48433F8
+2024-10-24 13:42:45.905 CEST [15116] LOG:  empezando checkpoint: immediate force wait
+2024-10-24 13:42:45.913 CEST [15116] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.008 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=2 kB, estimación=4198 kB; lsn=0/4843F48, lsn de redo=0/4843F10
+2024-10-24 13:44:28.863 CEST [19732] ERROR:  error de sintaxis en o cerca de «dt» en carácter 1
+2024-10-24 13:44:28.863 CEST [19732] SENTENCIA:  dt tienda_db.tienda_temporal.*
+	ROLLBACK;
+2024-10-24 17:06:10.499 CEST [15116] LOG:  empezando checkpoint: time
+2024-10-24 17:07:56.280 CEST [15116] LOG:  checkpoint completo: escritos 984 búfers (6.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=105.630 s, sync=0.134 s, total=105.782 s; archivos sincronizados=325, más largo=0.001 s, promedio=0.001 s; distancia=4691 kB, estimación=4691 kB; lsn=0/4CD8E30, lsn de redo=0/4CD8DF8

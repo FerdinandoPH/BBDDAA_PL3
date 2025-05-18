@@ -1,0 +1,1870 @@
+2024-12-05 12:12:26.084 CET [38520] FATAL:  la autentificación password falló para el usuario «juangomez»
+2024-12-05 12:12:26.084 CET [38520] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 12:12:34.354 CET [21112] FATAL:  no existe la base de datos «juangomez»
+2024-12-05 12:13:02.297 CET [40492] FATAL:  no existe la base de datos «lorenasaez»
+2024-12-05 12:13:45.935 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 12:13:46.499 CET [10408] LOG:  checkpoint completo: escritos 5 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.549 s, sync=0.005 s, total=0.566 s; archivos sincronizados=4, más largo=0.002 s, promedio=0.002 s; distancia=0 kB, estimación=0 kB; lsn=0/5F81AE80, lsn de redo=0/5F81AE48
+2024-12-05 12:15:41.472 CET [15232] ERROR:  no existe la relación «udesead» en carácter 15
+2024-12-05 12:15:41.472 CET [15232] SENTENCIA:  SELECT * FROM UDeseaD;
+2024-12-05 12:38:45.534 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 12:38:48.296 CET [10408] LOG:  checkpoint completo: escritos 26 búfers (0.2%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=2.742 s, sync=0.012 s, total=2.762 s; archivos sincronizados=19, más largo=0.002 s, promedio=0.001 s; distancia=123 kB, estimación=123 kB; lsn=0/5F839AB0, lsn de redo=0/5F839A78
+2024-12-05 12:39:33.287 CET [37956] ERROR:  el rol «administrador» ya existe
+2024-12-05 12:39:33.287 CET [37956] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-12-05 12:39:33.292 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.292 CET [37956] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-05 12:39:33.298 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.298 CET [37956] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-05 12:39:33.304 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.304 CET [37956] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-05 12:39:33.309 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.309 CET [37956] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-05 12:39:33.314 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.314 CET [37956] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-05 12:39:33.319 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.319 CET [37956] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-12-05 12:39:33.324 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.324 CET [37956] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-05 12:39:33.329 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.329 CET [37956] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-05 12:39:33.334 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.334 CET [37956] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-05 12:39:33.339 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.339 CET [37956] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-05 12:39:33.346 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.346 CET [37956] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-12-05 12:39:33.352 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.352 CET [37956] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-12-05 12:39:33.357 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.357 CET [37956] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-12-05 12:39:33.363 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.363 CET [37956] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-05 12:39:33.369 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.369 CET [37956] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-05 12:39:33.374 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.374 CET [37956] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 12:39:33.380 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.380 CET [37956] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-05 12:39:33.385 CET [37956] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 12:39:33.385 CET [37956] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-05 12:43:45.307 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 12:43:49.959 CET [10408] LOG:  checkpoint completo: escritos 43 búfers (0.3%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=4.630 s, sync=0.017 s, total=4.653 s; archivos sincronizados=28, más largo=0.002 s, promedio=0.001 s; distancia=221 kB, estimación=221 kB; lsn=0/5F871190, lsn de redo=0/5F871158
+2024-12-05 12:54:03.844 CET [24628] ERROR:  una cadena separada por $ está inconclusa en o cerca de «$$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	\q
+	ROLLBACK;» en carácter 4
+2024-12-05 12:54:03.844 CET [24628] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	\q
+	ROLLBACK;
+2024-12-05 12:56:40.417 CET [19664] ERROR:  error de sintaxis en o cerca de «SELECT» en carácter 43
+2024-12-05 12:56:40.417 CET [19664] CONSULTA:  CREATE TRIGGER tg_auditoria_utienee AFTER SELECT OR INSERT OR UPDATE OR DELETE ON tienda.utienee FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();
+2024-12-05 12:56:40.417 CET [19664] CONTEXTO:  función PL/pgSQL inline_code_block en la línea 10 en EXECUTE
+2024-12-05 12:56:40.417 CET [19664] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER SELECT OR INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 12:58:45.974 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 12:58:51.824 CET [10408] LOG:  checkpoint completo: escritos 54 búfers (0.3%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=5.822 s, sync=0.021 s, total=5.850 s; archivos sincronizados=46, más largo=0.001 s, promedio=0.001 s; distancia=224 kB, estimación=224 kB; lsn=0/5F8A9518, lsn de redo=0/5F8A94E0
+2024-12-05 13:01:27.801 CET [11828] ERROR:  ya existe un trigger «tg_auditoria_utienee» para la relación «utienee»
+2024-12-05 13:01:27.801 CET [11828] CONTEXTO:  sentencia SQL: «CREATE TRIGGER tg_auditoria_utienee AFTER INSERT OR UPDATE OR DELETE ON tienda.utienee FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();»
+	función PL/pgSQL inline_code_block en la línea 10 en EXECUTE
+2024-12-05 13:01:27.801 CET [11828] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:03:43.022 CET [11828] ERROR:  no se puede eliminar función fn_auditoria() porque otros objetos dependen de él
+2024-12-05 13:03:43.022 CET [11828] DETALLE:  disparador tg_auditoria_utienee en tabla tienda.utienee depende de función fn_auditoria()
+	disparador tg_auditoria_udesead en tabla tienda.udesead depende de función fn_auditoria()
+	disparador tg_auditoria_ediciones en tabla tienda.ediciones depende de función fn_auditoria()
+	disparador tg_auditoria_usuarios en tabla tienda.usuarios depende de función fn_auditoria()
+	disparador tg_auditoria_grupos en tabla tienda.grupos depende de función fn_auditoria()
+	disparador tg_auditoria_discos en tabla tienda.discos depende de función fn_auditoria()
+	disparador tg_auditoria_canciones en tabla tienda.canciones depende de función fn_auditoria()
+	disparador tg_auditoria_generosdisco en tabla tienda.generosdisco depende de función fn_auditoria()
+2024-12-05 13:03:43.022 CET [11828] HINT:  Use DROP ... CASCADE para eliminar además los objetos dependientes.
+2024-12-05 13:03:43.022 CET [11828] CONTEXTO:  sentencia SQL: «DROP FUNCTION IF EXISTS fn_auditoria()»
+	función PL/pgSQL inline_code_block en la línea 11 en sentencia SQL
+2024-12-05 13:03:43.022 CET [11828] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    -- Borrar todos los triggers en el esquema 'tienda'
+	    FOR r IN (SELECT tgname, relname FROM pg_trigger JOIN pg_class ON pg_trigger.tgrelid = pg_class.oid WHERE relnamespace = 'tienda'::regnamespace) LOOP
+	        EXECUTE format('DROP TRIGGER IF EXISTS %I ON %I;', r.tgname, r.relname);
+	    END LOOP;
+	
+	    -- Borrar la función 'fn_auditoria' si existe
+	    DROP FUNCTION IF EXISTS fn_auditoria();
+	END $$;
+2024-12-05 13:03:43.334 CET [26640] ERROR:  ya existe un trigger «tg_auditoria_utienee» para la relación «utienee»
+2024-12-05 13:03:43.334 CET [26640] CONTEXTO:  sentencia SQL: «CREATE TRIGGER tg_auditoria_utienee AFTER INSERT OR UPDATE OR DELETE ON tienda.utienee FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();»
+	función PL/pgSQL inline_code_block en la línea 10 en EXECUTE
+2024-12-05 13:03:43.334 CET [26640] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:03:45.841 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 13:03:49.053 CET [10408] LOG:  checkpoint completo: escritos 30 búfers (0.2%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=3.195 s, sync=0.012 s, total=3.213 s; archivos sincronizados=22, más largo=0.001 s, promedio=0.001 s; distancia=93 kB, estimación=211 kB; lsn=0/5F8C0CF8, lsn de redo=0/5F8C0CC0
+2024-12-05 13:05:17.986 CET [26640] WARNING:  no hay una transacción en curso
+2024-12-05 13:05:29.927 CET [26640] ERROR:  no se puede eliminar función fn_auditoria() porque otros objetos dependen de él
+2024-12-05 13:05:29.927 CET [26640] DETALLE:  disparador tg_auditoria_utienee en tabla tienda.utienee depende de función fn_auditoria()
+	disparador tg_auditoria_udesead en tabla tienda.udesead depende de función fn_auditoria()
+	disparador tg_auditoria_ediciones en tabla tienda.ediciones depende de función fn_auditoria()
+	disparador tg_auditoria_usuarios en tabla tienda.usuarios depende de función fn_auditoria()
+	disparador tg_auditoria_grupos en tabla tienda.grupos depende de función fn_auditoria()
+	disparador tg_auditoria_discos en tabla tienda.discos depende de función fn_auditoria()
+	disparador tg_auditoria_canciones en tabla tienda.canciones depende de función fn_auditoria()
+	disparador tg_auditoria_generosdisco en tabla tienda.generosdisco depende de función fn_auditoria()
+2024-12-05 13:05:29.927 CET [26640] HINT:  Use DROP ... CASCADE para eliminar además los objetos dependientes.
+2024-12-05 13:05:29.927 CET [26640] CONTEXTO:  sentencia SQL: «DROP FUNCTION IF EXISTS fn_auditoria()»
+	función PL/pgSQL inline_code_block en la línea 11 en sentencia SQL
+2024-12-05 13:05:29.927 CET [26640] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    -- Borrar todos los triggers en el esquema 'tienda'
+	    FOR r IN (SELECT tgname, relname FROM pg_trigger JOIN pg_class ON pg_trigger.tgrelid = pg_class.oid WHERE relnamespace = 'tienda'::regnamespace) LOOP
+	        EXECUTE format('DROP TRIGGER IF EXISTS %I ON %I;', r.tgname, r.relname);
+	    END LOOP;
+	
+	    -- Borrar la función 'fn_auditoria' si existe
+	    DROP FUNCTION IF EXISTS fn_auditoria();
+	END $$;
+2024-12-05 13:05:30.217 CET [37556] ERROR:  ya existe un trigger «tg_auditoria_utienee» para la relación «utienee»
+2024-12-05 13:05:30.217 CET [37556] CONTEXTO:  sentencia SQL: «CREATE TRIGGER tg_auditoria_utienee AFTER INSERT OR UPDATE OR DELETE ON tienda.utienee FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();»
+	función PL/pgSQL inline_code_block en la línea 10 en EXECUTE
+2024-12-05 13:05:30.217 CET [37556] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:05:55.545 CET [37556] ERROR:  no se puede eliminar disparador RI_ConstraintTrigger_a_52913 en tabla grupos porque restricción «discos_grupo_nombre_fkey» en tabla discos lo requiere
+2024-12-05 13:05:55.545 CET [37556] HINT:  Puede eliminar restricción «discos_grupo_nombre_fkey» en tabla discos en su lugar.
+2024-12-05 13:05:55.545 CET [37556] CONTEXTO:  sentencia SQL: «DROP TRIGGER IF EXISTS "RI_ConstraintTrigger_a_52913" ON grupos;»
+	función PL/pgSQL inline_code_block en la línea 8 en EXECUTE
+2024-12-05 13:05:55.545 CET [37556] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    -- Borrar todos los triggers en el esquema 'tienda'
+	    SET SCHEMA 'tienda';
+	    FOR r IN (SELECT tgname, relname FROM pg_trigger JOIN pg_class ON pg_trigger.tgrelid = pg_class.oid WHERE relnamespace = 'tienda'::regnamespace) LOOP
+	        EXECUTE format('DROP TRIGGER IF EXISTS %I ON %I;', r.tgname, r.relname);
+	    END LOOP;
+	
+	    -- Borrar la función 'fn_auditoria' si existe
+	    DROP FUNCTION IF EXISTS fn_auditoria();
+	END $$;
+2024-12-05 13:05:55.644 CET [30472] ERROR:  ya existe un trigger «tg_auditoria_utienee» para la relación «utienee»
+2024-12-05 13:05:55.644 CET [30472] CONTEXTO:  sentencia SQL: «CREATE TRIGGER tg_auditoria_utienee AFTER INSERT OR UPDATE OR DELETE ON tienda.utienee FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();»
+	función PL/pgSQL inline_code_block en la línea 10 en EXECUTE
+2024-12-05 13:05:55.644 CET [30472] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:07:13.909 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:07:13.919 CET [10408] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=28 kB, estimación=193 kB; lsn=0/5F8C7FA8, lsn de redo=0/5F8C7F70
+2024-12-05 13:10:19.412 CET [37472] ERROR:  permiso denegado al esquema tienda en carácter 13
+2024-12-05 13:10:19.412 CET [37472] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('juangomez','Lavatory',2012,2012,'Russia','Cd','VG+');
+2024-12-05 13:10:34.472 CET [37472] ERROR:  permiso denegado al esquema tienda en carácter 15
+2024-12-05 13:10:34.472 CET [37472] SENTENCIA:  SELECT * FROM tienda.UTieneE;
+2024-12-05 13:11:27.728 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:11:27.745 CET [10408] LOG:  checkpoint completo: escritos 5 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.006 s, sync=0.003 s, total=0.018 s; archivos sincronizados=5, más largo=0.001 s, promedio=0.001 s; distancia=9868 kB, estimación=9868 kB; lsn=0/6026B150, lsn de redo=0/6026B118
+2024-12-05 13:11:28.836 CET [31020] ERROR:  el rol «administrador» ya existe
+2024-12-05 13:11:28.836 CET [31020] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-12-05 13:11:28.839 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.839 CET [31020] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-05 13:11:28.845 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.845 CET [31020] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-05 13:11:28.850 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.850 CET [31020] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-05 13:11:28.855 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.855 CET [31020] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-05 13:11:28.861 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.861 CET [31020] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-05 13:11:28.866 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.866 CET [31020] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-12-05 13:11:28.871 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.871 CET [31020] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-05 13:11:28.876 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.876 CET [31020] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-05 13:11:28.881 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.881 CET [31020] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-05 13:11:28.885 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.885 CET [31020] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-05 13:11:28.890 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.890 CET [31020] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-12-05 13:11:28.895 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.895 CET [31020] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-12-05 13:11:28.900 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.900 CET [31020] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-12-05 13:11:28.905 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.905 CET [31020] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-05 13:11:28.909 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.909 CET [31020] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-05 13:11:28.914 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.914 CET [31020] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:11:28.919 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.919 CET [31020] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-05 13:11:28.923 CET [31020] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:11:28.923 CET [31020] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-05 13:11:50.550 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:11:50.565 CET [10408] LOG:  checkpoint completo: escritos 7 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.004 s, total=0.015 s; archivos sincronizados=7, más largo=0.002 s, promedio=0.001 s; distancia=9879 kB, estimación=9879 kB; lsn=0/60C10FC8, lsn de redo=0/60C10F90
+2024-12-05 13:12:00.792 CET [1352] FATAL:  la autentificación password falló para el usuario «juangomez»
+2024-12-05 13:12:00.792 CET [1352] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 13:12:17.294 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:12:17.319 CET [10408] LOG:  checkpoint completo: escritos 20 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.008 s, sync=0.008 s, total=0.025 s; archivos sincronizados=17, más largo=0.001 s, promedio=0.001 s; distancia=9952 kB, estimación=9952 kB; lsn=0/615C9168, lsn de redo=0/615C9130
+2024-12-05 13:17:17.321 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 13:20:00.750 CET [10408] LOG:  checkpoint completo: escritos 1488 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=163.280 s, sync=0.144 s, total=163.430 s; archivos sincronizados=389, más largo=0.001 s, promedio=0.001 s; distancia=9956 kB, estimación=9956 kB; lsn=0/61F824E8, lsn de redo=0/61F824B0
+2024-12-05 13:26:49.410 CET [23004] ERROR:  permiso denegado al esquema public
+2024-12-05 13:26:49.410 CET [23004] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_auditoria() RETURNS TRIGGER AS $fn_auditoria$
+	  DECLARE
+	  --  no declaro nada porque no me hace falta...de hecho DECLARE podría haberlo omitido en éste caso
+	  BEGIN
+	  -- Se determina que acción a activado el trigger e inserta un nuevo valor en la tabla dependiendo
+	  -- del dicha acción
+	  -- Junto con la acción se escribe fecha y hora en la que se ha producido la acción
+	  --  IF TG_OP='INSERT' THEN
+	  --    INSERT INTO auditoria VALUES ('alta',current_timestamp);  -- Cuando hay una inserción
+	  --  ELSIF TG_OP='UPDATE'	THEN
+	  --    INSERT INTO auditoria VALUES ('modificación',current_timestamp); -- Cuando hay una modificación
+	  --  ELSIF TG_OP='DELETE' THEN
+	  --    INSERT INTO auditoria VALUES ('borrado',current_timestamp); -- Cuando hay un borrado
+	  --  END IF;	 
+	   INSERT INTO tienda.auditoria (tabla_afectada, accion, usuario, fecha)
+	   VALUES (TG_TABLE_NAME, TG_OP, session_user,current_timestamp); -- Cuando hay una inserción, modificación o borrado
+	   RETURN NULL;
+	  END;
+	$fn_auditoria$ LANGUAGE plpgsql;
+2024-12-05 13:26:49.414 CET [23004] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:26:49.414 CET [23004] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_gestionar_usuarios() RETURNS TRIGGER AS $fn_gestionar_usuarios$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      CREATE USER NEW.nombre_usuario WITH PASSWORD NEW.contrasena;
+	      GRANT Cliente TO NEW.nombre_usuario;
+	    ELSIF TG_OP='DELETE' THEN
+	      DROP USER OLD.nombre_usuario;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_gestionar_usuarios$ LANGUAGE plpgsql;
+2024-12-05 13:26:49.419 CET [23004] ERROR:  error de sintaxis en o cerca de «CRETE» en carácter 1
+2024-12-05 13:26:49.419 CET [23004] SENTENCIA:  CRETE OR REPLACE FUNCTION fn_tienes_lo_que_deseas() RETURNS TRIGGER AS $fn_tienes_lo_que_deseas$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      IF EXISTS (SELECT * FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion) THEN
+	        DELETE FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion;
+	      END IF;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_tienes_lo_que_deseas$ LANGUAGE plpgsql;
+2024-12-05 13:26:49.427 CET [23004] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:26:49.427 CET [23004] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:26:49.433 CET [23004] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:26:49.433 CET [23004] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:26:49.440 CET [23004] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:26:49.440 CET [23004] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:27:08.692 CET [38636] ERROR:  error de sintaxis en o cerca de «.» en carácter 161
+2024-12-05 13:27:08.692 CET [38636] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_gestionar_usuarios() RETURNS TRIGGER AS $fn_gestionar_usuarios$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      CREATE USER NEW.nombre_usuario WITH PASSWORD NEW.contrasena;
+	      GRANT Cliente TO NEW.nombre_usuario;
+	    ELSIF TG_OP='DELETE' THEN
+	      DROP USER OLD.nombre_usuario;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_gestionar_usuarios$ LANGUAGE plpgsql;
+2024-12-05 13:27:08.702 CET [38636] ERROR:  error de sintaxis en o cerca de «CRETE» en carácter 1
+2024-12-05 13:27:08.702 CET [38636] SENTENCIA:  CRETE OR REPLACE FUNCTION fn_tienes_lo_que_deseas() RETURNS TRIGGER AS $fn_tienes_lo_que_deseas$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      IF EXISTS (SELECT * FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion) THEN
+	        DELETE FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion;
+	      END IF;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_tienes_lo_que_deseas$ LANGUAGE plpgsql;
+2024-12-05 13:27:08.710 CET [38636] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:27:08.710 CET [38636] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:27:08.717 CET [38636] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:27:08.717 CET [38636] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:27:08.723 CET [38636] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:27:08.723 CET [38636] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:27:17.778 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 13:27:18.549 CET [10408] LOG:  checkpoint completo: escritos 8 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.759 s, sync=0.005 s, total=0.771 s; archivos sincronizados=8, más largo=0.001 s, promedio=0.001 s; distancia=38 kB, estimación=8965 kB; lsn=0/61F8BE80, lsn de redo=0/61F8BE48
+2024-12-05 13:27:26.011 CET [4964] ERROR:  error de sintaxis en o cerca de «.» en carácter 161
+2024-12-05 13:27:26.011 CET [4964] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_gestionar_usuarios() RETURNS TRIGGER AS $fn_gestionar_usuarios$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      CREATE USER NEW.nombre_usuario WITH PASSWORD NEW.contrasena;
+	      GRANT Cliente TO NEW.nombre_usuario;
+	    ELSIF TG_OP='DELETE' THEN
+	      DROP USER OLD.nombre_usuario;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_gestionar_usuarios$ LANGUAGE plpgsql;
+2024-12-05 13:27:26.019 CET [4964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:27:26.019 CET [4964] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_tienes_lo_que_deseas() RETURNS TRIGGER AS $fn_tienes_lo_que_deseas$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      IF EXISTS (SELECT * FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion) THEN
+	        DELETE FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion;
+	      END IF;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_tienes_lo_que_deseas$ LANGUAGE plpgsql;
+2024-12-05 13:27:26.026 CET [4964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:27:26.026 CET [4964] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:27:26.032 CET [4964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:27:26.032 CET [4964] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:27:26.039 CET [4964] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:27:26.039 CET [4964] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:28:43.098 CET [23148] ERROR:  error de sintaxis en o cerca de «.» en carácter 259
+2024-12-05 13:28:43.098 CET [23148] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_gestionar_usuarios() RETURNS TRIGGER AS $fn_gestionar_usuarios$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      EXECUTE format('CREATE USER %I WITH PASSWORD %L', NEW.nombre_usuario, NEW.contrasena);
+	      GRANT Cliente TO NEW.nombre_usuario;
+	    ELSIF TG_OP='DELETE' THEN
+	      DROP USER OLD.nombre_usuario;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_gestionar_usuarios$ LANGUAGE plpgsql;
+2024-12-05 13:28:43.106 CET [23148] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:43.106 CET [23148] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_tienes_lo_que_deseas() RETURNS TRIGGER AS $fn_tienes_lo_que_deseas$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      IF EXISTS (SELECT * FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion) THEN
+	        DELETE FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion;
+	      END IF;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_tienes_lo_que_deseas$ LANGUAGE plpgsql;
+2024-12-05 13:28:43.112 CET [23148] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:43.112 CET [23148] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:28:43.120 CET [23148] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:43.120 CET [23148] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:28:43.126 CET [23148] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:43.126 CET [23148] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:28:54.225 CET [8152] ERROR:  error de sintaxis en o cerca de «.» en carácter 347
+2024-12-05 13:28:54.225 CET [8152] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_gestionar_usuarios() RETURNS TRIGGER AS $fn_gestionar_usuarios$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      EXECUTE format('CREATE USER %I WITH PASSWORD %L', NEW.nombre_usuario, NEW.contrasena);
+	      EXECUTE format('GRANT Cliente TO %I', NEW.nombre_usuario);
+	    ELSIF TG_OP='DELETE' THEN
+	      DROP USER OLD.nombre_usuario;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_gestionar_usuarios$ LANGUAGE plpgsql;
+2024-12-05 13:28:54.232 CET [8152] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:54.232 CET [8152] SENTENCIA:  CREATE OR REPLACE FUNCTION fn_tienes_lo_que_deseas() RETURNS TRIGGER AS $fn_tienes_lo_que_deseas$
+	  DECLARE
+	  BEGIN
+	    IF TG_OP='INSERT' THEN
+	      IF EXISTS (SELECT * FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion) THEN
+	        DELETE FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion;
+	      END IF;
+	    END IF;
+	    RETURN NULL;
+	  END;
+	$fn_tienes_lo_que_deseas$ LANGUAGE plpgsql;
+2024-12-05 13:28:54.239 CET [8152] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:54.239 CET [8152] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:28:54.245 CET [8152] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:54.245 CET [8152] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:28:54.251 CET [8152] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:28:54.251 CET [8152] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:30:01.875 CET [40724] ERROR:  el nuevo registro para la relación «usuarios» viola la restricción «check» «usuarios_email_check»
+2024-12-05 13:30:01.875 CET [40724] DETALLE:  La fila que falla contiene (fulanito, fuls01, fulano@gmail.com, A).
+2024-12-05 13:30:01.875 CET [40724] SENTENCIA:  INSERT INTO tienda.usuarios VALUES('fulanito','fuls01','fulano@gmail.com','A');
+2024-12-05 13:30:51.999 CET [40724] ERROR:  el nuevo registro para la relación «usuarios» viola la restricción «check» «usuarios_email_check»
+2024-12-05 13:30:51.999 CET [40724] DETALLE:  La fila que falla contiene (fulanito, fuls01, fulano@gmail.com, A).
+2024-12-05 13:30:51.999 CET [40724] SENTENCIA:  INSERT INTO tienda.usuarios VALUES('fulanito','fuls01','fulano@gmail.com','A');
+2024-12-05 13:31:57.779 CET [40724] ERROR:  el nuevo registro para la relación «usuarios» viola la restricción «check» «usuarios_email_check»
+2024-12-05 13:31:57.779 CET [40724] DETALLE:  La fila que falla contiene (fulanito, fuls01, juangomez@example.com, A).
+2024-12-05 13:31:57.779 CET [40724] SENTENCIA:  INSERT INTO tienda.usuarios VALUES('fulanito','fuls01','juangomez@example.com','A');
+2024-12-05 13:32:17.551 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 13:32:20.096 CET [10408] LOG:  checkpoint completo: escritos 24 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=2.530 s, sync=0.008 s, total=2.546 s; archivos sincronizados=17, más largo=0.001 s, promedio=0.001 s; distancia=87 kB, estimación=8077 kB; lsn=0/61FA1DC8, lsn de redo=0/61FA1D90
+2024-12-05 13:33:09.597 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:33:09.608 CET [10408] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.011 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=7 kB, estimación=7270 kB; lsn=0/61FA3D40, lsn de redo=0/61FA3D08
+2024-12-05 13:33:10.186 CET [40872] ERROR:  error de sintaxis en o cerca de «ON» en carácter 288
+2024-12-05 13:33:10.186 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Usuarios (
+	    nombre_usuario TEXT,
+	    email TEXT NOT NULL, --CHECK (email ~ '^[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ._%+-]+@[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ.-]+\.[A-Za-z]{2,}$'),
+	    nombre TEXT NOT NULL,
+	    contrasena TEXT NOT NULL,
+	    PRIMARY KEY (nombre_usuario),
+	    ON UPDATE RESTRICT
+	);
+2024-12-05 13:33:10.212 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.212 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Grupos (
+	    nombre TEXT,
+	    enlace TEXT CHECK (enlace ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    PRIMARY KEY (nombre)
+	);
+2024-12-05 13:33:10.217 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.217 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo TEXT,
+	    anno_publicacion INTEGER,
+	    enlace_portada TEXT CHECK (enlace_portada IS NULL OR enlace_portada ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    grupo_nombre TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-12-05 13:33:10.222 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.222 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    genero TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:10.228 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.228 CET [40872] SENTENCIA:  CREATE TYPE formato_enum AS ENUM ('CD', 'Vinyl', 'Cassette', 'Flexi-disc', 'CDr', 'Box Set', 'File', 'All Media', 'Lathe Cut', 'DVD', 'VHS', 'Reel-To-Reel', 'Shellac', 'Blu-ray', 'SACD', '8-Track Cartridge', 'Floppy Disk');
+2024-12-05 13:33:10.232 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.232 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais TEXT,
+	    anno_edicion INTEGER,
+	    formato formato_enum,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:10.237 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.237 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion >= 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:10.241 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.241 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:10.247 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.247 CET [40872] SENTENCIA:  CREATE TYPE estado_enum AS ENUM ('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F');
+2024-12-05 13:33:10.251 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.251 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais TEXT,
+	    edicion_anno_edicion INTEGER,
+	    edicion_formato formato_enum,
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno_edicion, edicion_formato,id),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno_edicion, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-12-05 13:33:10.259 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.259 CET [40872] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-12-05 13:33:10.264 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.264 CET [40872] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:10.269 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.269 CET [40872] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:10.274 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.274 CET [40872] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-12-05 13:33:10.279 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.279 CET [40872] SENTENCIA:  DELETE FROM tienda_temporal.Canciones
+	USING tienda_temporal.Canciones c2
+	WHERE tienda_temporal.Canciones.titulo = c2.titulo
+	  AND tienda_temporal.Canciones.disco_id = c2.disco_id
+	  AND tienda_temporal.Canciones.duracion IS NULL
+	  AND c2.duracion IS NOT NULL;
+2024-12-05 13:33:10.284 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.284 CET [40872] SENTENCIA:  DELETE FROM tienda_temporal.Canciones a
+	USING tienda_temporal.Canciones b
+	WHERE a.ctid < b.ctid
+	  AND a.titulo = b.titulo
+	  AND a.disco_id = b.disco_id
+	  AND a.duracion IS NOT NULL
+	  AND b.duracion IS NOT NULL;
+2024-12-05 13:33:10.289 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.289 CET [40872] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT DISTINCT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-12-05 13:33:10.293 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.293 CET [40872] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:10.297 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.297 CET [40872] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:33:10.302 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.302 CET [40872] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-12-05 13:33:10.307 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.307 CET [40872] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:33:10.311 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.311 CET [40872] SENTENCIA:  CREATE OR REPLACE VIEW tienda.vista_usuarios_cliente AS
+	SELECT *
+	FROM tienda.usuarios
+	WHERE nombre_usuario = session_user;
+2024-12-05 13:33:10.316 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.316 CET [40872] SENTENCIA:  SET search_path= tienda;
+2024-12-05 13:33:10.320 CET [40872] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.320 CET [40872] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.auditoria (
+	    id SERIAL PRIMARY KEY,
+	    tabla_afectada TEXT,
+	    accion TEXT,
+	    usuario TEXT,
+	    fecha TIMESTAMP
+	);
+2024-12-05 13:33:10.386 CET [24652] ERROR:  no existe la relación «tienda.usuarios» en carácter 28
+2024-12-05 13:33:10.386 CET [24652] CONSULTA:  SELECT nombre_usuario FROM tienda.Usuarios
+2024-12-05 13:33:10.386 CET [24652] CONTEXTO:  función PL/pgSQL inline_code_block en la línea 5 en bucle FOR en torno a filas de un SELECT
+2024-12-05 13:33:10.386 CET [24652] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:10.400 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.400 CET [24652] SENTENCIA:  DROP USER forastero;
+2024-12-05 13:33:10.406 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.406 CET [24652] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-05 13:33:10.412 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.412 CET [24652] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-05 13:33:10.417 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.417 CET [24652] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-05 13:33:10.423 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.423 CET [24652] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-05 13:33:10.427 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.427 CET [24652] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-05 13:33:10.432 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.432 CET [24652] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-05 13:33:10.437 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.437 CET [24652] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-05 13:33:10.443 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.443 CET [24652] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-05 13:33:10.451 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.451 CET [24652] SENTENCIA:  DROP ROLE Administrador;
+2024-12-05 13:33:10.457 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.457 CET [24652] SENTENCIA:  DROP ROLE Gestor;
+2024-12-05 13:33:10.463 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.463 CET [24652] SENTENCIA:  DROP ROLE Cliente;
+2024-12-05 13:33:10.468 CET [24652] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.468 CET [24652] SENTENCIA:  DROP ROLE Invitado;
+2024-12-05 13:33:10.531 CET [5796] ERROR:  el rol «administrador» ya existe
+2024-12-05 13:33:10.531 CET [5796] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-12-05 13:33:10.534 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.534 CET [5796] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-05 13:33:10.539 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.539 CET [5796] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-05 13:33:10.545 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.545 CET [5796] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-05 13:33:10.550 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.550 CET [5796] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-05 13:33:10.556 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.556 CET [5796] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-05 13:33:10.561 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.561 CET [5796] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-12-05 13:33:10.567 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.567 CET [5796] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-05 13:33:10.572 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.572 CET [5796] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-05 13:33:10.578 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.578 CET [5796] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-05 13:33:10.584 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.584 CET [5796] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-05 13:33:10.589 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.589 CET [5796] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-12-05 13:33:10.593 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.593 CET [5796] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-12-05 13:33:10.598 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.598 CET [5796] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-12-05 13:33:10.603 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.603 CET [5796] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-05 13:33:10.608 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.608 CET [5796] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-05 13:33:10.613 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.613 CET [5796] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:10.617 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.617 CET [5796] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-05 13:33:10.622 CET [5796] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.622 CET [5796] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-05 13:33:10.683 CET [8908] ERROR:  no existe el esquema «tienda»
+2024-12-05 13:33:10.683 CET [8908] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:33:10.687 CET [8908] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.687 CET [8908] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:33:10.692 CET [8908] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:10.692 CET [8908] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:20.819 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:33:20.835 CET [10408] LOG:  checkpoint completo: escritos 7 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.004 s, total=0.016 s; archivos sincronizados=7, más largo=0.001 s, promedio=0.001 s; distancia=6011 kB, estimación=7144 kB; lsn=0/625829D8, lsn de redo=0/625829A0
+2024-12-05 13:33:21.369 CET [23684] ERROR:  error de sintaxis en o cerca de «ON» en carácter 288
+2024-12-05 13:33:21.369 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Usuarios (
+	    nombre_usuario TEXT,
+	    email TEXT NOT NULL, --CHECK (email ~ '^[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ._%+-]+@[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ.-]+\.[A-Za-z]{2,}$'),
+	    nombre TEXT NOT NULL,
+	    contrasena TEXT NOT NULL,
+	    PRIMARY KEY (nombre_usuario),
+	    ON UPDATE RESTRICT
+	);
+2024-12-05 13:33:21.401 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.401 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Grupos (
+	    nombre TEXT,
+	    enlace TEXT CHECK (enlace ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    PRIMARY KEY (nombre)
+	);
+2024-12-05 13:33:21.409 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.409 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo TEXT,
+	    anno_publicacion INTEGER,
+	    enlace_portada TEXT CHECK (enlace_portada IS NULL OR enlace_portada ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    grupo_nombre TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-12-05 13:33:21.417 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.417 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    genero TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:21.425 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.425 CET [23684] SENTENCIA:  CREATE TYPE formato_enum AS ENUM ('CD', 'Vinyl', 'Cassette', 'Flexi-disc', 'CDr', 'Box Set', 'File', 'All Media', 'Lathe Cut', 'DVD', 'VHS', 'Reel-To-Reel', 'Shellac', 'Blu-ray', 'SACD', '8-Track Cartridge', 'Floppy Disk');
+2024-12-05 13:33:21.432 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.432 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais TEXT,
+	    anno_edicion INTEGER,
+	    formato formato_enum,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:21.439 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.439 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion >= 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:21.445 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.445 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:21.451 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.451 CET [23684] SENTENCIA:  CREATE TYPE estado_enum AS ENUM ('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F');
+2024-12-05 13:33:21.457 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.457 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais TEXT,
+	    edicion_anno_edicion INTEGER,
+	    edicion_formato formato_enum,
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno_edicion, edicion_formato,id),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno_edicion, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-12-05 13:33:21.466 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.466 CET [23684] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-12-05 13:33:21.472 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.472 CET [23684] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:21.481 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.481 CET [23684] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:21.489 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.489 CET [23684] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-12-05 13:33:21.495 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.495 CET [23684] SENTENCIA:  DELETE FROM tienda_temporal.Canciones
+	USING tienda_temporal.Canciones c2
+	WHERE tienda_temporal.Canciones.titulo = c2.titulo
+	  AND tienda_temporal.Canciones.disco_id = c2.disco_id
+	  AND tienda_temporal.Canciones.duracion IS NULL
+	  AND c2.duracion IS NOT NULL;
+2024-12-05 13:33:21.500 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.500 CET [23684] SENTENCIA:  DELETE FROM tienda_temporal.Canciones a
+	USING tienda_temporal.Canciones b
+	WHERE a.ctid < b.ctid
+	  AND a.titulo = b.titulo
+	  AND a.disco_id = b.disco_id
+	  AND a.duracion IS NOT NULL
+	  AND b.duracion IS NOT NULL;
+2024-12-05 13:33:21.505 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.505 CET [23684] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT DISTINCT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-12-05 13:33:21.510 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.510 CET [23684] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:21.515 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.515 CET [23684] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:33:21.521 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.521 CET [23684] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-12-05 13:33:21.526 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.526 CET [23684] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:33:21.531 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.531 CET [23684] SENTENCIA:  CREATE OR REPLACE VIEW tienda.vista_usuarios_cliente AS
+	SELECT *
+	FROM tienda.usuarios
+	WHERE nombre_usuario = session_user;
+2024-12-05 13:33:21.536 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.536 CET [23684] SENTENCIA:  SET search_path= tienda;
+2024-12-05 13:33:21.541 CET [23684] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.541 CET [23684] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.auditoria (
+	    id SERIAL PRIMARY KEY,
+	    tabla_afectada TEXT,
+	    accion TEXT,
+	    usuario TEXT,
+	    fecha TIMESTAMP
+	);
+2024-12-05 13:33:21.604 CET [40012] ERROR:  no existe la relación «tienda.usuarios» en carácter 28
+2024-12-05 13:33:21.604 CET [40012] CONSULTA:  SELECT nombre_usuario FROM tienda.Usuarios
+2024-12-05 13:33:21.604 CET [40012] CONTEXTO:  función PL/pgSQL inline_code_block en la línea 5 en bucle FOR en torno a filas de un SELECT
+2024-12-05 13:33:21.604 CET [40012] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:21.617 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.617 CET [40012] SENTENCIA:  DROP USER forastero;
+2024-12-05 13:33:21.623 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.623 CET [40012] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-05 13:33:21.628 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.628 CET [40012] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-05 13:33:21.634 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.634 CET [40012] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-05 13:33:21.639 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.639 CET [40012] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-05 13:33:21.644 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.644 CET [40012] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-05 13:33:21.648 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.648 CET [40012] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-05 13:33:21.653 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.653 CET [40012] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-05 13:33:21.658 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.658 CET [40012] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-05 13:33:21.663 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.663 CET [40012] SENTENCIA:  DROP ROLE Administrador;
+2024-12-05 13:33:21.668 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.668 CET [40012] SENTENCIA:  DROP ROLE Gestor;
+2024-12-05 13:33:21.673 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.673 CET [40012] SENTENCIA:  DROP ROLE Cliente;
+2024-12-05 13:33:21.678 CET [40012] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.678 CET [40012] SENTENCIA:  DROP ROLE Invitado;
+2024-12-05 13:33:21.739 CET [36472] ERROR:  el rol «administrador» ya existe
+2024-12-05 13:33:21.739 CET [36472] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-12-05 13:33:21.742 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.742 CET [36472] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-05 13:33:21.748 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.748 CET [36472] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-05 13:33:21.753 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.753 CET [36472] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-05 13:33:21.758 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.758 CET [36472] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-05 13:33:21.764 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.764 CET [36472] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-05 13:33:21.770 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.770 CET [36472] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-12-05 13:33:21.776 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.776 CET [36472] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-05 13:33:21.782 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.782 CET [36472] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-05 13:33:21.788 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.788 CET [36472] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-05 13:33:21.793 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.793 CET [36472] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-05 13:33:21.797 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.797 CET [36472] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-12-05 13:33:21.802 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.802 CET [36472] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-12-05 13:33:21.807 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.807 CET [36472] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-12-05 13:33:21.812 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.812 CET [36472] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-05 13:33:21.816 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.816 CET [36472] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-05 13:33:21.821 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.821 CET [36472] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:21.826 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.826 CET [36472] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-05 13:33:21.830 CET [36472] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.830 CET [36472] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-05 13:33:21.897 CET [30468] ERROR:  no existe el esquema «tienda»
+2024-12-05 13:33:21.897 CET [30468] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:33:21.900 CET [30468] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.900 CET [30468] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:33:21.907 CET [30468] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:21.907 CET [30468] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:55.038 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:33:55.054 CET [10408] LOG:  checkpoint completo: escritos 10 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.005 s, sync=0.006 s, total=0.016 s; archivos sincronizados=11, más largo=0.001 s, promedio=0.001 s; distancia=6021 kB, estimación=7032 kB; lsn=0/62B63F00, lsn de redo=0/62B63EC8
+2024-12-05 13:33:55.597 CET [2924] ERROR:  error de sintaxis en o cerca de «ON» en carácter 288
+2024-12-05 13:33:55.597 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Usuarios (
+	    nombre_usuario TEXT,
+	    email TEXT NOT NULL, --CHECK (email ~ '^[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ._%+-]+@[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ.-]+\.[A-Za-z]{2,}$'),
+	    nombre TEXT NOT NULL,
+	    contrasena TEXT NOT NULL,
+	    PRIMARY KEY (nombre_usuario),
+	    ON UPDATE RESTRICT
+	);
+2024-12-05 13:33:55.630 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.630 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Grupos (
+	    nombre TEXT,
+	    enlace TEXT CHECK (enlace ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    PRIMARY KEY (nombre)
+	);
+2024-12-05 13:33:55.636 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.636 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo TEXT,
+	    anno_publicacion INTEGER,
+	    enlace_portada TEXT CHECK (enlace_portada IS NULL OR enlace_portada ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    grupo_nombre TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-12-05 13:33:55.642 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.642 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    genero TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:55.648 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.648 CET [2924] SENTENCIA:  CREATE TYPE formato_enum AS ENUM ('CD', 'Vinyl', 'Cassette', 'Flexi-disc', 'CDr', 'Box Set', 'File', 'All Media', 'Lathe Cut', 'DVD', 'VHS', 'Reel-To-Reel', 'Shellac', 'Blu-ray', 'SACD', '8-Track Cartridge', 'Floppy Disk');
+2024-12-05 13:33:55.654 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.654 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais TEXT,
+	    anno_edicion INTEGER,
+	    formato formato_enum,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:55.659 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.659 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion >= 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:55.665 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.665 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:33:55.670 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.670 CET [2924] SENTENCIA:  CREATE TYPE estado_enum AS ENUM ('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F');
+2024-12-05 13:33:55.677 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.677 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais TEXT,
+	    edicion_anno_edicion INTEGER,
+	    edicion_formato formato_enum,
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno_edicion, edicion_formato,id),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno_edicion, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-12-05 13:33:55.685 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.685 CET [2924] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-12-05 13:33:55.690 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.690 CET [2924] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:55.696 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.696 CET [2924] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:55.703 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.703 CET [2924] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-12-05 13:33:55.709 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.709 CET [2924] SENTENCIA:  DELETE FROM tienda_temporal.Canciones
+	USING tienda_temporal.Canciones c2
+	WHERE tienda_temporal.Canciones.titulo = c2.titulo
+	  AND tienda_temporal.Canciones.disco_id = c2.disco_id
+	  AND tienda_temporal.Canciones.duracion IS NULL
+	  AND c2.duracion IS NOT NULL;
+2024-12-05 13:33:55.716 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.716 CET [2924] SENTENCIA:  DELETE FROM tienda_temporal.Canciones a
+	USING tienda_temporal.Canciones b
+	WHERE a.ctid < b.ctid
+	  AND a.titulo = b.titulo
+	  AND a.disco_id = b.disco_id
+	  AND a.duracion IS NOT NULL
+	  AND b.duracion IS NOT NULL;
+2024-12-05 13:33:55.722 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.722 CET [2924] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT DISTINCT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-12-05 13:33:55.728 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.728 CET [2924] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-12-05 13:33:55.735 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.735 CET [2924] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:33:55.742 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.742 CET [2924] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-12-05 13:33:55.748 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.748 CET [2924] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:33:55.755 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.755 CET [2924] SENTENCIA:  CREATE OR REPLACE VIEW tienda.vista_usuarios_cliente AS
+	SELECT *
+	FROM tienda.usuarios
+	WHERE nombre_usuario = session_user;
+2024-12-05 13:33:55.761 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.761 CET [2924] SENTENCIA:  SET search_path= tienda;
+2024-12-05 13:33:55.768 CET [2924] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.768 CET [2924] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.auditoria (
+	    id SERIAL PRIMARY KEY,
+	    tabla_afectada TEXT,
+	    accion TEXT,
+	    usuario TEXT,
+	    fecha TIMESTAMP
+	);
+2024-12-05 13:33:55.872 CET [29312] ERROR:  no existe la relación «tienda.usuarios» en carácter 28
+2024-12-05 13:33:55.872 CET [29312] CONSULTA:  SELECT nombre_usuario FROM tienda.Usuarios
+2024-12-05 13:33:55.872 CET [29312] CONTEXTO:  función PL/pgSQL inline_code_block en la línea 5 en bucle FOR en torno a filas de un SELECT
+2024-12-05 13:33:55.872 CET [29312] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:55.886 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.886 CET [29312] SENTENCIA:  DROP USER forastero;
+2024-12-05 13:33:55.892 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.892 CET [29312] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-05 13:33:55.898 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.898 CET [29312] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-05 13:33:55.904 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.904 CET [29312] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-05 13:33:55.910 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.910 CET [29312] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-05 13:33:55.915 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.915 CET [29312] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-05 13:33:55.919 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.919 CET [29312] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-05 13:33:55.923 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.923 CET [29312] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-05 13:33:55.927 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.927 CET [29312] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-05 13:33:55.932 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.932 CET [29312] SENTENCIA:  DROP ROLE Administrador;
+2024-12-05 13:33:55.936 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.936 CET [29312] SENTENCIA:  DROP ROLE Gestor;
+2024-12-05 13:33:55.940 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.940 CET [29312] SENTENCIA:  DROP ROLE Cliente;
+2024-12-05 13:33:55.944 CET [29312] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:55.944 CET [29312] SENTENCIA:  DROP ROLE Invitado;
+2024-12-05 13:33:56.005 CET [19776] ERROR:  el rol «administrador» ya existe
+2024-12-05 13:33:56.005 CET [19776] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-12-05 13:33:56.009 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.009 CET [19776] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-05 13:33:56.016 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.016 CET [19776] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-05 13:33:56.021 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.021 CET [19776] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-05 13:33:56.028 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.028 CET [19776] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-05 13:33:56.034 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.034 CET [19776] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-05 13:33:56.040 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.040 CET [19776] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-12-05 13:33:56.046 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.046 CET [19776] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-05 13:33:56.052 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.052 CET [19776] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-05 13:33:56.057 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.057 CET [19776] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-05 13:33:56.062 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.062 CET [19776] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-05 13:33:56.068 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.068 CET [19776] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-12-05 13:33:56.072 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.072 CET [19776] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-12-05 13:33:56.077 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.077 CET [19776] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-12-05 13:33:56.082 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.082 CET [19776] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-05 13:33:56.087 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.087 CET [19776] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-05 13:33:56.092 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.092 CET [19776] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:33:56.096 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.096 CET [19776] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-05 13:33:56.101 CET [19776] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.101 CET [19776] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-05 13:33:56.175 CET [30628] ERROR:  no existe el esquema «tienda»
+2024-12-05 13:33:56.175 CET [30628] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:33:56.179 CET [30628] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.179 CET [30628] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:33:56.184 CET [30628] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:33:56.184 CET [30628] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:34:18.229 CET [38452] FATAL:  la autentificación password falló para el usuario «postgres»
+2024-12-05 13:34:18.229 CET [38452] DETALLE:  La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 13:34:29.420 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:34:29.436 CET [10408] LOG:  checkpoint completo: escritos 6 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.016 s; archivos sincronizados=6, más largo=0.001 s, promedio=0.001 s; distancia=6011 kB, estimación=6930 kB; lsn=0/63142DC8, lsn de redo=0/63142D90
+2024-12-05 13:34:29.980 CET [36508] ERROR:  error de sintaxis en o cerca de «ON» en carácter 288
+2024-12-05 13:34:29.980 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Usuarios (
+	    nombre_usuario TEXT,
+	    email TEXT NOT NULL, --CHECK (email ~ '^[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ._%+-]+@[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ.-]+\.[A-Za-z]{2,}$'),
+	    nombre TEXT NOT NULL,
+	    contrasena TEXT NOT NULL,
+	    PRIMARY KEY (nombre_usuario),
+	    ON UPDATE RESTRICT
+	);
+2024-12-05 13:34:30.021 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.021 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Grupos (
+	    nombre TEXT,
+	    enlace TEXT CHECK (enlace ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    PRIMARY KEY (nombre)
+	);
+2024-12-05 13:34:30.030 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.030 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo TEXT,
+	    anno_publicacion INTEGER,
+	    enlace_portada TEXT CHECK (enlace_portada IS NULL OR enlace_portada ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    grupo_nombre TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-12-05 13:34:30.038 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.038 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    genero TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:34:30.044 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.044 CET [36508] SENTENCIA:  CREATE TYPE formato_enum AS ENUM ('CD', 'Vinyl', 'Cassette', 'Flexi-disc', 'CDr', 'Box Set', 'File', 'All Media', 'Lathe Cut', 'DVD', 'VHS', 'Reel-To-Reel', 'Shellac', 'Blu-ray', 'SACD', '8-Track Cartridge', 'Floppy Disk');
+2024-12-05 13:34:30.049 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.049 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais TEXT,
+	    anno_edicion INTEGER,
+	    formato formato_enum,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:34:30.055 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.055 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion >= 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:34:30.060 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.060 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:34:30.067 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.067 CET [36508] SENTENCIA:  CREATE TYPE estado_enum AS ENUM ('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F');
+2024-12-05 13:34:30.073 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.073 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais TEXT,
+	    edicion_anno_edicion INTEGER,
+	    edicion_formato formato_enum,
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno_edicion, edicion_formato,id),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno_edicion, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-12-05 13:34:30.081 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.081 CET [36508] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-12-05 13:34:30.086 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.086 CET [36508] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-12-05 13:34:30.090 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.090 CET [36508] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-12-05 13:34:30.095 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.095 CET [36508] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-12-05 13:34:30.100 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.100 CET [36508] SENTENCIA:  DELETE FROM tienda_temporal.Canciones
+	USING tienda_temporal.Canciones c2
+	WHERE tienda_temporal.Canciones.titulo = c2.titulo
+	  AND tienda_temporal.Canciones.disco_id = c2.disco_id
+	  AND tienda_temporal.Canciones.duracion IS NULL
+	  AND c2.duracion IS NOT NULL;
+2024-12-05 13:34:30.104 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.104 CET [36508] SENTENCIA:  DELETE FROM tienda_temporal.Canciones a
+	USING tienda_temporal.Canciones b
+	WHERE a.ctid < b.ctid
+	  AND a.titulo = b.titulo
+	  AND a.disco_id = b.disco_id
+	  AND a.duracion IS NOT NULL
+	  AND b.duracion IS NOT NULL;
+2024-12-05 13:34:30.109 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.109 CET [36508] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT DISTINCT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-12-05 13:34:30.113 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.113 CET [36508] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-12-05 13:34:30.118 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.118 CET [36508] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:34:30.123 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.123 CET [36508] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-12-05 13:34:30.128 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.128 CET [36508] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:34:30.132 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.132 CET [36508] SENTENCIA:  CREATE OR REPLACE VIEW tienda.vista_usuarios_cliente AS
+	SELECT *
+	FROM tienda.usuarios
+	WHERE nombre_usuario = session_user;
+2024-12-05 13:34:30.138 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.138 CET [36508] SENTENCIA:  SET search_path= tienda;
+2024-12-05 13:34:30.142 CET [36508] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.142 CET [36508] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.auditoria (
+	    id SERIAL PRIMARY KEY,
+	    tabla_afectada TEXT,
+	    accion TEXT,
+	    usuario TEXT,
+	    fecha TIMESTAMP
+	);
+2024-12-05 13:34:30.213 CET [38456] ERROR:  no existe la relación «tienda.usuarios» en carácter 28
+2024-12-05 13:34:30.213 CET [38456] CONSULTA:  SELECT nombre_usuario FROM tienda.Usuarios
+2024-12-05 13:34:30.213 CET [38456] CONTEXTO:  función PL/pgSQL inline_code_block en la línea 5 en bucle FOR en torno a filas de un SELECT
+2024-12-05 13:34:30.213 CET [38456] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:34:30.227 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.227 CET [38456] SENTENCIA:  DROP USER forastero;
+2024-12-05 13:34:30.233 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.233 CET [38456] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-05 13:34:30.239 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.239 CET [38456] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-05 13:34:30.247 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.247 CET [38456] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-05 13:34:30.253 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.253 CET [38456] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-05 13:34:30.258 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.258 CET [38456] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-05 13:34:30.265 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.265 CET [38456] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-05 13:34:30.273 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.273 CET [38456] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-05 13:34:30.282 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.282 CET [38456] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-05 13:34:30.292 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.292 CET [38456] SENTENCIA:  DROP ROLE Administrador;
+2024-12-05 13:34:30.301 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.301 CET [38456] SENTENCIA:  DROP ROLE Gestor;
+2024-12-05 13:34:30.310 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.310 CET [38456] SENTENCIA:  DROP ROLE Cliente;
+2024-12-05 13:34:30.319 CET [38456] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.319 CET [38456] SENTENCIA:  DROP ROLE Invitado;
+2024-12-05 13:34:30.404 CET [17160] ERROR:  el rol «administrador» ya existe
+2024-12-05 13:34:30.404 CET [17160] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-12-05 13:34:30.410 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.410 CET [17160] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-05 13:34:30.419 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.419 CET [17160] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-05 13:34:30.428 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.428 CET [17160] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-05 13:34:30.437 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.437 CET [17160] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-05 13:34:30.445 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.445 CET [17160] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-05 13:34:30.451 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.451 CET [17160] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-12-05 13:34:30.458 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.458 CET [17160] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-05 13:34:30.467 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.467 CET [17160] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-05 13:34:30.473 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.473 CET [17160] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-05 13:34:30.481 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.481 CET [17160] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-05 13:34:30.486 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.486 CET [17160] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-12-05 13:34:30.494 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.494 CET [17160] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-12-05 13:34:30.501 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.501 CET [17160] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-12-05 13:34:30.507 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.507 CET [17160] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-05 13:34:30.513 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.513 CET [17160] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-05 13:34:30.519 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.519 CET [17160] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:34:30.525 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.525 CET [17160] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-05 13:34:30.531 CET [17160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.531 CET [17160] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-05 13:34:30.607 CET [11252] ERROR:  no existe el esquema «tienda»
+2024-12-05 13:34:30.607 CET [11252] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:34:30.611 CET [11252] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.611 CET [11252] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:34:30.619 CET [11252] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:34:30.619 CET [11252] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:35:36.693 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:35:36.708 CET [10408] LOG:  checkpoint completo: escritos 6 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.005 s, sync=0.004 s, total=0.016 s; archivos sincronizados=6, más largo=0.001 s, promedio=0.001 s; distancia=6011 kB, estimación=6838 kB; lsn=0/63721D38, lsn de redo=0/63721D00
+2024-12-05 13:35:37.384 CET [8808] ERROR:  error de sintaxis en o cerca de «ON» en carácter 299
+2024-12-05 13:35:37.384 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Usuarios (
+	    nombre_usuario TEXT,
+	    email TEXT NOT NULL, --CHECK (email ~ '^[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ._%+-]+@[A-Za-z0-9áÁéÉíÍóÓúÚüÜñÑ.-]+\.[A-Za-z]{2,}$'),
+	    nombre TEXT NOT NULL,
+	    contrasena TEXT NOT NULL,
+	    PRIMARY KEY (nombre_usuario),
+	    MATCH FULL ON UPDATE RESTRICT
+	);
+2024-12-05 13:35:37.443 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.443 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Grupos (
+	    nombre TEXT,
+	    enlace TEXT CHECK (enlace ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    PRIMARY KEY (nombre)
+	);
+2024-12-05 13:35:37.454 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.454 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo TEXT,
+	    anno_publicacion INTEGER,
+	    enlace_portada TEXT CHECK (enlace_portada IS NULL OR enlace_portada ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    grupo_nombre TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-12-05 13:35:37.460 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.460 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    genero TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:35:37.467 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.467 CET [8808] SENTENCIA:  CREATE TYPE formato_enum AS ENUM ('CD', 'Vinyl', 'Cassette', 'Flexi-disc', 'CDr', 'Box Set', 'File', 'All Media', 'Lathe Cut', 'DVD', 'VHS', 'Reel-To-Reel', 'Shellac', 'Blu-ray', 'SACD', '8-Track Cartridge', 'Floppy Disk');
+2024-12-05 13:35:37.474 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.474 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais TEXT,
+	    anno_edicion INTEGER,
+	    formato formato_enum,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:35:37.481 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.481 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion >= 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:35:37.488 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.488 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-12-05 13:35:37.495 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.495 CET [8808] SENTENCIA:  CREATE TYPE estado_enum AS ENUM ('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F');
+2024-12-05 13:35:37.502 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.502 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais TEXT,
+	    edicion_anno_edicion INTEGER,
+	    edicion_formato formato_enum,
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre_usuario, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno_edicion, edicion_formato,id),
+	    FOREIGN KEY (usuario_nombre_usuario) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno_edicion, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-12-05 13:35:37.510 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.510 CET [8808] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-12-05 13:35:37.516 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.516 CET [8808] SENTENCIA:  INSERT INTO tienda.Grupos
+	SELECT DISTINCT grupo_nombre, grupo_enlace
+	FROM tienda_temporal.Discos;
+2024-12-05 13:35:37.524 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.524 CET [8808] SENTENCIA:  INSERT INTO tienda.Discos
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, enlace_portada, grupo_nombre
+	FROM tienda_temporal.Discos;
+2024-12-05 13:35:37.531 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.531 CET [8808] SENTENCIA:  INSERT INTO tienda.Ediciones
+	SELECT e.pais, e.anno_edicion::INTEGER, e.formato::formato_enum, d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Ediciones e
+	JOIN tienda_temporal.Discos d ON e.disco_id = d.id;
+2024-12-05 13:35:37.540 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.540 CET [8808] SENTENCIA:  DELETE FROM tienda_temporal.Canciones
+	USING tienda_temporal.Canciones c2
+	WHERE tienda_temporal.Canciones.titulo = c2.titulo
+	  AND tienda_temporal.Canciones.disco_id = c2.disco_id
+	  AND tienda_temporal.Canciones.duracion IS NULL
+	  AND c2.duracion IS NOT NULL;
+2024-12-05 13:35:37.547 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.547 CET [8808] SENTENCIA:  DELETE FROM tienda_temporal.Canciones a
+	USING tienda_temporal.Canciones b
+	WHERE a.ctid < b.ctid
+	  AND a.titulo = b.titulo
+	  AND a.disco_id = b.disco_id
+	  AND a.duracion IS NOT NULL
+	  AND b.duracion IS NOT NULL;
+2024-12-05 13:35:37.552 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.552 CET [8808] SENTENCIA:  INSERT INTO tienda.Canciones
+	SELECT DISTINCT c.titulo, (CAST(split_part(c.duracion, ':', 1) AS INTEGER) * 60) + CAST(split_part(c.duracion, ':', 2) AS INTEGER), d.titulo, d.anno_publicacion::INTEGER
+	FROM tienda_temporal.Canciones c
+	JOIN tienda_temporal.Discos d ON c.disco_id = d.id;
+2024-12-05 13:35:37.557 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.557 CET [8808] SENTENCIA:  INSERT INTO tienda.GenerosDisco
+	SELECT DISTINCT titulo, anno_publicacion::INTEGER, trim(both ' ' from replace(trim(both '[]' from unnest(string_to_array(replace(trim(both '[]' from generos), ' & ', ''), ','))), '''', ''))
+	FROM tienda_temporal.Discos;
+2024-12-05 13:35:37.562 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.562 CET [8808] SENTENCIA:  INSERT INTO tienda.UDeseaD
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER
+	FROM tienda_temporal.UDeseaD
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:35:37.566 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.566 CET [8808] SENTENCIA:  CREATE SEQUENCE tienda.UTieneE_id_seq;
+2024-12-05 13:35:37.571 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.571 CET [8808] SENTENCIA:  INSERT INTO tienda.UTieneE
+	SELECT usuario_nombre_usuario, disco_titulo, disco_anno_publicacion::INTEGER, edicion_pais, edicion_anno_edicion::INTEGER, edicion_formato::formato_enum, estado::estado_enum, nextval('tienda.UTieneE_id_seq')
+	FROM tienda_temporal.UTieneE
+	WHERE usuario_nombre_usuario IN (SELECT nombre_usuario FROM tienda.Usuarios);
+2024-12-05 13:35:37.576 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.576 CET [8808] SENTENCIA:  CREATE OR REPLACE VIEW tienda.vista_usuarios_cliente AS
+	SELECT *
+	FROM tienda.usuarios
+	WHERE nombre_usuario = session_user;
+2024-12-05 13:35:37.581 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.581 CET [8808] SENTENCIA:  SET search_path= tienda;
+2024-12-05 13:35:37.585 CET [8808] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.585 CET [8808] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.auditoria (
+	    id SERIAL PRIMARY KEY,
+	    tabla_afectada TEXT,
+	    accion TEXT,
+	    usuario TEXT,
+	    fecha TIMESTAMP
+	);
+2024-12-05 13:35:37.652 CET [40780] ERROR:  no existe la relación «tienda.usuarios» en carácter 28
+2024-12-05 13:35:37.652 CET [40780] CONSULTA:  SELECT nombre_usuario FROM tienda.Usuarios
+2024-12-05 13:35:37.652 CET [40780] CONTEXTO:  función PL/pgSQL inline_code_block en la línea 5 en bucle FOR en torno a filas de un SELECT
+2024-12-05 13:35:37.652 CET [40780] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN   
+	    FOR ent IN SELECT nombre_usuario FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('DROP USER %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:35:37.665 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.665 CET [40780] SENTENCIA:  DROP USER forastero;
+2024-12-05 13:35:37.671 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.671 CET [40780] SENTENCIA:  REASSIGN OWNED BY Administrador TO postgres;
+2024-12-05 13:35:37.678 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.678 CET [40780] SENTENCIA:  REASSIGN OWNED BY Gestor TO postgres;
+2024-12-05 13:35:37.685 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.685 CET [40780] SENTENCIA:  REASSIGN OWNED BY Cliente TO postgres;
+2024-12-05 13:35:37.691 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.691 CET [40780] SENTENCIA:  REASSIGN OWNED BY Invitado TO postgres;
+2024-12-05 13:35:37.696 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.696 CET [40780] SENTENCIA:  DROP OWNED BY Administrador;
+2024-12-05 13:35:37.701 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.701 CET [40780] SENTENCIA:  DROP OWNED BY Gestor;
+2024-12-05 13:35:37.706 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.706 CET [40780] SENTENCIA:  DROP OWNED BY Cliente;
+2024-12-05 13:35:37.710 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.710 CET [40780] SENTENCIA:  DROP OWNED BY Invitado;
+2024-12-05 13:35:37.715 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.715 CET [40780] SENTENCIA:  DROP ROLE Administrador;
+2024-12-05 13:35:37.720 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.720 CET [40780] SENTENCIA:  DROP ROLE Gestor;
+2024-12-05 13:35:37.724 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.724 CET [40780] SENTENCIA:  DROP ROLE Cliente;
+2024-12-05 13:35:37.729 CET [40780] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.729 CET [40780] SENTENCIA:  DROP ROLE Invitado;
+2024-12-05 13:35:37.793 CET [11952] ERROR:  el rol «administrador» ya existe
+2024-12-05 13:35:37.793 CET [11952] SENTENCIA:  CREATE ROLE Administrador WITH SUPERUSER;
+2024-12-05 13:35:37.795 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.795 CET [11952] SENTENCIA:  CREATE ROLE Gestor WITH NOSUPERUSER;
+2024-12-05 13:35:37.801 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.801 CET [11952] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Gestor;
+2024-12-05 13:35:37.806 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.806 CET [11952] SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA tienda TO Gestor;
+2024-12-05 13:35:37.812 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.812 CET [11952] SENTENCIA:  CREATE ROLE Cliente WITH NOSUPERUSER;
+2024-12-05 13:35:37.818 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.818 CET [11952] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Cliente;
+2024-12-05 13:35:37.824 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.824 CET [11952] SENTENCIA:  GRANT INSERT ON TABLE tienda.UTieneE, tienda.UDeseaD TO Cliente;
+2024-12-05 13:35:37.830 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.830 CET [11952] SENTENCIA:  GRANT SELECT ON ALL TABLES IN SCHEMA tienda TO Cliente;
+2024-12-05 13:35:37.837 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.837 CET [11952] SENTENCIA:  REVOKE SELECT ON tienda.Usuarios FROM Cliente;
+2024-12-05 13:35:37.842 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.842 CET [11952] SENTENCIA:  CREATE ROLE Invitado WITH NOSUPERUSER;
+2024-12-05 13:35:37.847 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.847 CET [11952] SENTENCIA:  GRANT USAGE ON SCHEMA tienda TO Invitado;
+2024-12-05 13:35:37.852 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.852 CET [11952] SENTENCIA:  GRANT SELECT ON TABLE tienda.Grupos, tienda.Discos, tienda.Canciones TO Invitado;
+2024-12-05 13:35:37.858 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.858 CET [11952] SENTENCIA:  CREATE USER suMajestad WITH PASSWORD '1234';
+2024-12-05 13:35:37.863 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.863 CET [11952] SENTENCIA:  GRANT Administrador TO suMajestad;
+2024-12-05 13:35:37.869 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.869 CET [11952] SENTENCIA:  CREATE USER virrey WITH PASSWORD 'ABCD';
+2024-12-05 13:35:37.875 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.875 CET [11952] SENTENCIA:  GRANT Gestor TO virrey;
+2024-12-05 13:35:37.881 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.881 CET [11952] SENTENCIA:  DO $$
+	DECLARE
+	    ent RECORD;
+	BEGIN
+	    FOR ent IN SELECT nombre_usuario, contrasena FROM tienda.Usuarios
+	    LOOP
+	        EXECUTE format('CREATE USER %I WITH PASSWORD %L', ent.nombre_usuario, ent.contrasena);
+	        EXECUTE format('GRANT Cliente TO %I', ent.nombre_usuario);
+	    END LOOP;
+	END $$;
+2024-12-05 13:35:37.887 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.887 CET [11952] SENTENCIA:  CREATE USER forastero WITH PASSWORD 'XYZ';
+2024-12-05 13:35:37.894 CET [11952] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.894 CET [11952] SENTENCIA:  GRANT Invitado TO forastero;
+2024-12-05 13:35:37.967 CET [33160] ERROR:  no existe el esquema «tienda»
+2024-12-05 13:35:37.967 CET [33160] SENTENCIA:  CREATE TRIGGER tg_tienes_lo_que_deseas AFTER INSERT ON tienda.UTieneE FOR EACH ROW EXECUTE PROCEDURE fn_tienes_lo_que_deseas();
+2024-12-05 13:35:37.971 CET [33160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.971 CET [33160] SENTENCIA:  CREATE TRIGGER tg_gestionar_usuarios AFTER INSERT OR DELETE ON tienda.Usuarios FOR EACH ROW EXECUTE PROCEDURE fn_gestionar_usuarios();
+2024-12-05 13:35:37.978 CET [33160] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-12-05 13:35:37.978 CET [33160] SENTENCIA:  DO $$
+	DECLARE
+	    r RECORD;
+	BEGIN
+	    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'tienda')
+	    LOOP
+	        IF r.tablename = 'auditoria' THEN
+	            CONTINUE;
+	        END IF;
+	        EXECUTE format('CREATE TRIGGER tg_auditoria_%I AFTER INSERT OR UPDATE OR DELETE ON tienda.%I FOR EACH ROW EXECUTE PROCEDURE fn_auditoria();', r.tablename, r.tablename);
+	    END LOOP;
+	END $$;
+2024-12-05 13:36:53.574 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:36:53.588 CET [10408] LOG:  checkpoint completo: escritos 6 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.005 s, sync=0.004 s, total=0.014 s; archivos sincronizados=6, más largo=0.002 s, promedio=0.001 s; distancia=6012 kB, estimación=6755 kB; lsn=0/63D00E10, lsn de redo=0/63D00DD8
+2024-12-05 13:37:06.478 CET [33812] LOG:  omitiendo analyze de «utienee»: el candado no está disponible
+2024-12-05 13:37:06.516 CET [33812] LOG:  omitiendo el vacuum de «generosdisco»: el candado no está disponible
+2024-12-05 13:37:06.516 CET [33812] LOG:  omitiendo el vacuum de «ediciones»: el candado no está disponible
+2024-12-05 13:37:06.516 CET [33812] LOG:  omitiendo analyze de «udesead»: el candado no está disponible
+2024-12-05 13:37:06.516 CET [33812] LOG:  omitiendo analyze de «grupos»: el candado no está disponible
+2024-12-05 13:37:06.516 CET [33812] LOG:  omitiendo analyze de «discos»: el candado no está disponible
+2024-12-05 13:37:06.516 CET [33812] LOG:  omitiendo el vacuum de «canciones»: el candado no está disponible
+2024-12-05 13:37:46.761 CET [2672] FATAL:  la autentificación password falló para el usuario «fuls01»
+2024-12-05 13:37:46.761 CET [2672] DETALLE:  No existe el rol «fuls01».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 13:37:54.753 CET [34796] FATAL:  la autentificación password falló para el usuario «fuls01»
+2024-12-05 13:37:54.753 CET [34796] DETALLE:  No existe el rol «fuls01».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 13:38:03.554 CET [18872] FATAL:  la autentificación password falló para el usuario «fuls01»
+2024-12-05 13:38:03.554 CET [18872] DETALLE:  No existe el rol «fuls01».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 13:38:54.508 CET [5736] FATAL:  la autentificación password falló para el usuario «fuls0asdsadsads1»
+2024-12-05 13:38:54.508 CET [5736] DETALLE:  No existe el rol «fuls0asdsadsads1».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 13:41:27.086 CET [17216] ERROR:  error de sintaxis en o cerca de «%» en carácter 55
+2024-12-05 13:41:27.086 CET [17216] SENTENCIA:  DELETE FROM tienda.usuarios WHERE nombre_usuario LIKE %Fulano%;
+2024-12-05 13:41:43.595 CET [9868] FATAL:  la autentificación password falló para el usuario «Fulano»
+2024-12-05 13:41:43.595 CET [9868] DETALLE:  No existe el rol «Fulano».
+	La conexión coincidió con el archivo «C:/Program Files/PostgreSQL/16/data/pg_hba.conf» línea 117: «host    all             all             ::1/128                 scram-sha-256»
+2024-12-05 13:41:53.602 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 13:44:36.893 CET [10408] LOG:  checkpoint completo: escritos 1488 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=163.136 s, sync=0.146 s, total=163.291 s; archivos sincronizados=387, más largo=0.001 s, promedio=0.001 s; distancia=9969 kB, estimación=9969 kB; lsn=0/646BD230, lsn de redo=0/646BD1F8
+2024-12-05 13:46:48.062 CET [36684] ERROR:  permiso denegado a la tabla auditoria
+2024-12-05 13:46:48.062 CET [36684] CONTEXTO:  sentencia SQL: «INSERT INTO tienda.auditoria (tabla_afectada, accion, usuario, fecha)
+	   VALUES (TG_TABLE_NAME, TG_OP, session_user,current_timestamp)»
+	función PL/pgSQL fn_auditoria() en la línea 15 en sentencia SQL
+2024-12-05 13:46:48.062 CET [36684] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('juangomez','Kootch',1973,'US',1973,'Vinyl', 'VG+', 1);
+2024-12-05 13:46:53.917 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 13:46:54.799 CET [10408] LOG:  checkpoint completo: escritos 9 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.870 s, sync=0.006 s, total=0.882 s; archivos sincronizados=9, más largo=0.002 s, promedio=0.001 s; distancia=27 kB, estimación=8974 kB; lsn=0/646C41D0, lsn de redo=0/646C4198
+2024-12-05 13:48:22.446 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:48:22.456 CET [10408] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.010 s; archivos sincronizados=3, más largo=0.001 s, promedio=0.001 s; distancia=5 kB, estimación=8078 kB; lsn=0/646C5978, lsn de redo=0/646C5940
+2024-12-05 13:48:41.808 CET [3184] ERROR:  permiso denegado a la secuencia auditoria_id_seq
+2024-12-05 13:48:41.808 CET [3184] CONTEXTO:  sentencia SQL: «INSERT INTO tienda.auditoria (tabla_afectada, accion, usuario, fecha)
+	   VALUES (TG_TABLE_NAME, TG_OP, session_user,current_timestamp)»
+	función PL/pgSQL fn_auditoria() en la línea 15 en sentencia SQL
+2024-12-05 13:48:41.808 CET [3184] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('juangomez','Kootch',1973,'US',1973,'Vinyl', 'VG+', 1);
+2024-12-05 13:50:36.722 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:50:36.848 CET [10408] LOG:  checkpoint completo: escritos 16 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.011 s, sync=0.083 s, total=0.127 s; archivos sincronizados=16, más largo=0.014 s, promedio=0.006 s; distancia=9953 kB, estimación=9953 kB; lsn=0/6507E050, lsn de redo=0/6507E018
+2024-12-05 13:50:53.295 CET [18656] ERROR:  no existe la columna «nombre_usuario» en carácter 44
+2024-12-05 13:50:53.295 CET [18656] CONSULTA:  EXISTS (SELECT * FROM tienda.UDeseaD WHERE nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion)
+2024-12-05 13:50:53.295 CET [18656] CONTEXTO:  función PL/pgSQL fn_tienes_lo_que_deseas() en la línea 5 en IF
+2024-12-05 13:50:53.295 CET [18656] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('juangomez','Kootch',1973,'US',1973,'Vinyl', 'VG+', 1);
+2024-12-05 13:52:04.375 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:52:04.401 CET [10408] LOG:  checkpoint completo: escritos 25 búfers (0.2%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.009 s, sync=0.012 s, total=0.026 s; archivos sincronizados=20, más largo=0.002 s, promedio=0.001 s; distancia=9994 kB, estimación=9994 kB; lsn=0/65A40B08, lsn de redo=0/65A40AD0
+2024-12-05 13:52:06.692 CET [8876] LOG:  omitiendo analyze de «utienee»: el candado no está disponible
+2024-12-05 13:52:06.731 CET [8876] LOG:  omitiendo el vacuum de «generosdisco»: el candado no está disponible
+2024-12-05 13:52:06.731 CET [8876] LOG:  omitiendo el vacuum de «ediciones»: el candado no está disponible
+2024-12-05 13:52:06.731 CET [8876] LOG:  omitiendo analyze de «udesead»: el candado no está disponible
+2024-12-05 13:52:06.731 CET [8876] LOG:  omitiendo analyze de «grupos»: el candado no está disponible
+2024-12-05 13:52:06.731 CET [8876] LOG:  omitiendo analyze de «discos»: el candado no está disponible
+2024-12-05 13:52:06.731 CET [8876] LOG:  omitiendo el vacuum de «canciones»: el candado no está disponible
+2024-12-05 13:52:16.678 CET [14216] ERROR:  el registro «new» no tiene un campo «nombre_usuario»
+2024-12-05 13:52:16.678 CET [14216] CONTEXTO:  expresión SQL «EXISTS (SELECT * FROM tienda.UDeseaD WHERE usuario_nombre_usuario = NEW.nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion)»
+	función PL/pgSQL fn_tienes_lo_que_deseas() en la línea 5 en IF
+2024-12-05 13:52:16.678 CET [14216] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('juangomez','Kootch',1973,'US',1973,'Vinyl', 'VG+', 1);
+2024-12-05 13:53:09.916 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:53:09.947 CET [10408] LOG:  checkpoint completo: escritos 22 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.012 s, sync=0.010 s, total=0.031 s; archivos sincronizados=19, más largo=0.001 s, promedio=0.001 s; distancia=9963 kB, estimación=9991 kB; lsn=0/663FB988, lsn de redo=0/663FB950
+2024-12-05 13:53:22.502 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:53:22.523 CET [10408] LOG:  checkpoint completo: escritos 15 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.007 s, sync=0.008 s, total=0.021 s; archivos sincronizados=15, más largo=0.002 s, promedio=0.001 s; distancia=9721 kB, estimación=9964 kB; lsn=0/66D79EB8, lsn de redo=0/66D79E80
+2024-12-05 13:53:37.433 CET [16844] ERROR:  permiso denegado a la tabla udesead
+2024-12-05 13:53:37.433 CET [16844] CONTEXTO:  sentencia SQL: «DELETE FROM tienda.UDeseaD WHERE usuario_nombre_usuario = NEW.usuario_nombre_usuario AND disco_titulo = NEW.disco_titulo AND disco_anno_publicacion = NEW.disco_anno_publicacion»
+	función PL/pgSQL fn_tienes_lo_que_deseas() en la línea 6 en sentencia SQL
+2024-12-05 13:53:37.433 CET [16844] SENTENCIA:  INSERT INTO tienda.UTieneE VALUES('juangomez','Kootch',1973,'US',1973,'Vinyl', 'VG+', 1);
+2024-12-05 13:55:19.421 CET [10408] LOG:  empezando checkpoint: immediate force wait
+2024-12-05 13:55:19.448 CET [10408] LOG:  checkpoint completo: escritos 25 búfers (0.2%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.008 s, sync=0.011 s, total=0.028 s; archivos sincronizados=20, más largo=0.002 s, promedio=0.001 s; distancia=9995 kB, estimación=9995 kB; lsn=0/6773CB50, lsn de redo=0/6773CB18
+2024-12-05 13:56:01.044 CET [3268] ERROR:  no existe la relación «usuarios.udesead» en carácter 15
+2024-12-05 13:56:01.044 CET [3268] SENTENCIA:  SELECT * FROM Usuarios.UDeseaD WHERE usuario_nombre_usuario='juangomez';
+2024-12-05 13:57:45.672 CET [3268] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-12-05 16:34:18.824 CET [10408] LOG:  empezando checkpoint: time
+2024-12-05 16:37:02.338 CET [10408] LOG:  checkpoint completo: escritos 1488 búfers (9.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=163.341 s, sync=0.158 s, total=163.514 s; archivos sincronizados=388, más largo=0.002 s, promedio=0.001 s; distancia=9949 kB, estimación=9990 kB; lsn=0/680F40E8, lsn de redo=0/680F40B0

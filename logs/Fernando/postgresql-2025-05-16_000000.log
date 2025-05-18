@@ -1,0 +1,808 @@
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.524 CESTLOG:  sentencia: DROP USER IF EXISTS usuario1;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.530 CESTLOG:  duración: 14.321 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.531 CESTLOG:  sentencia: DROP USER IF EXISTS usuario2;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.531 CESTLOG:  duración: 0.303 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.532 CESTLOG:  sentencia: DROP USER IF EXISTS usuario3;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.532 CESTLOG:  duración: 0.258 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.533 CESTLOG:  sentencia: DROP ROLE IF EXISTS rol_usuario;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.537 CESTERROR:  no se puede eliminar el rol «rol_usuario» porque otros objetos dependen de él
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.537 CESTDETALLE:  privilegios para esquema public
+	privilegios para tabla clientes
+	privilegios para tabla vehiculos
+	privilegios para tabla plazas
+	privilegios para tabla reservas
+	privilegios para tabla incidencias
+	privilegios para tabla pagos
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.537 CESTSENTENCIA:  DROP ROLE IF EXISTS rol_usuario;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.560 CESTLOG:  sentencia: CREATE USER usuario1 WITH PASSWORD '1234';
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.578 CESTLOG:  duración: 19.884 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.580 CESTLOG:  sentencia: CREATE USER usuario2 WITH PASSWORD '1234';
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.594 CESTLOG:  duración: 14.555 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.595 CESTLOG:  sentencia: CREATE USER usuario3 WITH PASSWORD '1234';
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.610 CESTLOG:  duración: 14.550 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.611 CESTLOG:  sentencia: CREATE ROLE rol_usuario WITH NOSUPERUSER;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.611 CESTERROR:  el rol «rol_usuario» ya existe
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.611 CESTSENTENCIA:  CREATE ROLE rol_usuario WITH NOSUPERUSER;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.616 CESTLOG:  sentencia: GRANT USAGE ON SCHEMA public TO rol_usuario;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.618 CESTLOG:  duración: 2.394 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.618 CESTLOG:  sentencia: GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.620 CESTLOG:  duración: 1.607 ms
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.620 CESTLOG:  sentencia: GRANT rol_usuario TO usuario1, usuario2, usuario3;
+[09066309P 08134385K] ::1(29080) 2025-05-17 16:34:54.622 CESTLOG:  duración: 1.350 ms
+[09066309P 08134385K]  2025-05-17 16:35:50.928 CESTLOG:  empezando checkpoint: time
+[09066309P 08134385K]  2025-05-17 16:35:52.165 CESTLOG:  checkpoint completo: escritos 12 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=1.205 s, sync=0.009 s, total=1.238 s; archivos sincronizados=12, más largo=0.002 s, promedio=0.001 s; distancia=19 kB, estimación=13281 kB; lsn=D8/9901D5D8, lsn de redo=D8/9901D5A0
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.068 CESTLOG:  duración: 0.039 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.072 CESTLOG:  duración: 0.027 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.101 CESTLOG:  duración: 27.671 ms  sentencia: SELECT * FROM unnest(current_schemas(true))
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.156 CESTLOG:  duración: 32.431 ms  sentencia:    SELECT
+	       db.oid as oid, 
+	       db.datname as name, 
+	       ta.spcname as spcname, 
+	       db.datallowconn,
+	              16383 as datlastsysoid,
+	       has_database_privilege(db.oid, 'CREATE') as cancreate, 
+	       datdba as owner, 
+	       db.datistemplate , 
+	       has_database_privilege(db.datname, 'connect') as canconnect,
+	       datistemplate as is_system
+	   
+	   FROM
+	       pg_database db
+	       LEFT OUTER JOIN pg_tablespace ta ON db.dattablespace = ta.oid
+	      
+	   ORDER BY datname;
+	   
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.202 CESTLOG:  duración: 2.363 ms  sentencia: SELECT
+	    nsp.oid,
+	    nsp.nspname as name,
+	    has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+	    has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+	    CASE
+	    WHEN nsp.nspname like 'pg_%' or nsp.nspname = 'information_schema'
+	        THEN true
+	    ELSE false END as is_system
+	FROM
+	    pg_namespace nsp
+	    ORDER BY nspname;
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.208 CESTLOG:  duración: 5.705 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{r,p}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.231 CESTLOG:  duración: 20.825 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{p,r}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.250 CESTLOG:  duración: 14.635 ms  sentencia: 
+	                SELECT s_p.nspname AS parentschema,
+	                       t_p.relname AS parenttable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(confkey) as attnum, 
+	                                generate_subscripts(confkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.confrelid
+	                        )) AS parentcolumn,
+	                       s_c.nspname AS childschema,
+	                       t_c.relname AS childtable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(conkey) as attnum, 
+	                                generate_subscripts(conkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.conrelid
+	                        )) AS childcolumn
+	                FROM pg_catalog.pg_constraint fk
+	                JOIN pg_catalog.pg_class      t_p ON t_p.oid = fk.confrelid
+	                JOIN pg_catalog.pg_namespace  s_p ON s_p.oid = t_p.relnamespace
+	                JOIN pg_catalog.pg_class      t_c ON t_c.oid = fk.conrelid
+	                JOIN pg_catalog.pg_namespace  s_c ON s_c.oid = t_c.relnamespace
+	                WHERE fk.contype = 'f';
+	                
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.251 CESTLOG:  duración: 0.642 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{v,m}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.260 CESTLOG:  duración: 6.353 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{v,m}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.270 CESTLOG:  duración: 0.019 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.272 CESTLOG:  duración: 4.691 ms  sentencia: 
+	                    SELECT n.nspname schema_name,
+	                           t.typname type_name
+	                    FROM   pg_catalog.pg_type t
+	                           INNER JOIN pg_catalog.pg_namespace n
+	                              ON n.oid = t.typnamespace
+	                    WHERE ( t.typrelid = 0  -- non-composite types
+	                            OR (  -- composite type, but not a table
+	                                  SELECT c.relkind = 'c'
+	                                  FROM pg_catalog.pg_class c
+	                                  WHERE c.oid = t.typrelid
+	                                )
+	                          )
+	                          AND NOT EXISTS( -- ignore array types
+	                                SELECT  1
+	                                FROM    pg_catalog.pg_type el
+	                                WHERE   el.oid = t.typelem AND el.typarray = t.oid
+	                              )
+	                          AND n.nspname <> 'pg_catalog'
+	                          AND n.nspname <> 'information_schema'
+	                    ORDER BY 1, 2;
+	                    
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.273 CESTLOG:  duración: 0.016 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.275 CESTLOG:  duración: 0.373 ms  sentencia: SELECT * FROM unnest(current_schemas(true))
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.282 CESTLOG:  duración: 5.568 ms  sentencia:    SELECT
+	       db.oid as oid, 
+	       db.datname as name, 
+	       ta.spcname as spcname, 
+	       db.datallowconn,
+	              16383 as datlastsysoid,
+	       has_database_privilege(db.oid, 'CREATE') as cancreate, 
+	       datdba as owner, 
+	       db.datistemplate , 
+	       has_database_privilege(db.datname, 'connect') as canconnect,
+	       datistemplate as is_system
+	   
+	   FROM
+	       pg_database db
+	       LEFT OUTER JOIN pg_tablespace ta ON db.dattablespace = ta.oid
+	      
+	   ORDER BY datname;
+	   
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.288 CESTLOG:  duración: 2.651 ms  sentencia: SELECT
+	    nsp.oid,
+	    nsp.nspname as name,
+	    has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+	    has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+	    CASE
+	    WHEN nsp.nspname like 'pg_%' or nsp.nspname = 'information_schema'
+	        THEN true
+	    ELSE false END as is_system
+	FROM
+	    pg_namespace nsp
+	    ORDER BY nspname;
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.293 CESTLOG:  duración: 3.954 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{r,p}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.294 CESTLOG:  duración: 20.841 ms  sentencia: 
+	                SELECT n.nspname schema_name,
+	                        p.proname func_name,
+	                        p.proargnames,
+	                        COALESCE(proallargtypes::regtype[], proargtypes::regtype[])::text[],
+	                        p.proargmodes,
+	                        prorettype::regtype::text return_type,
+	                        p.prokind is_aggregate,
+	                        p.prokind is_window,
+	                        p.proretset is_set_returning,
+	                        pg_get_expr(proargdefaults, 0) AS arg_defaults
+	                FROM pg_catalog.pg_proc p
+	                        INNER JOIN pg_catalog.pg_namespace n
+	                            ON n.oid = p.pronamespace
+	                WHERE p.prorettype::regtype != 'trigger'::regtype
+	                ORDER BY 1, 2
+	                
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.302 CESTLOG:  duración: 8.248 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{p,r}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.332 CESTLOG:  duración: 0.352 ms  sentencia: DISCARD ALL
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.337 CESTLOG:  duración: 0.013 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29598) 2025-05-17 16:40:02.338 CESTLOG:  duración: 0.025 ms  sentencia: DISCARD ALL
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.343 CESTLOG:  duración: 6.205 ms  sentencia: 
+	                SELECT s_p.nspname AS parentschema,
+	                       t_p.relname AS parenttable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(confkey) as attnum, 
+	                                generate_subscripts(confkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.confrelid
+	                        )) AS parentcolumn,
+	                       s_c.nspname AS childschema,
+	                       t_c.relname AS childtable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(conkey) as attnum, 
+	                                generate_subscripts(conkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.conrelid
+	                        )) AS childcolumn
+	                FROM pg_catalog.pg_constraint fk
+	                JOIN pg_catalog.pg_class      t_p ON t_p.oid = fk.confrelid
+	                JOIN pg_catalog.pg_namespace  s_p ON s_p.oid = t_p.relnamespace
+	                JOIN pg_catalog.pg_class      t_c ON t_c.oid = fk.conrelid
+	                JOIN pg_catalog.pg_namespace  s_c ON s_c.oid = t_c.relnamespace
+	                WHERE fk.contype = 'f';
+	                
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.344 CESTLOG:  duración: 0.577 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{v,m}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.351 CESTLOG:  duración: 5.940 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{v,m}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.367 CESTLOG:  duración: 5.660 ms  sentencia: 
+	                    SELECT n.nspname schema_name,
+	                           t.typname type_name
+	                    FROM   pg_catalog.pg_type t
+	                           INNER JOIN pg_catalog.pg_namespace n
+	                              ON n.oid = t.typnamespace
+	                    WHERE ( t.typrelid = 0  -- non-composite types
+	                            OR (  -- composite type, but not a table
+	                                  SELECT c.relkind = 'c'
+	                                  FROM pg_catalog.pg_class c
+	                                  WHERE c.oid = t.typrelid
+	                                )
+	                          )
+	                          AND NOT EXISTS( -- ignore array types
+	                                SELECT  1
+	                                FROM    pg_catalog.pg_type el
+	                                WHERE   el.oid = t.typelem AND el.typarray = t.oid
+	                              )
+	                          AND n.nspname <> 'pg_catalog'
+	                          AND n.nspname <> 'information_schema'
+	                    ORDER BY 1, 2;
+	                    
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.386 CESTLOG:  duración: 18.103 ms  sentencia: 
+	                SELECT n.nspname schema_name,
+	                        p.proname func_name,
+	                        p.proargnames,
+	                        COALESCE(proallargtypes::regtype[], proargtypes::regtype[])::text[],
+	                        p.proargmodes,
+	                        prorettype::regtype::text return_type,
+	                        p.prokind is_aggregate,
+	                        p.prokind is_window,
+	                        p.proretset is_set_returning,
+	                        pg_get_expr(proargdefaults, 0) AS arg_defaults
+	                FROM pg_catalog.pg_proc p
+	                        INNER JOIN pg_catalog.pg_namespace n
+	                            ON n.oid = p.pronamespace
+	                WHERE p.prorettype::regtype != 'trigger'::regtype
+	                ORDER BY 1, 2
+	                
+[09066309P 08134385K] 127.0.0.1(29599) 2025-05-17 16:40:02.427 CESTLOG:  duración: 0.148 ms  sentencia: DISCARD ALL
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.512 CESTLOG:  duración: 0.030 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.517 CESTLOG:  duración: 0.025 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.520 CESTLOG:  duración: 0.872 ms  sentencia: SELECT * FROM unnest(current_schemas(true))
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.538 CESTLOG:  duración: 8.530 ms  sentencia:    SELECT
+	       db.oid as oid, 
+	       db.datname as name, 
+	       ta.spcname as spcname, 
+	       db.datallowconn,
+	              16383 as datlastsysoid,
+	       has_database_privilege(db.oid, 'CREATE') as cancreate, 
+	       datdba as owner, 
+	       db.datistemplate , 
+	       has_database_privilege(db.datname, 'connect') as canconnect,
+	       datistemplate as is_system
+	   
+	   FROM
+	       pg_database db
+	       LEFT OUTER JOIN pg_tablespace ta ON db.dattablespace = ta.oid
+	      
+	   ORDER BY datname;
+	   
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.557 CESTLOG:  duración: 3.629 ms  sentencia: SELECT
+	    nsp.oid,
+	    nsp.nspname as name,
+	    has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+	    has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+	    CASE
+	    WHEN nsp.nspname like 'pg_%' or nsp.nspname = 'information_schema'
+	        THEN true
+	    ELSE false END as is_system
+	FROM
+	    pg_namespace nsp
+	    ORDER BY nspname;
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.565 CESTLOG:  duración: 6.564 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{r,p}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.584 CESTLOG:  duración: 17.433 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{p,r}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.602 CESTLOG:  duración: 11.445 ms  sentencia: 
+	                SELECT s_p.nspname AS parentschema,
+	                       t_p.relname AS parenttable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(confkey) as attnum, 
+	                                generate_subscripts(confkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.confrelid
+	                        )) AS parentcolumn,
+	                       s_c.nspname AS childschema,
+	                       t_c.relname AS childtable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(conkey) as attnum, 
+	                                generate_subscripts(conkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.conrelid
+	                        )) AS childcolumn
+	                FROM pg_catalog.pg_constraint fk
+	                JOIN pg_catalog.pg_class      t_p ON t_p.oid = fk.confrelid
+	                JOIN pg_catalog.pg_namespace  s_p ON s_p.oid = t_p.relnamespace
+	                JOIN pg_catalog.pg_class      t_c ON t_c.oid = fk.conrelid
+	                JOIN pg_catalog.pg_namespace  s_c ON s_c.oid = t_c.relnamespace
+	                WHERE fk.contype = 'f';
+	                
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.604 CESTLOG:  duración: 0.927 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{v,m}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.615 CESTLOG:  duración: 8.787 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{v,m}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.640 CESTLOG:  duración: 9.266 ms  sentencia: 
+	                    SELECT n.nspname schema_name,
+	                           t.typname type_name
+	                    FROM   pg_catalog.pg_type t
+	                           INNER JOIN pg_catalog.pg_namespace n
+	                              ON n.oid = t.typnamespace
+	                    WHERE ( t.typrelid = 0  -- non-composite types
+	                            OR (  -- composite type, but not a table
+	                                  SELECT c.relkind = 'c'
+	                                  FROM pg_catalog.pg_class c
+	                                  WHERE c.oid = t.typrelid
+	                                )
+	                          )
+	                          AND NOT EXISTS( -- ignore array types
+	                                SELECT  1
+	                                FROM    pg_catalog.pg_type el
+	                                WHERE   el.oid = t.typelem AND el.typarray = t.oid
+	                              )
+	                          AND n.nspname <> 'pg_catalog'
+	                          AND n.nspname <> 'information_schema'
+	                    ORDER BY 1, 2;
+	                    
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.667 CESTLOG:  duración: 26.939 ms  sentencia: 
+	                SELECT n.nspname schema_name,
+	                        p.proname func_name,
+	                        p.proargnames,
+	                        COALESCE(proallargtypes::regtype[], proargtypes::regtype[])::text[],
+	                        p.proargmodes,
+	                        prorettype::regtype::text return_type,
+	                        p.prokind is_aggregate,
+	                        p.prokind is_window,
+	                        p.proretset is_set_returning,
+	                        pg_get_expr(proargdefaults, 0) AS arg_defaults
+	                FROM pg_catalog.pg_proc p
+	                        INNER JOIN pg_catalog.pg_namespace n
+	                            ON n.oid = p.pronamespace
+	                WHERE p.prorettype::regtype != 'trigger'::regtype
+	                ORDER BY 1, 2
+	                
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.744 CESTLOG:  duración: 0.081 ms  sentencia: DISCARD ALL
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.802 CESTLOG:  duración: 0.048 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.807 CESTLOG:  duración: 0.024 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.808 CESTLOG:  duración: 0.172 ms  sentencia: SELECT * FROM unnest(current_schemas(true))
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.812 CESTLOG:  duración: 0.650 ms  sentencia:    SELECT
+	       db.oid as oid, 
+	       db.datname as name, 
+	       ta.spcname as spcname, 
+	       db.datallowconn,
+	              16383 as datlastsysoid,
+	       has_database_privilege(db.oid, 'CREATE') as cancreate, 
+	       datdba as owner, 
+	       db.datistemplate , 
+	       has_database_privilege(db.datname, 'connect') as canconnect,
+	       datistemplate as is_system
+	   
+	   FROM
+	       pg_database db
+	       LEFT OUTER JOIN pg_tablespace ta ON db.dattablespace = ta.oid
+	      
+	   ORDER BY datname;
+	   
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.815 CESTLOG:  duración: 0.293 ms  sentencia: SELECT
+	    nsp.oid,
+	    nsp.nspname as name,
+	    has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+	    has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+	    CASE
+	    WHEN nsp.nspname like 'pg_%' or nsp.nspname = 'information_schema'
+	        THEN true
+	    ELSE false END as is_system
+	FROM
+	    pg_namespace nsp
+	    ORDER BY nspname;
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.816 CESTLOG:  duración: 0.592 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{r,p}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.825 CESTLOG:  duración: 7.264 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{p,r}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.835 CESTLOG:  duración: 2.673 ms  sentencia: 
+	                SELECT s_p.nspname AS parentschema,
+	                       t_p.relname AS parenttable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(confkey) as attnum, 
+	                                generate_subscripts(confkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.confrelid
+	                        )) AS parentcolumn,
+	                       s_c.nspname AS childschema,
+	                       t_c.relname AS childtable,
+	                       unnest((
+	                        select
+	                            array_agg(attname ORDER BY i)
+	                        from
+	                            (select 
+	                                unnest(conkey) as attnum, 
+	                                generate_subscripts(conkey, 1) as i
+	                            ) x
+	                            JOIN pg_catalog.pg_attribute c USING(attnum)
+	                            WHERE c.attrelid = fk.conrelid
+	                        )) AS childcolumn
+	                FROM pg_catalog.pg_constraint fk
+	                JOIN pg_catalog.pg_class      t_p ON t_p.oid = fk.confrelid
+	                JOIN pg_catalog.pg_namespace  s_p ON s_p.oid = t_p.relnamespace
+	                JOIN pg_catalog.pg_class      t_c ON t_c.oid = fk.conrelid
+	                JOIN pg_catalog.pg_namespace  s_c ON s_c.oid = t_c.relnamespace
+	                WHERE fk.contype = 'f';
+	                
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.838 CESTLOG:  duración: 1.155 ms  sentencia: 
+	        SELECT  n.nspname schema_name,
+	                c.relname table_name
+	        FROM    pg_catalog.pg_class c
+	                LEFT JOIN pg_catalog.pg_namespace n
+	                    ON n.oid = c.relnamespace
+	        WHERE   c.relkind = ANY('{v,m}')
+	          AND   NOT c.relispartition
+	        ORDER BY 1,2;
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.849 CESTLOG:  duración: 9.559 ms  sentencia: 
+	                SELECT  nsp.nspname schema_name,
+	                        cls.relname table_name,
+	                        att.attname column_name,
+	                        att.atttypid::regtype::text type_name,
+	                        att.atthasdef AS has_default,
+	                        pg_get_expr(def.adbin, def.adrelid) as default
+	                FROM    pg_catalog.pg_attribute att
+	                        INNER JOIN pg_catalog.pg_class cls
+	                            ON att.attrelid = cls.oid
+	                        INNER JOIN pg_catalog.pg_namespace nsp
+	                            ON cls.relnamespace = nsp.oid
+	                        LEFT OUTER JOIN pg_attrdef def
+	                            ON def.adrelid = att.attrelid
+	                            AND def.adnum = att.attnum
+	                WHERE   cls.relkind = ANY('{v,m}')
+	                        AND NOT att.attisdropped
+	                        AND att.attnum  > 0
+	                        AND NOT cls.relispartition
+	                ORDER BY 1, 2, att.attnum
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.872 CESTLOG:  duración: 3.256 ms  sentencia: 
+	                    SELECT n.nspname schema_name,
+	                           t.typname type_name
+	                    FROM   pg_catalog.pg_type t
+	                           INNER JOIN pg_catalog.pg_namespace n
+	                              ON n.oid = t.typnamespace
+	                    WHERE ( t.typrelid = 0  -- non-composite types
+	                            OR (  -- composite type, but not a table
+	                                  SELECT c.relkind = 'c'
+	                                  FROM pg_catalog.pg_class c
+	                                  WHERE c.oid = t.typrelid
+	                                )
+	                          )
+	                          AND NOT EXISTS( -- ignore array types
+	                                SELECT  1
+	                                FROM    pg_catalog.pg_type el
+	                                WHERE   el.oid = t.typelem AND el.typarray = t.oid
+	                              )
+	                          AND n.nspname <> 'pg_catalog'
+	                          AND n.nspname <> 'information_schema'
+	                    ORDER BY 1, 2;
+	                    
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.899 CESTLOG:  duración: 26.701 ms  sentencia: 
+	                SELECT n.nspname schema_name,
+	                        p.proname func_name,
+	                        p.proargnames,
+	                        COALESCE(proallargtypes::regtype[], proargtypes::regtype[])::text[],
+	                        p.proargmodes,
+	                        prorettype::regtype::text return_type,
+	                        p.prokind is_aggregate,
+	                        p.prokind is_window,
+	                        p.proretset is_set_returning,
+	                        pg_get_expr(proargdefaults, 0) AS arg_defaults
+	                FROM pg_catalog.pg_proc p
+	                        INNER JOIN pg_catalog.pg_namespace n
+	                            ON n.oid = p.pronamespace
+	                WHERE p.prorettype::regtype != 'trigger'::regtype
+	                ORDER BY 1, 2
+	                
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:26.957 CESTLOG:  duración: 0.069 ms  sentencia: DISCARD ALL
+[09066309P 08134385K] 127.0.0.1(29705) 2025-05-17 16:40:26.962 CESTLOG:  duración: 0.067 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29705) 2025-05-17 16:40:26.964 CESTLOG:  duración: 0.080 ms  sentencia: DISCARD ALL
+[09066309P 08134385K] 127.0.0.1(29695) 2025-05-17 16:40:41.977 CESTLOG:  duración: 0.020 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29705) 2025-05-17 16:40:42.076 CESTLOG:  duración: 0.022 ms  sentencia: 
+[09066309P 08134385K] 127.0.0.1(29705) 2025-05-17 16:40:42.077 CESTLOG:  duración: 0.076 ms  sentencia: SET application_name = 'vscode-pgsql - Datos_Avanzadas/PL3/PL3_c7.sql'
+[09066309P 08134385K] 127.0.0.1(29705) 2025-05-17 16:40:42.105 CESTERROR:  error de sintaxis en o cerca de «\» en carácter 1
+[09066309P 08134385K] 127.0.0.1(29705) 2025-05-17 16:40:42.105 CESTSENTENCIA:  \c telpark
+	
+	DROP USER IF EXISTS usuario1;
+[09066309P 08134385K]  2025-05-17 16:40:50.172 CESTLOG:  empezando checkpoint: time
+[09066309P 08134385K]  2025-05-17 16:40:52.363 CESTLOG:  checkpoint completo: escritos 20 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=2.180 s, sync=0.005 s, total=2.192 s; archivos sincronizados=8, más largo=0.001 s, promedio=0.001 s; distancia=22 kB, estimación=11955 kB; lsn=D8/99022FC8, lsn de redo=D8/99022F90
+[09066309P 08134385K] ::1(30028) 2025-05-17 16:58:04.141 CESTLOG:  duración: 3.941 ms  sentencia: SELECT * FROM clientes;
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.610 CESTLOG:  duración: 0.027 ms  sentencia: BEGIN;
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.611 CESTLOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.613 CESTLOG:  duración: 2.023 ms
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.614 CESTLOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.621 CESTLOG:  duración: 7.412 ms
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.622 CESTLOG:  duración: 0.117 ms  sentencia: SELECT * FROM clientes WHERE clienteid=0;
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.685 CESTLOG:  duración: 1.090 ms  sentencia: SELECT * FROM vehiculos WHERE vehiculoid=0;
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:00:50.757 CESTLOG:  duración: 15.305 ms  sentencia: SELECT * FROM pg_stat_activity WHERE state='idle' OR state='idle in transaction';
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:01:11.900 CESTERROR:  error de sintaxis en o cerca de «n» en carácter 1
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:01:11.900 CESTSENTENCIA:  n';
+[09066309P 08134385K] ::1(31694) 2025-05-17 17:01:19.705 CESTLOG:  duración: 0.456 ms  sentencia: ROLLBACK;
+[09066309P 08134385K] ::1(31739) 2025-05-17 17:01:21.002 CESTLOG:  duración: 0.028 ms  sentencia: BEGIN;
+[09066309P 08134385K] ::1(31739) 2025-05-17 17:01:21.003 CESTLOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+[09066309P 08134385K] ::1(31739) 2025-05-17 17:01:21.005 CESTLOG:  duración: 1.575 ms
+[09066309P 08134385K] ::1(31739) 2025-05-17 17:01:21.006 CESTLOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+[09066309P 08134385K] ::1(31739) 2025-05-17 17:01:21.009 CESTLOG:  duración: 2.747 ms
+[09066309P 08134385K] ::1(31739) 2025-05-17 17:01:25.291 CESTLOG:  duración: 0.919 ms  sentencia: COMMIT;
+[09066309P 08134385K]  2025-05-17 17:05:50.394 CESTLOG:  empezando checkpoint: time
+[09066309P 08134385K]  2025-05-17 17:05:51.495 CESTLOG:  checkpoint completo: escritos 11 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=1.088 s, sync=0.007 s, total=1.102 s; archivos sincronizados=10, más largo=0.002 s, promedio=0.001 s; distancia=12 kB, estimación=10761 kB; lsn=D8/990262A8, lsn de redo=D8/99026270
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.566 CESTLOG:  duración: 0.057 ms  sentencia: BEGIN;
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.567 CESTLOG:  sentencia: INSERT INTO clientes VALUES(1, 'Mengano', 'Menganez', 'menganito@example.ex', 918856931, 'Cantabria');
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.571 CESTERROR:  llave duplicada viola restricción de unicidad «clientes_telefono_key»
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.571 CESTDETALLE:  Ya existe la llave (telefono)=(918856931).
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.571 CESTSENTENCIA:  INSERT INTO clientes VALUES(1, 'Mengano', 'Menganez', 'menganito@example.ex', 918856931, 'Cantabria');
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.582 CESTLOG:  sentencia: INSERT INTO vehiculos VALUES(1, '6789HPT', 'Renault', 'Scenic', 'Rojo', 1);
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.582 CESTERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.582 CESTSENTENCIA:  INSERT INTO vehiculos VALUES(1, '6789HPT', 'Renault', 'Scenic', 'Rojo', 1);
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.591 CESTERROR:  error de sintaxis en o cerca de «WHERE» en carácter 18
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.591 CESTSENTENCIA:  UPDATE vehiculos WHERE vehiculoid = 1 SET matricula = '1234MMG';
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.604 CESTLOG:  sentencia: INSERT INTO clientes VALUES(2, 'Zutano', 'Zutanez', 'zutanito@example.ex', 987651234, 'Madrid');
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.604 CESTERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.604 CESTSENTENCIA:  INSERT INTO clientes VALUES(2, 'Zutano', 'Zutanez', 'zutanito@example.ex', 987651234, 'Madrid');
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.613 CESTLOG:  sentencia: INSERT INTO vehiculos VALUES(3, '4567HPG', 'Seat', 'Panda', 'Blanco', 2);
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.613 CESTERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.613 CESTSENTENCIA:  INSERT INTO vehiculos VALUES(3, '4567HPG', 'Seat', 'Panda', 'Blanco', 2);
+[09066309P 08134385K] ::1(36047) 2025-05-17 17:32:08.622 CESTLOG:  duración: 0.033 ms  sentencia: COMMIT;
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.881 CESTLOG:  duración: 0.040 ms  sentencia: BEGIN;
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.882 CESTLOG:  sentencia: INSERT INTO clientes VALUES(1, 'Mengano', 'Menganez', 'menganito@example.ex', 918856931, 'Cantabria');
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.884 CESTERROR:  llave duplicada viola restricción de unicidad «clientes_telefono_key»
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.884 CESTDETALLE:  Ya existe la llave (telefono)=(918856931).
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.884 CESTSENTENCIA:  INSERT INTO clientes VALUES(1, 'Mengano', 'Menganez', 'menganito@example.ex', 918856931, 'Cantabria');
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.899 CESTLOG:  sentencia: INSERT INTO vehiculos VALUES(1, '6789HPT', 'Renault', 'Scenic', 'Rojo', 1);
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.899 CESTERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.899 CESTSENTENCIA:  INSERT INTO vehiculos VALUES(1, '6789HPT', 'Renault', 'Scenic', 'Rojo', 1);
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.911 CESTERROR:  error de sintaxis en o cerca de «WHERE» en carácter 18
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.911 CESTSENTENCIA:  UPDATE vehiculos WHERE vehiculoid = 1 SET matricula = '1234MMG';
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.927 CESTLOG:  sentencia: INSERT INTO clientes VALUES(2, 'Zutano', 'Zutanez', 'zutanito@example.ex', 987651234, 'Madrid');
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.927 CESTERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.927 CESTSENTENCIA:  INSERT INTO clientes VALUES(2, 'Zutano', 'Zutanez', 'zutanito@example.ex', 987651234, 'Madrid');
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.940 CESTLOG:  sentencia: INSERT INTO vehiculos VALUES(3, '4567HPG', 'Seat', 'Panda', 'Blanco', 2);
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.940 CESTERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.940 CESTSENTENCIA:  INSERT INTO vehiculos VALUES(3, '4567HPG', 'Seat', 'Panda', 'Blanco', 2);
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.952 CESTLOG:  duración: 0.032 ms  sentencia: COMMIT;
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:39.956 CESTLOG:  duración: 3.080 ms  sentencia: SELECT * FROM clientes;
+[09066309P 08134385K] ::1(36100) 2025-05-17 17:32:40.056 CESTLOG:  duración: 1.893 ms  sentencia: SELECT * FROM vehiculos;
+[09066309P 08134385K]  2025-05-17 17:35:50.523 CESTLOG:  empezando checkpoint: time
+[09066309P 08134385K]  2025-05-17 17:35:50.947 CESTLOG:  checkpoint completo: escritos 5 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.413 s, sync=0.004 s, total=0.425 s; archivos sincronizados=5, más largo=0.002 s, promedio=0.001 s; distancia=1 kB, estimación=9685 kB; lsn=D8/99026820, lsn de redo=D8/990267E8
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.697 CESTLOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla1(
+	    x REAL PRIMARY KEY
+	);
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.726 CESTLOG:  duración: 31.668 ms
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.727 CESTLOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla2(
+	    y REAL PRIMARY KEY
+	);
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.729 CESTLOG:  duración: 2.421 ms
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.730 CESTLOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla3(
+	    z REAL PRIMARY KEY
+	);
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.732 CESTLOG:  duración: 2.627 ms
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.734 CESTERROR:  error de sintaxis en o cerca de «1» en carácter 19
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.734 CESTSENTENCIA:  INSERT INTO tabla 1 VALUES (30);
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.745 CESTLOG:  sentencia: INSERT INTO tabla2 VALUES (40);
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.749 CESTLOG:  duración: 4.108 ms
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.750 CESTLOG:  sentencia: INSERT INTO tabla3 VALUES (50);
+[09066309P 08134385K] ::1(36957) 2025-05-17 17:41:30.752 CESTLOG:  duración: 1.972 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.433 CESTLOG:  duración: 0.032 ms  sentencia: BEGIN;
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.434 CESTLOG:  sentencia: DROP TABLE IF EXISTS tabla1;
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.441 CESTLOG:  duración: 8.163 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.442 CESTLOG:  sentencia: DROP TABLE IF EXISTS tabla2;
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.443 CESTLOG:  duración: 0.453 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.444 CESTLOG:  sentencia: DROP TABLE IF EXISTS tabla3;
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.445 CESTLOG:  duración: 0.766 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.446 CESTLOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla1(
+	    x REAL PRIMARY KEY
+	);
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.459 CESTLOG:  duración: 12.727 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.460 CESTLOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla2(
+	    y REAL PRIMARY KEY
+	);
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.465 CESTLOG:  duración: 5.017 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.466 CESTLOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla3(
+	    z REAL PRIMARY KEY
+	);
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.471 CESTLOG:  duración: 4.233 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.472 CESTLOG:  sentencia: INSERT INTO tabla1 VALUES (30);
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.474 CESTLOG:  duración: 1.718 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.475 CESTLOG:  sentencia: INSERT INTO tabla2 VALUES (40);
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.476 CESTLOG:  duración: 1.395 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.477 CESTLOG:  sentencia: INSERT INTO tabla3 VALUES (50);
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.479 CESTLOG:  duración: 1.691 ms
+[09066309P 08134385K] ::1(36997) 2025-05-17 17:41:58.496 CESTLOG:  duración: 16.544 ms  sentencia: COMMIT;

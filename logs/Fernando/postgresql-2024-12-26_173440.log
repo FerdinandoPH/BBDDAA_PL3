@@ -1,0 +1,3 @@
+2024-12-26 17:34:41.056 CET [10516] LOG:  el sistema de bases de datos fue apagado en 2024-12-26 17:33:32 CET
+2024-12-26 17:39:41.063 CET [10528] LOG:  empezando checkpoint: time
+2024-12-26 17:39:41.076 CET [10528] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.002 s, total=0.016 s; archivos sincronizados=2, más largo=0.002 s, promedio=0.001 s; distancia=0 kB, estimación=0 kB; lsn=0/7CA62688, lsn de redo=0/7CA62650

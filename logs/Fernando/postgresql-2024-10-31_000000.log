@@ -1,0 +1,487 @@
+2024-10-31 12:31:49.229 CET [25684] ERROR:  error de sintaxis en o cerca de «DATABASE» en carácter 8
+2024-10-31 12:31:49.229 CET [25684] SENTENCIA:  DELETE DATABASE tienda_db;
+2024-10-31 12:32:00.310 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:32:00.319 CET [15564] LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.010 s; archivos sincronizados=1, más largo=0.001 s, promedio=0.001 s; distancia=3 kB, estimación=3 kB; lsn=0/4CD9D60, lsn de redo=0/4CD9D28
+2024-10-31 12:32:35.115 CET [7024] ERROR:  no se pudo abrir archivo «./usuarios.csv» para lectura: No such file or directory
+2024-10-31 12:32:35.115 CET [7024] HINT:  COPY FROM indica al proceso servidor de PostgreSQL leer un archivo. Puede desear usar una facilidad del lado del cliente como \copy de psql.
+2024-10-31 12:32:35.115 CET [7024] SENTENCIA:  COPY tienda_temporal.Usuarios FROM './usuarios.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:32:35.127 CET [7024] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:32:35.127 CET [7024] SENTENCIA:  COPY tienda_temporal.Discos FROM './discos.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:32:35.133 CET [7024] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:32:35.133 CET [7024] SENTENCIA:  COPY tienda_temporal.Ediciones FROM './ediciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:32:35.139 CET [7024] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:32:35.139 CET [7024] SENTENCIA:  COPY tienda_temporal.UDeseaD FROM './usuario_desea_disco.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:32:35.144 CET [7024] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:32:35.144 CET [7024] SENTENCIA:  COPY tienda_temporal.UsuarioTieneE FROM './usuario_tiene_edicion.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:32:35.152 CET [7024] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:32:35.152 CET [7024] SENTENCIA:  COPY tienda_temporal.Canciones FROM './canciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:33:05.030 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:33:05.045 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4637 kB, estimación=4637 kB; lsn=0/51611B8, lsn de redo=0/5161180
+2024-10-31 12:34:15.511 CET [15608] ERROR:  no se pudo abrir archivo «../usuarios.csv» para lectura: No such file or directory
+2024-10-31 12:34:15.511 CET [15608] HINT:  COPY FROM indica al proceso servidor de PostgreSQL leer un archivo. Puede desear usar una facilidad del lado del cliente como \copy de psql.
+2024-10-31 12:34:15.511 CET [15608] SENTENCIA:  COPY tienda_temporal.Usuarios FROM '../usuarios.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:34:15.524 CET [15608] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:34:15.524 CET [15608] SENTENCIA:  COPY tienda_temporal.Discos FROM '../discos.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:34:15.531 CET [15608] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:34:15.531 CET [15608] SENTENCIA:  COPY tienda_temporal.Ediciones FROM '../ediciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:34:15.537 CET [15608] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:34:15.537 CET [15608] SENTENCIA:  COPY tienda_temporal.UDeseaD FROM '../usuario_desea_disco.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:34:15.542 CET [15608] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:34:15.542 CET [15608] SENTENCIA:  COPY tienda_temporal.UsuarioTieneE FROM '../usuario_tiene_edicion.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:34:15.549 CET [15608] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:34:15.549 CET [15608] SENTENCIA:  COPY tienda_temporal.Canciones FROM '../canciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:34:24.106 CET [15608] ERROR:  no se puede eliminar la base de datos activa
+2024-10-31 12:34:24.106 CET [15608] SENTENCIA:  DROP DATABASE tienda_db;
+2024-10-31 12:34:30.723 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:34:30.734 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4637 kB, estimación=4637 kB; lsn=0/55E86C8, lsn de redo=0/55E8690
+2024-10-31 12:35:01.049 CET [4868] ERROR:  no se pudo abrir archivo «../usuarios.csv» para lectura: No such file or directory
+2024-10-31 12:35:01.049 CET [4868] HINT:  COPY FROM indica al proceso servidor de PostgreSQL leer un archivo. Puede desear usar una facilidad del lado del cliente como \copy de psql.
+2024-10-31 12:35:01.049 CET [4868] SENTENCIA:  COPY tienda_temporal.Usuarios FROM '../usuarios.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:01.062 CET [4868] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:01.062 CET [4868] SENTENCIA:  COPY tienda_temporal.Discos FROM '../discos.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:01.069 CET [4868] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:01.069 CET [4868] SENTENCIA:  COPY tienda_temporal.Ediciones FROM '../ediciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:01.075 CET [4868] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:01.075 CET [4868] SENTENCIA:  COPY tienda_temporal.UDeseaD FROM '../usuario_desea_disco.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:01.080 CET [4868] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:01.080 CET [4868] SENTENCIA:  COPY tienda_temporal.UsuarioTieneE FROM '../usuario_tiene_edicion.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:01.086 CET [4868] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:01.086 CET [4868] SENTENCIA:  COPY tienda_temporal.Canciones FROM '../canciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:23.226 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:35:23.237 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4637 kB, estimación=4637 kB; lsn=0/5A6FC90, lsn de redo=0/5A6FC58
+2024-10-31 12:35:25.951 CET [38512] ERROR:  error de sintaxis en o cerca de «usuarios» en carácter 36
+2024-10-31 12:35:25.951 CET [38512] SENTENCIA:  COPY tienda_temporal.Usuarios FROM usuarios.csv DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:25.960 CET [38512] ERROR:  error de sintaxis en o cerca de «discos» en carácter 34
+2024-10-31 12:35:25.960 CET [38512] SENTENCIA:  COPY tienda_temporal.Discos FROM discos.csv DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:25.968 CET [38512] ERROR:  error de sintaxis en o cerca de «ediciones» en carácter 37
+2024-10-31 12:35:25.968 CET [38512] SENTENCIA:  COPY tienda_temporal.Ediciones FROM ediciones.csv DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:25.978 CET [38512] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:25.978 CET [38512] SENTENCIA:  COPY tienda_temporal.UDeseaD FROM '../usuario_desea_disco.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:25.984 CET [38512] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:25.984 CET [38512] SENTENCIA:  COPY tienda_temporal.UsuarioTieneE FROM '../usuario_tiene_edicion.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:25.991 CET [38512] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:25.991 CET [38512] SENTENCIA:  COPY tienda_temporal.Canciones FROM '../canciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:48.219 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:35:48.230 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4637 kB, estimación=4637 kB; lsn=0/5EF72E8, lsn de redo=0/5EF72B0
+2024-10-31 12:35:51.138 CET [8184] ERROR:  no se pudo abrir archivo «usuarios.csv» para lectura: No such file or directory
+2024-10-31 12:35:51.138 CET [8184] HINT:  COPY FROM indica al proceso servidor de PostgreSQL leer un archivo. Puede desear usar una facilidad del lado del cliente como \copy de psql.
+2024-10-31 12:35:51.138 CET [8184] SENTENCIA:  COPY tienda_temporal.Usuarios FROM 'usuarios.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:51.150 CET [8184] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:51.150 CET [8184] SENTENCIA:  COPY tienda_temporal.Discos FROM 'discos.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:51.157 CET [8184] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:51.157 CET [8184] SENTENCIA:  COPY tienda_temporal.Ediciones FROM 'ediciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:51.163 CET [8184] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:51.163 CET [8184] SENTENCIA:  COPY tienda_temporal.UDeseaD FROM '../usuario_desea_disco.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:51.170 CET [8184] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:51.170 CET [8184] SENTENCIA:  COPY tienda_temporal.UsuarioTieneE FROM '../usuario_tiene_edicion.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:35:51.176 CET [8184] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:35:51.176 CET [8184] SENTENCIA:  COPY tienda_temporal.Canciones FROM '../canciones.csv' DELIMITER ',' CSV HEADER;
+2024-10-31 12:37:29.084 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:37:29.096 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4637 kB, estimación=4637 kB; lsn=0/637EA20, lsn de redo=0/637E9E8
+2024-10-31 12:37:32.426 CET [19544] ERROR:  faltan datos en la columna «nombre_usuario»
+2024-10-31 12:37:32.426 CET [19544] CONTEXTO:  COPY usuarios, línea 2: «Juan García Gómez;juangomez;juangomez@example.com;U'EJlUy9»
+2024-10-31 12:37:32.426 CET [19544] SENTENCIA:  COPY  tienda_temporal.Usuarios FROM STDIN DELIMITER ',' CSV HEADER;
+2024-10-31 12:37:32.435 CET [19544] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:37:32.435 CET [19544] SENTENCIA:  COPY  tienda_temporal.Discos FROM STDIN DELIMITER ',' CSV HEADER;
+2024-10-31 12:37:32.441 CET [19544] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:37:32.441 CET [19544] SENTENCIA:  COPY  tienda_temporal.Ediciones FROM STDIN DELIMITER ',' CSV HEADER;
+2024-10-31 12:39:11.116 CET [11652] ERROR:  la base de datos «tienda_db» ya existe
+2024-10-31 12:39:11.116 CET [11652] SENTENCIA:  CREATE DATABASE tienda_db;
+2024-10-31 12:39:47.241 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:39:47.251 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5157 kB, estimación=5157 kB; lsn=0/6887F38, lsn de redo=0/6887F00
+2024-10-31 12:39:50.502 CET [19484] ERROR:  faltan datos en la columna «estado»
+2024-10-31 12:39:50.502 CET [19484] CONTEXTO:  COPY usuariotienee, línea 2: «juangomez;Subterranean Hitz Vol. I;1997;1997;US;CD;NM»
+2024-10-31 12:39:50.502 CET [19484] SENTENCIA:  COPY  tienda_temporal.UsuarioTieneE FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:39:50.513 CET [19484] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:39:50.513 CET [19484] SENTENCIA:  COPY  tienda_temporal.Canciones FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:41:32.704 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:41:32.716 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5099 kB, estimación=5151 kB; lsn=0/6D82CA8, lsn de redo=0/6D82C70
+2024-10-31 12:42:59.016 CET [21080] ERROR:  error de sintaxis en o cerca de «SELECT» en carácter 40
+2024-10-31 12:42:59.016 CET [21080] SENTENCIA:  SELECT * FROM tienda_temporal.usuarios
+	SELECT * FROM tienda_temporal.usuarios;
+2024-10-31 12:43:02.351 CET [21080] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:43:02.351 CET [21080] SENTENCIA:  SELECT * FROM tienda_temporal.usuarios;
+2024-10-31 12:43:05.236 CET [21080] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:43:05.236 CET [21080] SENTENCIA:  SELECT * FROM tienda_temporal.usuarios;
+2024-10-31 12:44:31.519 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:44:31.532 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5418 kB, estimación=5418 kB; lsn=0/72CD730, lsn de redo=0/72CD6F8
+2024-10-31 12:49:31.548 CET [15564] LOG:  empezando checkpoint: time
+2024-10-31 12:51:31.190 CET [15564] LOG:  checkpoint completo: escritos 1107 búfers (6.8%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=119.533 s, sync=0.103 s, total=119.643 s; archivos sincronizados=319, más largo=0.001 s, promedio=0.001 s; distancia=5418 kB, estimación=5418 kB; lsn=0/7818070, lsn de redo=0/7817F18
+2024-10-31 12:53:19.084 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:53:19.094 CET [15564] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.010 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=5 kB, estimación=4877 kB; lsn=0/7819580, lsn de redo=0/7819548
+2024-10-31 12:53:19.490 CET [37960] ERROR:  error de sintaxis en o cerca de «:» en carácter 53
+2024-10-31 12:53:19.490 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo: TEXT,
+	    anno_publicacion: TEXT,
+	    enlace_portada: TEXT,
+	    grupo_nombre: TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-10-31 12:53:19.496 CET [37960] ERROR:  error de sintaxis en o cerca de «:» en carácter 65
+2024-10-31 12:53:19.496 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo: TEXT,
+	    disco_anno_publicacion: TEXT,
+	    genero: TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 12:53:19.502 CET [37960] ERROR:  error de sintaxis en o cerca de «:» en carácter 54
+2024-10-31 12:53:19.502 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais: TEXT,
+	    anno_edicion: TEXT,
+	    formato: TEXT,
+	    disco_titulo: TEXT,
+	    disco_anno_publicacion: TEXT,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 12:53:19.508 CET [37960] ERROR:  error de sintaxis en o cerca de «:» en carácter 56
+2024-10-31 12:53:19.508 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo: TEXT,
+	    duracion: TEXT,
+	    disco_titulo: TEXT,
+	    disco_anno_publicacion: TEXT,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 12:53:19.514 CET [37960] ERROR:  error de sintaxis en o cerca de «:» en carácter 62
+2024-10-31 12:53:19.514 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre: TEXT,
+	    disco_titulo: TEXT,
+	    disco_anno_publicacion: TEXT,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 12:53:19.522 CET [37960] ERROR:  error de sintaxis en o cerca de «:» en carácter 62
+2024-10-31 12:53:19.522 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre: TEXT,
+	    disco_titulo: TEXT,
+	    disco_anno_publicacion: TEXT,
+	    edicion_pais: TEXT,
+	    edicion_anno: TEXT,
+	    edicion_formato: TEXT,
+	    estado: TEXT,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-10-31 12:53:19.532 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.532 CET [37960] SENTENCIA:  CREATE SCHEMA IF NOT EXISTS tienda_temporal;
+2024-10-31 12:53:19.540 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.540 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Usuarios (
+	    nombre TEXT,
+	    nombre_usuario TEXT,
+	    email TEXT,
+	    contrasena TEXT
+	);
+2024-10-31 12:53:19.547 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.547 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Discos(
+	    id TEXT UNIQUE,
+	    titulo TEXT,
+	    anno_publicacion TEXT,
+	    grupo_id TEXT,
+	    grupo_nombre TEXT,
+	    grupo_enlace TEXT,
+	    generos TEXT,
+	    enlace_portada TEXT
+	);
+2024-10-31 12:53:19.554 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.554 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Ediciones(
+	    disco_id TEXT,
+	    anno_edicion TEXT,
+	    pais TEXT,
+	    formato TEXT
+	);
+2024-10-31 12:53:19.560 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.560 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UDeseaD(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT
+	);
+2024-10-31 12:53:19.565 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.565 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.UsuarioTieneE(
+	    usuario_nombre_usuario TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion TEXT,
+	    edicion_anno_edicion TEXT,
+	    edicion_pais TEXT,
+	    edicion_formato TEXT,
+	    estado TEXT
+	);
+2024-10-31 12:53:19.571 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.571 CET [37960] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda_temporal.Canciones(
+	    disco_id TEXT,
+	    titulo TEXT,
+	    duracion TEXT
+	);
+2024-10-31 12:53:19.579 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.579 CET [37960] SENTENCIA:  COPY  tienda_temporal.Usuarios FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:53:19.585 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.585 CET [37960] SENTENCIA:  COPY  tienda_temporal.Discos FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:53:19.590 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.590 CET [37960] SENTENCIA:  COPY  tienda_temporal.Ediciones FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:53:19.595 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.595 CET [37960] SENTENCIA:  COPY  tienda_temporal.UDeseaD FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:53:19.602 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.602 CET [37960] SENTENCIA:  COPY  tienda_temporal.UsuarioTieneE FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:53:19.608 CET [37960] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 12:53:19.608 CET [37960] SENTENCIA:  COPY  tienda_temporal.Canciones FROM STDIN DELIMITER ';' CSV HEADER;
+2024-10-31 12:54:26.717 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:54:26.727 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=4590 kB, estimación=4848 kB; lsn=0/7C94DF0, lsn de redo=0/7C94DB8
+2024-10-31 12:55:32.085 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:55:32.099 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5575 kB, estimación=5575 kB; lsn=0/8206AB8, lsn de redo=0/8206A80
+2024-10-31 12:56:43.528 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:56:43.538 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5575 kB, estimación=5575 kB; lsn=0/8778858, lsn de redo=0/8778820
+2024-10-31 12:57:20.154 CET [35780] ERROR:  error de sintaxis en o cerca de «tienda_temporal» en carácter 17
+2024-10-31 12:57:20.154 CET [35780] SENTENCIA:  SET SEARCH_PATH tienda_temporal;
+2024-10-31 12:59:51.518 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 12:59:51.528 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5419 kB, estimación=5559 kB; lsn=0/8CC3710, lsn de redo=0/8CC36D8
+2024-10-31 13:00:12.070 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:00:12.083 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.002 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5419 kB, estimación=5545 kB; lsn=0/920E560, lsn de redo=0/920E528
+2024-10-31 13:01:03.451 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:01:03.463 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5420 kB, estimación=5533 kB; lsn=0/9759598, lsn de redo=0/9759560
+2024-10-31 13:05:04.739 CET [23320] ERROR:  error de sintaxis en o cerca de «IN» en carácter 88
+2024-10-31 13:05:04.739 CET [23320] SENTENCIA:  SELECT *FROM tienda_temporal.UsuarioTieneEWHERE (usuario_nombre_usuario, disco_titulo) IN (    SELECT usuario_nombre_usuario, disco_titulo    FROM tienda_temporal.UsuarioTieneE    GROUP BY usuario_nombre_usuario, disco_titulo    HAVING COUNT(*) > 1);
+2024-10-31 13:05:15.260 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:05:15.273 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.014 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5420 kB, estimación=5521 kB; lsn=0/9CA4708, lsn de redo=0/9CA46D0
+2024-10-31 13:10:15.282 CET [15564] LOG:  empezando checkpoint: time
+2024-10-31 13:12:15.673 CET [15564] LOG:  checkpoint completo: escritos 1107 búfers (6.8%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=120.278 s, sync=0.104 s, total=120.391 s; archivos sincronizados=319, más largo=0.001 s, promedio=0.001 s; distancia=5419 kB, estimación=5511 kB; lsn=0/A1EF6E8, lsn de redo=0/A1EF5A8
+2024-10-31 13:43:42.550 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:43:42.559 CET [15564] LOG:  checkpoint completo: escritos 2 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.010 s; archivos sincronizados=2, más largo=0.001 s, promedio=0.001 s; distancia=6 kB, estimación=4961 kB; lsn=0/A1F1170, lsn de redo=0/A1F1138
+2024-10-31 13:43:43.013 CET [29580] ERROR:  error de sintaxis en o cerca de «CHECK» en carácter 109
+2024-10-31 13:43:43.013 CET [29580] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo TEXT,
+	    anno_publicacion INTEGER,
+	    enlace_portada CHECK (enlace ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    grupo_nombre TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-10-31 13:43:43.034 CET [29580] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:43:43.034 CET [29580] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    genero TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:43:43.042 CET [29580] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:43:43.042 CET [29580] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais CHAR(2),
+	    anno_edicion INTEGER,
+	    formato ENUM('CD', 'Vinilo', 'Cassette', 'Flexidisco'),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:43:43.048 CET [29580] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:43:43.048 CET [29580] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion > 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:43:43.054 CET [29580] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:43:43.054 CET [29580] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:43:43.058 CET [29580] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:43:43.058 CET [29580] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais CHAR(2),
+	    edicion_anno INTEGER,
+	    edicion_formato ENUM('CD', 'Vinilo', 'Cassette', 'Flexidisco'),
+	    estado ENUM('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F') NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-10-31 13:43:43.064 CET [29580] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:43:43.064 CET [29580] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-10-31 13:43:43.068 CET [29580] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:43:43.068 CET [29580] SENTENCIA:  SET search_path= tienda;
+2024-10-31 13:44:04.232 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:44:04.242 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5448 kB, estimación=5448 kB; lsn=0/A7434A0, lsn de redo=0/A743468
+2024-10-31 13:44:04.707 CET [34044] ERROR:  no existe la columna «enlace» en carácter 121
+2024-10-31 13:44:04.707 CET [34044] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Discos(
+	    titulo TEXT,
+	    anno_publicacion INTEGER,
+	    enlace_portada TEXT CHECK (enlace ~ '^(http|https):\/\/[^\s/$.?#].[^\s]*$'),
+	    grupo_nombre TEXT,
+	    PRIMARY KEY (titulo, anno_publicacion),
+	    FOREIGN KEY (grupo_nombre) REFERENCES tienda.Grupos(nombre)
+	);
+2024-10-31 13:44:04.723 CET [34044] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:04.723 CET [34044] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.GenerosDisco(
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    genero TEXT,
+	    PRIMARY KEY (disco_titulo, disco_anno_publicacion, genero),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:44:04.729 CET [34044] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:04.729 CET [34044] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais CHAR(2),
+	    anno_edicion INTEGER,
+	    formato ENUM('CD', 'Vinilo', 'Cassette', 'Flexidisco'),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:44:04.733 CET [34044] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:04.733 CET [34044] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion > 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:44:04.737 CET [34044] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:04.737 CET [34044] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:44:04.743 CET [34044] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:04.743 CET [34044] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais CHAR(2),
+	    edicion_anno INTEGER,
+	    edicion_formato ENUM('CD', 'Vinilo', 'Cassette', 'Flexidisco'),
+	    estado ENUM('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F') NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-10-31 13:44:04.749 CET [34044] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:04.749 CET [34044] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-10-31 13:44:04.754 CET [34044] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:04.754 CET [34044] SENTENCIA:  SET search_path= tienda;
+2024-10-31 13:44:20.066 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:44:20.076 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.010 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5453 kB, estimación=5453 kB; lsn=0/AC96A90, lsn de redo=0/AC96A58
+2024-10-31 13:44:20.546 CET [19244] ERROR:  no existe el tipo «enum» en carácter 102
+2024-10-31 13:44:20.546 CET [19244] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Ediciones(
+	    pais CHAR(2),
+	    anno_edicion INTEGER,
+	    formato ENUM('CD', 'Vinilo', 'Cassette', 'Flexidisco'),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:44:20.562 CET [19244] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:20.562 CET [19244] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.Canciones(
+	    titulo TEXT,
+	    duracion INTEGER CHECK (duracion > 0),
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (titulo, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:44:20.566 CET [19244] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:20.566 CET [19244] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UDeseaD(
+	    usuario_nombre TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion)
+	);
+2024-10-31 13:44:20.572 CET [19244] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:20.572 CET [19244] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais CHAR(2),
+	    edicion_anno INTEGER,
+	    edicion_formato ENUM('CD', 'Vinilo', 'Cassette', 'Flexidisco'),
+	    estado ENUM('M', 'NM', 'EX', 'VG+', 'VG', 'G', 'F') NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-10-31 13:44:20.579 CET [19244] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:20.579 CET [19244] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-10-31 13:44:20.585 CET [19244] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:44:20.585 CET [19244] SENTENCIA:  SET search_path= tienda;
+2024-10-31 13:46:19.141 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:46:19.154 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.003 s, sync=0.002 s, total=0.013 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5491 kB, estimación=5491 kB; lsn=0/B1F38E8, lsn de redo=0/B1F38B0
+2024-10-31 13:46:19.643 CET [23724] ERROR:  no existe el tipo «enum» en carácter 200
+2024-10-31 13:46:19.643 CET [23724] SENTENCIA:  CREATE TABLE IF NOT EXISTS tienda.UTieneE(
+	    usuario_nombre TEXT,
+	    disco_titulo TEXT,
+	    disco_anno_publicacion INTEGER,
+	    edicion_pais CHAR(2),
+	    edicion_anno INTEGER,
+	    edicion_formato ENUM('CD', 'Vinilo', 'Cassette', 'Flexidisco'),
+	    estado estado_enum NOT NULL,
+	    id INTEGER CHECK(id > 0) NOT NULL,
+	    PRIMARY KEY (usuario_nombre, disco_titulo, disco_anno_publicacion, edicion_pais, edicion_anno, edicion_formato),
+	    FOREIGN KEY (usuario_nombre) REFERENCES tienda.Usuarios(nombre_usuario),
+	    FOREIGN KEY (disco_titulo, disco_anno_publicacion) REFERENCES tienda.Discos(titulo, anno_publicacion),
+	    FOREIGN KEY (edicion_pais, edicion_anno, edicion_formato, disco_titulo, disco_anno_publicacion) REFERENCES tienda.Ediciones(pais, anno_edicion, formato, disco_titulo, disco_anno_publicacion)
+	);
+2024-10-31 13:46:19.670 CET [23724] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:46:19.670 CET [23724] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-10-31 13:46:19.674 CET [23724] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:46:19.674 CET [23724] SENTENCIA:  SET search_path= tienda;
+2024-10-31 13:46:29.178 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:46:29.189 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5559 kB, estimación=5559 kB; lsn=0/B761890, lsn de redo=0/B761858
+2024-10-31 13:46:29.744 CET [29532] ERROR:  el nuevo registro para la relación «usuarios» viola la restricción «check» «usuarios_email_check»
+2024-10-31 13:46:29.744 CET [29532] DETALLE:  La fila que falla contiene (martalópez, martalópez@example.com, Marta López Martínez, YZn`Fi5L).
+2024-10-31 13:46:29.744 CET [29532] SENTENCIA:  INSERT INTO tienda.Usuarios
+	SELECT nombre_usuario, email, nombre, contrasena
+	FROM tienda_temporal.Usuarios;
+2024-10-31 13:46:29.769 CET [29532] ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+2024-10-31 13:46:29.769 CET [29532] SENTENCIA:  SET search_path= tienda;
+2024-10-31 13:49:23.104 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:49:23.115 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5597 kB, estimación=5597 kB; lsn=0/BCD8F78, lsn de redo=0/BCD8F40
+2024-10-31 13:50:47.813 CET [14876] ERROR:  error de sintaxis en o cerca de «SELECT» en carácter 31
+2024-10-31 13:50:47.813 CET [14876] SENTENCIA:  SELECT * FROM tienda.usuarios
+	SELECT * FROM tienda.usuarios
+	SELECT * FROM tienda.usuarios;
+2024-10-31 13:50:50.745 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:50:50.760 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=0.004 s, sync=0.003 s, total=0.015 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5601 kB, estimación=5601 kB; lsn=0/C251730, lsn de redo=0/C2516F8
+2024-10-31 13:52:52.971 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:52:52.982 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.011 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5602 kB, estimación=5602 kB; lsn=0/C7C9FC0, lsn de redo=0/C7C9F88
+2024-10-31 13:53:33.257 CET [15564] LOG:  empezando checkpoint: immediate force wait
+2024-10-31 13:53:33.268 CET [15564] LOG:  checkpoint completo: escritos 4 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.012 s; archivos sincronizados=4, más largo=0.001 s, promedio=0.001 s; distancia=5602 kB, estimación=5602 kB; lsn=0/CD42938, lsn de redo=0/CD42900
+2024-10-31 13:57:04.677 CET [21560] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+2024-10-31 13:57:04.677 CET [21560] LOG:  se encontró fin de archivo inesperado en una conexión con una transacción abierta
+2024-10-31 16:50:11.975 CET [15564] LOG:  empezando checkpoint: time
+2024-10-31 16:51:59.053 CET [15564] LOG:  checkpoint completo: escritos 997 búfers (6.1%); 0 archivos WAL añadidos, 0 eliminados, 1 reciclados; write=106.918 s, sync=0.139 s, total=107.078 s; archivos sincronizados=351, más largo=0.002 s, promedio=0.001 s; distancia=5602 kB, estimación=5602 kB; lsn=0/D2BB448, lsn de redo=0/D2BB410

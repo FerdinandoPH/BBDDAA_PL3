@@ -1,0 +1,3 @@
+2024-10-22 15:40:35.956 CEST [15136] LOG:  el sistema de bases de datos fue apagado en 2024-10-22 15:39:36 CEST
+2024-10-22 15:45:35.999 CEST [15116] LOG:  empezando checkpoint: time
+2024-10-22 15:45:36.011 CEST [15116] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.003 s, total=0.014 s; archivos sincronizados=2, más largo=0.002 s, promedio=0.002 s; distancia=0 kB, estimación=0 kB; lsn=0/31B3EE8, lsn de redo=0/31B3EB0

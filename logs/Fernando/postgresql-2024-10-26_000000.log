@@ -1,0 +1,3 @@
+2024-10-26 04:57:26.338 CEST [15116] LOG:  apagando
+2024-10-26 04:57:26.339 CEST [15116] LOG:  empezando checkpoint: shutdown immediate
+2024-10-26 04:57:26.346 CEST [15116] LOG:  checkpoint completo: escritos 0 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.009 s; archivos sincronizados=0, más largo=0.000 s, promedio=0.000 s; distancia=0 kB, estimación=4222 kB; lsn=0/4CD8EE0, lsn de redo=0/4CD8EE0

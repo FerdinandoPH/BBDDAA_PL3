@@ -1,0 +1,7 @@
+2024-09-19 12:39:59.735 CEST [21948] LOG:  iniciando PostgreSQL 16.4, compiled by Visual C++ build 1940, 64-bit
+2024-09-19 12:39:59.736 CEST [21948] LOG:  escuchando en la dirección IPv6 «::», port 5432
+2024-09-19 12:39:59.736 CEST [21948] LOG:  escuchando en la dirección IPv4 «0.0.0.0», port 5432
+2024-09-19 12:39:59.769 CEST [14412] LOG:  el sistema de bases de datos fue apagado en 2024-09-19 12:38:48 CEST
+2024-09-19 12:39:59.782 CEST [21948] LOG:  el sistema de bases de datos está listo para aceptar conexiones
+2024-09-19 12:40:50.838 CEST [7840] LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	

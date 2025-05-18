@@ -1,0 +1,6 @@
+2024-12-15 21:17:07.246 CET [12004] LOG:  el sistema de bases de datos fue apagado en 2024-12-15 21:16:04 CET
+2024-12-15 21:22:07.329 CET [11968] LOG:  empezando checkpoint: time
+2024-12-15 21:22:07.343 CET [11968] LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.004 s, sync=0.003 s, total=0.017 s; archivos sincronizados=2, más largo=0.002 s, promedio=0.002 s; distancia=0 kB, estimación=0 kB; lsn=0/7300F4B8, lsn de redo=0/7300F480
+2024-12-15 21:22:55.553 CET [11968] LOG:  apagando
+2024-12-15 21:22:55.554 CET [11968] LOG:  empezando checkpoint: shutdown immediate
+2024-12-15 21:22:55.563 CET [11968] LOG:  checkpoint completo: escritos 0 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.001 s, sync=0.001 s, total=0.011 s; archivos sincronizados=0, más largo=0.000 s, promedio=0.000 s; distancia=0 kB, estimación=0 kB; lsn=0/7300F568, lsn de redo=0/7300F568
