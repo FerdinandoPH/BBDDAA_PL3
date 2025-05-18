@@ -1,0 +1,122 @@
+08134385K 09066309P; ::1(52783); 2025-05-15 12:32:16.516 CEST LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+08134385K 09066309P; ::1(52783); 2025-05-15 12:32:16.516 CEST SENTENCIA:  START_REPLICATION 9/93000000 TIMELINE 1
+08134385K 09066309P; ::1(52783); 2025-05-15 12:32:16.516 CEST LOG:  se encontró fin de archivo inesperado en la conexión standby
+08134385K 09066309P; ::1(52783); 2025-05-15 12:32:16.516 CEST SENTENCIA:  START_REPLICATION 9/93000000 TIMELINE 1
+08134385K 09066309P; ::1(58256); 2025-05-15 12:59:46.484 CEST LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+08134385K 09066309P; ::1(56998); 2025-05-15 13:43:13.643 CEST LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+08134385K 09066309P; ::1(56998); 2025-05-15 13:43:13.643 CEST SENTENCIA:  START_REPLICATION 9/93000000 TIMELINE 1
+08134385K 09066309P; ::1(56998); 2025-05-15 13:43:13.643 CEST LOG:  se encontró fin de archivo inesperado en la conexión standby
+08134385K 09066309P; ::1(56998); 2025-05-15 13:43:13.643 CEST SENTENCIA:  START_REPLICATION 9/93000000 TIMELINE 1
+08134385K 09066309P; ::1(63519); 2025-05-15 16:55:04.562 CEST LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.614 CEST ERROR:  error de sintaxis en o cerca de «NOT» en carácter 16
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.614 CEST SENTENCIA:  CREATE USER IF NOT EXISTS usuario1 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.620 CEST ERROR:  error de sintaxis en o cerca de «NOT» en carácter 16
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.620 CEST SENTENCIA:  CREATE USER IF NOT EXISTS usuario2 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.626 CEST ERROR:  error de sintaxis en o cerca de «NOT» en carácter 16
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.626 CEST SENTENCIA:  CREATE USER IF NOT EXISTS usuario3 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.633 CEST LOG:  sentencia: CREATE ROLE rol_usuario WITH NOSUPERUSER;
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.648 CEST LOG:  sentencia: GRANT SELECT, INSERT, UPDATE, DELETE, USAGE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.651 CEST ERROR:  el tipo de privilegio USAGE no es válido para una tabla
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.651 CEST SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE, USAGE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.657 CEST LOG:  sentencia: GRANT rol_usuario TO usuario1, usuario2, usuario3;
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.658 CEST ERROR:  no existe el rol «usuario1»
+08134385K 09066309P; ::1(65009); 2025-05-15 17:04:21.658 CEST SENTENCIA:  GRANT rol_usuario TO usuario1, usuario2, usuario3;
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.087 CEST LOG:  sentencia: CREATE USER usuario1 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.106 CEST LOG:  sentencia: CREATE USER usuario2 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.121 CEST LOG:  sentencia: CREATE USER usuario3 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.137 CEST LOG:  sentencia: CREATE ROLE rol_usuario WITH NOSUPERUSER;
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.138 CEST ERROR:  el rol «rol_usuario» ya existe
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.138 CEST SENTENCIA:  CREATE ROLE rol_usuario WITH NOSUPERUSER;
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.145 CEST LOG:  sentencia: GRANT SELECT, INSERT, UPDATE, DELETE, USAGE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.146 CEST ERROR:  el tipo de privilegio USAGE no es válido para una tabla
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.146 CEST SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE, USAGE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65026); 2025-05-15 17:04:37.153 CEST LOG:  sentencia: GRANT rol_usuario TO usuario1, usuario2, usuario3;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.262 CEST LOG:  sentencia: DROP USER IF EXISTS usuario1;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.271 CEST LOG:  sentencia: DROP USER IF EXISTS usuario2;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.273 CEST LOG:  sentencia: DROP USER IF EXISTS usuario3;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.274 CEST LOG:  sentencia: DROP ROLE IF EXISTS rol_usuario;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.276 CEST LOG:  sentencia: CREATE USER usuario1 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.295 CEST LOG:  sentencia: CREATE USER usuario2 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.318 CEST LOG:  sentencia: CREATE USER usuario3 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.335 CEST LOG:  sentencia: CREATE ROLE rol_usuario WITH NOSUPERUSER;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.336 CEST LOG:  sentencia: GRANT SELECT, INSERT, UPDATE, DELETE, USAGE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.337 CEST ERROR:  el tipo de privilegio USAGE no es válido para una tabla
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.337 CEST SENTENCIA:  GRANT SELECT, INSERT, UPDATE, DELETE, USAGE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65048); 2025-05-15 17:05:03.343 CEST LOG:  sentencia: GRANT rol_usuario TO usuario1, usuario2, usuario3;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.663 CEST LOG:  sentencia: DROP USER IF EXISTS usuario1;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.703 CEST LOG:  sentencia: DROP USER IF EXISTS usuario2;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.704 CEST LOG:  sentencia: DROP USER IF EXISTS usuario3;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.705 CEST LOG:  sentencia: DROP ROLE IF EXISTS rol_usuario;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.707 CEST LOG:  sentencia: CREATE USER usuario1 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.724 CEST LOG:  sentencia: CREATE USER usuario2 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.745 CEST LOG:  sentencia: CREATE USER usuario3 WITH PASSWORD '1234';
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.763 CEST LOG:  sentencia: CREATE ROLE rol_usuario WITH NOSUPERUSER;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.764 CEST LOG:  sentencia: GRANT USAGE ON SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.770 CEST LOG:  sentencia: GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO rol_usuario;
+08134385K 09066309P; ::1(65060); 2025-05-15 17:05:20.774 CEST LOG:  sentencia: GRANT rol_usuario TO usuario1, usuario2, usuario3;
+08134385K 09066309P; ::1(65305); 2025-05-15 17:06:21.609 CEST FATAL:  no existe la base de datos «usuario1»
+08134385K 09066309P; ; 2025-05-15 17:08:05.657 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-15 17:08:07.521 CEST LOG:  checkpoint completo: escritos 16 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=1.725 s, sync=0.060 s, total=1.908 s; archivos sincronizados=16, más largo=0.041 s, promedio=0.004 s; distancia=41 kB, estimación=13276 kB; lsn=9/9300E660, lsn de redo=9/9300E628
+08134385K 09066309P; ::1(65356); 2025-05-15 17:08:16.723 CEST ERROR:  error de sintaxis en o cerca de «ALL» en carácter 15
+08134385K 09066309P; ::1(65356); 2025-05-15 17:08:16.723 CEST SENTENCIA:  SELECT * FROM ALL TABLES;
+08134385K 09066309P; ::1(65356); 2025-05-15 17:12:24.000 CEST LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.861 CEST ERROR:  error de sintaxis en o cerca de «0» en carácter 23
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.861 CEST SENTENCIA:  INSERT INTO usuarios (0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.867 CEST ERROR:  error de sintaxis en o cerca de «0» en carácter 24
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.867 CEST SENTENCIA:  INSERT INTO vehiculos (0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.874 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.874 CEST SENTENCIA:  SELECT * FROM usuarios WHERE clienteid=0;
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.877 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.877 CEST SENTENCIA:  SELECT * FROM vehiculos WHERE vehiculoid=0;
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.881 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64425); 2025-05-16 20:55:29.881 CEST SENTENCIA:  SELECT * FROM pg_stat_activity WHERE state!='idle';
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.564 CEST LOG:  sentencia: INSERT INTO usuarios VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.570 CEST ERROR:  no existe la relación «usuarios» en carácter 13
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.570 CEST SENTENCIA:  INSERT INTO usuarios VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.575 CEST LOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.575 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.575 CEST SENTENCIA:  INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.579 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.579 CEST SENTENCIA:  SELECT * FROM usuarios WHERE clienteid=0;
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.583 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.583 CEST SENTENCIA:  SELECT * FROM vehiculos WHERE vehiculoid=0;
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.588 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:04.588 CEST SENTENCIA:  SELECT * FROM pg_stat_activity WHERE state!='idle';
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:49.400 CEST ERROR:  transacción abortada, las órdenes serán ignoradas hasta el fin de bloque de transacción
+08134385K 09066309P; ::1(64478); 2025-05-16 20:56:49.400 CEST SENTENCIA:  SELECT * FROM usuarios;
+08134385K 09066309P; ::1(64478); 2025-05-16 20:57:07.098 CEST ERROR:  no existe la relación «usuarios» en carácter 15
+08134385K 09066309P; ::1(64478); 2025-05-16 20:57:07.098 CEST SENTENCIA:  SELECT * FROM usuarios;
+08134385K 09066309P; ::1(64515); 2025-05-16 20:57:53.194 CEST ERROR:  no existe la relación «usuarios» en carácter 15
+08134385K 09066309P; ::1(64515); 2025-05-16 20:57:53.194 CEST SENTENCIA:  SELECT * FROM usuarios;
+08134385K 09066309P; ::1(64559); 2025-05-16 20:58:39.869 CEST LOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(64559); 2025-05-16 20:58:39.877 CEST LOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ; 2025-05-16 21:01:24.479 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-16 21:01:25.393 CEST LOG:  checkpoint completo: escritos 8 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.876 s, sync=0.017 s, total=0.920 s; archivos sincronizados=8, más largo=0.007 s, promedio=0.003 s; distancia=19 kB, estimación=11950 kB; lsn=9/93013518, lsn de redo=9/930134E0
+08134385K 09066309P; ::1(64559); 2025-05-16 21:03:36.552 CEST WARNING:  no hay una transacción en curso
+08134385K 09066309P; ::1(64676); 2025-05-16 21:03:40.787 CEST LOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(64676); 2025-05-16 21:03:40.789 CEST LOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ; 2025-05-16 21:06:24.405 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-16 21:06:25.194 CEST LOG:  checkpoint completo: escritos 8 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.759 s, sync=0.012 s, total=0.789 s; archivos sincronizados=8, más largo=0.005 s, promedio=0.002 s; distancia=19 kB, estimación=10757 kB; lsn=9/930184F8, lsn de redo=9/930184C0
+08134385K 09066309P; ; 2025-05-16 21:11:24.194 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-16 21:11:24.209 CEST LOG:  checkpoint completo: escritos 1 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.002 s, sync=0.002 s, total=0.015 s; archivos sincronizados=1, más largo=0.002 s, promedio=0.002 s; distancia=0 kB, estimación=9682 kB; lsn=9/93018640, lsn de redo=9/93018608
+08134385K 09066309P; ::1(65285); 2025-05-16 21:17:21.871 CEST LOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(65285); 2025-05-16 21:17:21.874 CEST LOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ; 2025-05-16 21:21:24.225 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-16 21:21:25.102 CEST LOG:  checkpoint completo: escritos 7 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.769 s, sync=0.049 s, total=0.878 s; archivos sincronizados=7, más largo=0.041 s, promedio=0.007 s; distancia=20 kB, estimación=8715 kB; lsn=9/9301D700, lsn de redo=9/9301D6C8
+08134385K 09066309P; ::1(65477); 2025-05-16 21:21:35.221 CEST LOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(65477); 2025-05-16 21:21:35.223 CEST LOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ::1(65510); 2025-05-16 21:21:59.156 CEST LOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(65510); 2025-05-16 21:21:59.159 CEST LOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ; 2025-05-16 21:26:24.107 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-16 21:26:24.946 CEST LOG:  checkpoint completo: escritos 8 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.762 s, sync=0.018 s, total=0.839 s; archivos sincronizados=8, más largo=0.010 s, promedio=0.003 s; distancia=21 kB, estimación=7846 kB; lsn=9/93022B98, lsn de redo=9/93022B60
+08134385K 09066309P; ::1(49381); 2025-05-16 21:31:49.333 CEST LOG:  sentencia: INSERT INTO clientes VALUES(0, 'Fulano', 'Fualnez', 'fualnito@example.ex', 918856931, 'Madrid');
+08134385K 09066309P; ::1(49381); 2025-05-16 21:31:49.336 CEST LOG:  sentencia: INSERT INTO vehiculos VALUES(0, '1234MMG', 'Audi', 'A3', 'Negro', 0);
+08134385K 09066309P; ; 2025-05-16 21:36:24.972 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-16 21:36:25.961 CEST LOG:  checkpoint completo: escritos 9 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.884 s, sync=0.050 s, total=0.989 s; archivos sincronizados=9, más largo=0.040 s, promedio=0.006 s; distancia=20 kB, estimación=7063 kB; lsn=9/93027F70, lsn de redo=9/93027F38
+08134385K 09066309P; ; 2025-05-16 21:56:24.991 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-16 21:56:25.250 CEST LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.216 s, sync=0.005 s, total=0.260 s; archivos sincronizados=3, más largo=0.002 s, promedio=0.002 s; distancia=0 kB, estimación=6357 kB; lsn=9/930280D0, lsn de redo=9/93028098

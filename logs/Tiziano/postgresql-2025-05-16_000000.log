@@ -1,0 +1,35 @@
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:05.721 CEST LOG:  sentencia: DELETE FROM clientes;
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:05.748 CEST ERROR:  update o delete en «clientes» viola la llave foránea «vehiculos_clienteid_clientes_fkey» en la tabla «vehiculos»
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:05.748 CEST DETALLE:  La llave (clienteid)=(1) todavía es referida desde la tabla «vehiculos».
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:05.748 CEST SENTENCIA:  DELETE FROM clientes;
+08134385K 09066309P; ; 2025-05-17 17:30:23.575 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-17 17:30:23.949 CEST LOG:  checkpoint completo: escritos 3 búfers (0.0%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=0.225 s, sync=0.042 s, total=0.376 s; archivos sincronizados=3, más largo=0.040 s, promedio=0.014 s; distancia=12 kB, estimación=5723 kB; lsn=9/9302B370, lsn de redo=9/9302B338
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:32.981 CEST ERROR:  error de sintaxis en o cerca de «*» en carácter 8
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:32.981 CEST SENTENCIA:  DELETE * FROM pagos;
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:41.023 CEST LOG:  sentencia: DELETE FROM pagos;
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:48.694 CEST LOG:  sentencia: DELETE FROM incidencias;
+08134385K 09066309P; ::1(55580); 2025-05-17 17:30:54.243 CEST LOG:  sentencia: DELETE FROM reservas;
+08134385K 09066309P; ::1(55580); 2025-05-17 17:31:02.746 CEST LOG:  sentencia: DELETE FROM vehiculos;
+08134385K 09066309P; ::1(55580); 2025-05-17 17:31:12.430 CEST LOG:  sentencia: DELETE FROM clientes;
+08134385K 09066309P; ::1(55580); 2025-05-17 17:31:27.716 CEST LOG:  sentencia: DELETE FROM plazas;
+08134385K 09066309P; ; 2025-05-17 17:35:23.960 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-17 17:35:26.474 CEST LOG:  checkpoint completo: escritos 23 búfers (0.1%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=2.434 s, sync=0.025 s, total=2.515 s; archivos sincronizados=29, más largo=0.002 s, promedio=0.001 s; distancia=106 kB, estimación=5161 kB; lsn=9/93045B90, lsn de redo=9/93045B58
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:39.979 CEST LOG:  sentencia: DROP TABLE IF EXISTS tabla1;
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:39.990 CEST LOG:  sentencia: DROP TABLE IF EXISTS tabla2;
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:39.999 CEST LOG:  sentencia: DROP TABLE IF EXISTS tabla3;
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:40.008 CEST LOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla1(
+	    x REAL PRIMARY KEY
+	);
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:40.046 CEST LOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla2(
+	    y REAL PRIMARY KEY
+	);
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:40.051 CEST LOG:  sentencia: CREATE TABLE IF NOT EXISTS tabla3(
+	    z REAL PRIMARY KEY
+	);
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:40.057 CEST LOG:  sentencia: INSERT INTO tabla1 VALUES (30);
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:40.060 CEST LOG:  sentencia: INSERT INTO tabla2 VALUES (40);
+08134385K 09066309P; ::1(57295); 2025-05-17 18:15:40.063 CEST LOG:  sentencia: INSERT INTO tabla3 VALUES (50);
+08134385K 09066309P; ; 2025-05-17 18:20:23.580 CEST LOG:  empezando checkpoint: time
+08134385K 09066309P; ; 2025-05-17 18:20:28.307 CEST LOG:  checkpoint completo: escritos 41 búfers (0.3%); 0 archivos WAL añadidos, 0 eliminados, 0 reciclados; write=4.682 s, sync=0.026 s, total=4.727 s; archivos sincronizados=31, más largo=0.002 s, promedio=0.001 s; distancia=158 kB, estimación=4661 kB; lsn=9/9306D390, lsn de redo=9/9306D358
+08134385K 09066309P; ::1(57295); 2025-05-17 21:11:08.554 CEST LOG:  no se pudo recibir datos del cliente: An existing connection was forcibly closed by the remote host.
+	
